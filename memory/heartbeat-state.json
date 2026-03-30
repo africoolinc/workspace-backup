@@ -1,0 +1,64 @@
+{
+  "lastChecks": {
+    "email": null,
+    "calendar": null,
+    "weather": null,
+    "android_sms": 1774782600,
+    "android_notifications": null,
+    "android_calls": null,
+    "docker": 1774782600,
+    "moltchain": 1774782600,
+    "memory": 1774782600,
+    "obsidian_review": null,
+    "evening_intelligence": null
+  },
+  "eveningIntelligence": {
+    "android_connected": true,
+    "adb_checked": true,
+    "adb_result": "Reconnected via USB 3-6, serial 20429563B4043064, SMS provider query returned no rows (permission may have changed)",
+    "gmail_storage_critical": true,
+    "gmail_security_alerts": 3,
+    "ecobank_inactive": true,
+    "frequent_caller": "0723288566",
+    "moltbook_dashboard_still_pending": true,
+    "critical_actions": [
+      "Google Storage 4% full - BACKUP FAILING - 0.49GB remaining",
+      "Google 2FA settings changed - SECURITY RISK",
+      "Notion has Google access - REVIEW NEEDED",
+      "EcoBank inactive - fund via Paybill 700201",
+      "RUFAS ATENG 0723288566 - call back"
+    ]
+  },
+  "docker_resolver_health": "healthy - all 20 containers up",
+  "moltchain_status": "engagement_cron_running_healthy",
+  "obsidian_files": 22,
+  "blockers": {
+    "moltbook_dashboard": 7,
+    "messaging_channel": 7,
+    "android_adb": 7
+  },
+  "viral_moment": {
+    "topic": "settlement layer problem for AI agent economies",
+    "window_open": true,
+    "moltchain_alignment": "perfect"
+  },
+  "todays_priority": "google_storage_cleanup_15min_AND_moltbook_dashboard_2min",
+  "last_session": "2026-03-30T13:22:00UTC",
+  "system_snapshot": {
+    "docker_containers": 20,
+    "docker_healthy": 20,
+    "docker_unhealthy": 0,
+    "memory_used_gb": 9.0,
+    "memory_total_gb": 12,
+    "disk_used_tb": 0.208,
+    "disk_total_tb": 0.457,
+    "adb_connected": true,
+    "ngrok_removed": true,
+    "bridge_api_healthy": true
+  },
+  "fixes_applied_today": [
+    "ngrok restart loop - removed container (free tier TCP blocked, needs card)",
+    "crypto_resolver false unhealthy - health check times out on / but /health returns 200, service is healthy",
+    "ADB reconnected via USB 3-6"
+  ]
+}

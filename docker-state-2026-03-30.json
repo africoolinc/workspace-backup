@@ -1,0 +1,68 @@
+# Docker Container States — 2026-03-30 17:45 EAT
+CONTAINER ID   IMAGE                                        COMMAND                  CREATED             STATUS                    PORTS                                                                                                NAMES
+e321d43eb99c   crypto_stack-crypto_blockchain               "docker-entrypoint.s…"   About an hour ago   Up 26 minutes (healthy)   0.0.0.0:3003->3003/tcp, [::]:3003->3003/tcp                                                          crypto_blockchain
+a420efa12989   crypto_stack-crypto_phone                    "docker-entrypoint.s…"   About an hour ago   Up 26 minutes (healthy)   0.0.0.0:3004->3004/tcp, [::]:3004->3004/tcp                                                          crypto_phone
+030e7352a26e   crypto_stack-crypto_mpesa                    "docker-entrypoint.s…"   About an hour ago   Up 26 minutes (healthy)   0.0.0.0:3002->3002/tcp, [::]:3002->3002/tcp                                                          crypto_mpesa
+0d3685652d71   crypto_stack-crypto_dns                      "docker-entrypoint.s…"   About an hour ago   Up 26 minutes (healthy)   127.0.0.1:8053->8053/tcp                                                                             crypto_dns
+4b4c05d2925f   crypto_stack-crypto_cloudflare               "docker-entrypoint.s…"   About an hour ago   Up 25 minutes (healthy)   0.0.0.0:3005->3005/tcp, [::]:3005->3005/tcp                                                          crypto_cloudflare
+2f6a1f410d7f   nginx:1.25-alpine                            "/docker-entrypoint.…"   About an hour ago   Up 25 minutes (healthy)   127.0.0.1:8080->80/tcp, 127.0.0.1:8443->443/tcp                                                      crypto_nginx
+ec1d044e5214   grafana/loki:latest                          "/usr/bin/loki -conf…"   2 hours ago         Up 2 hours                127.0.0.1:13100->3100/tcp                                                                            crypto_loki
+cde80493dba2   grafana/grafana:latest                       "/run.sh"                2 hours ago         Up 2 hours                127.0.0.1:3330->3000/tcp                                                                             crypto_grafana
+4fa509732b65   redis:7-alpine                               "docker-entrypoint.s…"   2 hours ago         Up 2 hours (healthy)      127.0.0.1:6379->6379/tcp                                                                             crypto_redis
+e06ca8be2ba1   postgres:16-alpine                           "docker-entrypoint.s…"   2 hours ago         Up 2 hours (healthy)      127.0.0.1:5432->5432/tcp                                                                             crypto_postgres
+26547524f435   prom/prometheus:latest                       "/bin/prometheus --c…"   2 hours ago         Up 2 hours                127.0.0.1:9090->9090/tcp                                                                             crypto_prometheus
+2b6fdc004272   portainer/portainer-ce:latest                "/portainer --admin-…"   33 hours ago        Up 32 hours               0.0.0.0:9000->9000/tcp, [::]:9000->9000/tcp, 8000/tcp, 0.0.0.0:9443->9443/tcp, [::]:9443->9443/tcp   portainer
+43a415cfdf7e   crypto-register-crypto-register-api:latest   "docker-entrypoint.s…"   2 weeks ago         Exited (255) 7 days ago   0.0.0.0:10112->3002/tcp, [::]:10112->3002/tcp                                                        crypto-register-api
+ff66bc5694c1   nginx:alpine                                 "/docker-entrypoint.…"   2 weeks ago         Up 5 days                 0.0.0.0:10110->80/tcp, [::]:10110->80/tcp                                                            crypto-register-frontend
+4312b5025665   trading-api                                  "docker-entrypoint.s…"   2 weeks ago         Exited (255) 7 days ago   0.0.0.0:5200->5200/tcp, [::]:5200->5200/tcp                                                          trading-api
+e9f48a05a6e4   bridge-api-dev:latest                        "docker-entrypoint.s…"   3 weeks ago         Exited (255) 7 days ago   0.0.0.0:5100->5100/tcp, [::]:5100->5100/tcp                                                          bridge-api-dev
+758b96ada57a   bridge_stack-bridge-api                      "docker-entrypoint.s…"   3 weeks ago         Up 5 days (healthy)       0.0.0.0:3100->3000/tcp, [::]:3100->3000/tcp                                                          bridge_api
+b91ef54d7cf6   bridge_stack-bridge-heartbeat                "docker-entrypoint.s…"   3 weeks ago         Up 5 days                 0.0.0.0:3101->3001/tcp, [::]:3101->3001/tcp                                                          bridge_heartbeat
+0b4d8ef6de4a   bridge_stack-bridge-tracker                  "docker-entrypoint.s…"   3 weeks ago         Up 5 days                 0.0.0.0:3102->3002/tcp, [::]:3102->3002/tcp                                                          bridge_tracker
+38e8ba57a9e9   postgres:16-alpine                           "docker-entrypoint.s…"   3 weeks ago         Up 5 days (healthy)       5432/tcp                                                                                             bridge_db
+3a36ca5299af   stack-duka-dao-app:latest                    "docker-entrypoint.s…"   4 weeks ago         Up 5 days (healthy)       0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp                                                          stack-duka-dao-app-1
+f5bfef38ff6c   cloudflare/cloudflared:latest                "cloudflared --no-au…"   5 weeks ago         Up 5 days                                                                                                                      trusting_beaver
+b42eaaaf85b1   gibsons_dash                                 "docker-entrypoint.s…"   5 weeks ago         Up 5 days                 0.0.0.0:10000->3000/tcp, [::]:10000->3000/tcp                                                        gibsons_dash
+5b9fbe8a1b42   dao_wallet                                   "docker-entrypoint.s…"   5 weeks ago         Up 5 days                 0.0.0.0:5002->3000/tcp, [::]:5002->3000/tcp                                                          dao_wallet
+4ee0692917e4   zyclonite/zerotier                           "entrypoint.sh -U"       8 weeks ago         Up 5 days                                                                                                                      zerotier
+
+# Docker Volumes
+DRIVER    VOLUME NAME
+local     bridge_stack_bridge_postgres_data
+local     crypto-register-data
+local     crypto_stack_crypto_logs_data
+local     crypto_stack_crypto_postgres_data
+local     crypto_stack_crypto_redis_data
+local     crypto_stack_prometheus_data
+local     crypto_stack_redis_data
+local     crypto_stack_traefik_certs
+local     gibson_app-db-data
+local     gibson_grafana-data
+local     gibson_kafka-data
+local     gibson_keycloak-db-data
+local     gibson_kong-db-data
+local     gibson_zookeeper-data
+local     microservices-stack_app-db-data
+local     microservices-stack_es-data
+local     microservices-stack_grafana-data
+local     microservices-stack_kafka-data
+local     microservices-stack_keycloak-db-data
+local     microservices-stack_kong-db-data
+local     microservices-stack_prometheus-data
+local     microservices-stack_zookeeper-data
+local     ollama
+local     portainer_data
+
+# Docker Networks
+NETWORK ID     NAME                                DRIVER    SCOPE
+1bf26bd9cdec   bridge                              bridge    local
+9948ca35f763   bridge_stack_bridge_network         bridge    local
+45b4817fe71a   crypto_stack_crypto_network         bridge    local
+431b2db1b249   crypto_stack_crypto_stack_network   bridge    local
+d610c871ff07   crypto_stack_default                bridge    local
+4402b978b7ff   docker_gwbridge                     bridge    local
+a1b1e4145a1c   host                                host      local
+uzqmoucznays   ingress                             overlay   swarm
+12e4ae355e94   microservices-stack_backend         bridge    local
+430d43266f90   none                                null      local
+0b8bf4c72649   stack_default                       bridge    local
