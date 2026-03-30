@@ -1,4 +1,4 @@
-# Security Scan — 2026-03-30 17:53 EAT
+# Security Scan — 2026-03-30 17:55 EAT
 
 ## Cron Jobs
 (no crontab)
@@ -43,12 +43,12 @@ List of devices attached
 
 ## Docker Container Status
 NAMES                      STATUS                    PORTS
-crypto_blockchain          Up 33 minutes (healthy)   0.0.0.0:3003->3003/tcp, [::]:3003->3003/tcp
-crypto_phone               Up 33 minutes (healthy)   0.0.0.0:3004->3004/tcp, [::]:3004->3004/tcp
-crypto_mpesa               Up 34 minutes (healthy)   0.0.0.0:3002->3002/tcp, [::]:3002->3002/tcp
-crypto_dns                 Up 33 minutes (healthy)   127.0.0.1:8053->8053/tcp
-crypto_cloudflare          Up 33 minutes (healthy)   0.0.0.0:3005->3005/tcp, [::]:3005->3005/tcp
-crypto_nginx               Up 32 minutes (healthy)   127.0.0.1:8080->80/tcp, 127.0.0.1:8443->443/tcp
+crypto_blockchain          Up 35 minutes (healthy)   0.0.0.0:3003->3003/tcp, [::]:3003->3003/tcp
+crypto_phone               Up 35 minutes (healthy)   0.0.0.0:3004->3004/tcp, [::]:3004->3004/tcp
+crypto_mpesa               Up 36 minutes (healthy)   0.0.0.0:3002->3002/tcp, [::]:3002->3002/tcp
+crypto_dns                 Up 35 minutes (healthy)   127.0.0.1:8053->8053/tcp
+crypto_cloudflare          Up 35 minutes (healthy)   0.0.0.0:3005->3005/tcp, [::]:3005->3005/tcp
+crypto_nginx               Up 34 minutes (healthy)   127.0.0.1:8080->80/tcp, 127.0.0.1:8443->443/tcp
 crypto_loki                Up 2 hours                127.0.0.1:13100->3100/tcp
 crypto_grafana             Up 2 hours                127.0.0.1:3330->3000/tcp
 crypto_redis               Up 2 hours (healthy)      127.0.0.1:6379->6379/tcp
