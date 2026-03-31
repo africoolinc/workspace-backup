@@ -1,17 +1,11 @@
-Last check: | 2026-03-30 15:49 | .6040 GiB | 4.00% | 0% | HEALTHY |
+Last check: | 2026-03-30 21:48 | .6152 GiB | 4.00% | 0% | HEALTHY |
 
-## 2026-03-30 15:49 GMT+3 — HEALTHY ✅
+## Resource Check — 2026-03-30 21:48:36 (GMT+3)
 
-| Check | Value |
-|-------|-------|
-| System Memory | 12.35 GiB |
-| Docker Ceiling | 3.70 GiB (30%) |
-| Docker Used | 0.604 GiB (4.00%) |
-| System Free | 0.21 GiB |
+**Status:** ✅ HEALTHY  
+**Docker Usage:** 4.00% of ceiling (0.615 GiB / 3.70 GiB)  
+**System Memory:** 12.35 GiB total, ~0.15 GiB free
 
-**Status: HEALTHY** — All containers within normal parameters.
+All containers within normal parameters.
 
-Containers running: 22 total
-Top consumers: crypto_grafana (98MiB), crypto_blockchain (35MiB), bridge_api (66MiB)
-
-
+---

@@ -6,11 +6,11 @@
 
 ## 🆕 NEW — UNKNOWN CONTACT
 
-### +254796591902 — Unknown
-- **Source:** SMS received 15:25 today (Mar 30)
+### +254796591902 — Unknown (possibly 0796591902)
+- **Source:** SMS received 11:27 AM today (Mar 30)
 - **Message:** "Pls check Whatsapp"
 - **Status:** NOT IN CONTACTS — identity unknown
-- **Action:** Gibson should identify and check WhatsApp
+- **Action:** Check WhatsApp, then identify and add to contacts
 
 ---
 

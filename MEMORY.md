@@ -51,15 +51,20 @@
 - **Battery:** 37%, USB charging, 34°C, healthy, 500mA slow charge
 - **Screen:** Awake, unlocked, Launcher active
 
-### Known Devices on LAN (scan 2026-03-30 13:33 EAT)
+### Known Devices on LAN (scan 2026-03-30 evening)
 
 | IP | Device | MAC Vendor | Key Services | Status |
 |----|--------|-----------|-------------|--------|
 | 192.168.100.1 | Huawei Router (gateway) | Huawei Technologies | telnet 23 ⚠️ OPEN, DNS 53, HTTP 80 | ⚠️ telnet accessible — security risk |
+| 192.168.100.4 | LG Smart TV | 60:8D:26:B1:AF:4F | HTTP :3000 (LG smart TV service) | ✅ |
 | 192.168.100.21 | TP-Link device | TP-Link Technologies | all ports filtered | 🔒 firewalled |
+| 192.168.100.50 | Unknown | — | ports 49152, 62078 (tcpwrapped) | ⚠️ unknown — possibly ADB-related Android device |
 | 192.168.100.116 | D-Link device | D-Link International | all ports filtered | 🔒 firewalled |
 | 192.168.100.122 | Server (Bitsoko) | TP-Link Technologies | SSH 22, HTTP 80, Samba 139/445, MySQL 3306, Abyss 9999 | ⚠️ MySQL on LAN |
-| 192.168.100.182 | This machine (ahie) | — | SSH 22, SMTP 25, DNS 53, HTTP 80, Docker Swarm, ZeroTier, OpenClaw | ✅ |
+| 192.168.100.182 | This machine (ahie) | — | SSH 22, SMTP 25, DNS 53, HTTP 80, Docker Swarm, ZeroTier, OpenClaw; port 3000 filtered | ✅ |
+| 192.168.100.224 | Oraimo device | — | all ports closed | ⚠️ |
+| 192.168.100.251 | Unknown | — | not responding | ⚠️ missing since 2026-03-21 |
+| 192.168.100.138 | Unknown | — | not seen in evening scan | ⚠️ may be intermittent |
 
 ### Oracle Security Operations — ⚔️ ACTIVE (as of 2026-03-30)
 Oracle now autonomously manages all security logs and network scans for Gibson's infrastructure.
@@ -81,15 +86,18 @@ Oracle now autonomously manages all security logs and network scans for Gibson's
 - `dumpsys telephony.registry` — radio/SIM anomalies on Android
 
 **Security Log Location:** `memory/security-2026-03-30.md` (ongoing)
-| 192.168.100.4 | LG Smart TV | 60:8D:26:B1:AF:4F | HTTP :3000 (LG smart TV service) | ⚠️ was offline — NOW BACK |
-| 192.168.100.138 | Unknown device | — | all ports filtered | 🆕 NEW — appeared 2026-03-30 |
-| 192.168.100.251 | Unknown | — | not responding | ⚠️ missing since 2026-03-21 |
+### Previously Seen (last seen before 2026-03-31)
+| IP | Device | Last Seen | Notes |
+|----|--------|-----------|-------|
+| 192.168.100.251 | Unknown | 2026-03-21 | Not responding since 2026-03-21 |
+| 192.168.100.138 | Unknown | 2026-03-30 morning | Not seen in evening scan — intermittent availability |
+| 192.168.100.4 (LG TV) | 2026-03-30 | Had HTTP:3000, now all filtered |
 
 ### Previously Seen (last seen before 2026-03-30)
 | IP | Device | Last Seen | Notes |
 |----|--------|-----------|-------|
 | 192.168.100.251 | Unknown | 2026-03-21 | Not responding since 2026-03-21 |
-| 192.168.100.138 | Unknown | 2026-03-30 | First seen — possibly .224 (timing discrepancy in scans) |
+| 192.168.100.138 | Unknown | 2026-03-30 morning | Not seen in evening scan — intermittent availability |
 
 ### Security Concerns (as of 2026-03-27)
 1. ⚠️ Router (.1): telnet port 23 is **OPEN** — unencrypted protocol, actively accessible. HIGH priority to disable.

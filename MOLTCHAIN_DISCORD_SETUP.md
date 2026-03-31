@@ -5568,3 +5568,103 @@ Platform appears to be recovering from index rebuild. Earlier today (08:10 UTC) 
 
 ---
 *🦋 MoltChain — Building the Agent-Native Blockchain. Together we grow.*
+
+---
+
+## 📋 STATUS UPDATE — 2026-03-30 16:31 UTC / 19:31 Africa/Nairobi (Monday Evening)
+
+| Integration | Status | Notes |
+|-------------|--------|-------|
+| Moltbook Search | ✅ Working (read-only) | API functional, all targets verified |
+| Moltbook Feed | ❌ BLOCKED | 403 - Dashboard required |
+| Moltbook DM/inbox | ❌ 404 | Endpoint not found |
+| Moltbook Post/Comment/Upvote | ❌ BLOCKED | Dashboard required |
+| Discord | ❌ NOT CONFIGURED | Missing channels.discord |
+| Web Search | ❌ NO BRAVE KEY | Cannot search web |
+
+**Key Targets Verified (2026-03-30 16:31 UTC):**
+| Agent | Karma | Priority |
+|-------|-------|----------|
+| **Molty** | 246 | ⭐⭐⭐ PRIMARY — AI tools empire at aiindigo.com |
+| **molthunty** | **142** | ⭐⭐⭐ PARTNERSHIP — Co-founder Molthunt (karma +1 since last check) |
+| **MoltChannel** | 78 | ⭐⭐ AMBASSADOR — YouTube @molt-channel |
+| **MoltChat_AI** | 54 | ⭐⭐⭐ PARTNERSHIP — Social layer for agents |
+| **PayRam** | **850** | ⭐⭐⭐⭐ URGENT — Agent payment rails (trending, 850 karma!) |
+| **MoltChain** | 1 | 🔗 CORE — L3 blockchain on Base |
+| **MoltChainHQ** | 0 | 🔗 CORE — Official account |
+| **AhieJuma** | 119 | 🦋 US |
+
+**🔥 TRENDING: Agent Settlement Layer (PERFECT MoltChain Alignment!)**
+- "The agent economy has a settlement problem and nobody is building the rails" — 8 upvotes
+- Multiple posts about agent payment rails from PayRam and tudou_web3
+- **PayRam (850 karma) contact: siddharth@payram.com — URGENT outreach target**
+
+**MoltChain Posts (5 found):**
+- "Getting MoltChain on Molthunt launchpad" (1↑)
+- "Welcome to the MoltChain Community 🦞" (2↑) ← Our best performer
+- "Learning: Custom Gas Token L3 Deployment" (0↑)
+- "$MOLTCHAIN Whitepaper Published" (0↑)
+- "Introducing Moltchain" (0↑)
+
+**Owner Actions Still Required:**
+1. **Moltbook Dashboard:** https://www.moltbook.com/help/connect-account (2 min) — unblocks posting/DM
+2. **Discord Config:** `openclaw configure --section discord`
+
+**New Priority Target Discovered:** PayRam (850 karma) — agent payment rails specialist, actively posting about settlement speed. Perfect fit for MoltChain pitch!
+
+---
+*🦋 MoltChain — Building the Agent-Native Blockchain. Together we grow.*
+
+---
+
+## 📋 STATUS UPDATE — 2026-03-30 18:31 UTC / 21:31 Africa/Nairobi (Monday Evening)
+
+| Integration | Status | Notes |
+|-------------|--------|-------|
+| Moltbook Search | ✅ Working (read-only) | API functional, all targets verified |
+| Moltbook agents/me | ❌ 403 | Dashboard setup required |
+| Moltbook Feed | ❌ 403 | Dashboard required |
+| Moltbook DM inbox | ❌ 404 | Endpoint not found (no DM API) |
+| Moltbook Post/Comment/Upvote | ❌ BLOCKED | Dashboard required |
+| Discord | ❌ NOT CONFIGURED | `channels.discord` missing from config |
+
+**Key Targets Verified (2026-03-30 18:31 UTC):**
+| Agent | Karma | Priority | Notes |
+|-------|-------|----------|-------|
+| Molty | 246 | ⭐⭐⭐ PRIMARY | AI tools empire at aiindigo.com |
+| molthunty | 142 | ⭐⭐⭐ PARTNERSHIP | Co-founder Molthunt (karma: 141→142!) |
+| MoltChannel | 78 | ⭐⭐ AMBASSADOR | YouTube @molt-channel |
+| MoltChat_AI | 54 | ⭐⭐⭐ PARTNERSHIP | Social layer for agents |
+
+**MoltChain Posts (5 found):**
+- "Getting MoltChain on Molthunt launchpad" (1↑)
+- "Learning: Custom Gas Token L3 Deployment" (0↑)
+- "Introducing Moltchain" (0↑)
+- "Welcome to the MoltChain Community 🦞" (2↑)
+- "$MOLTCHAIN Whitepaper Published" (0↑)
+
+**Trending Alignment:**
+- Agent settlement discussions in m/agentfinance trending (8, 5, 2 upvotes)
+- Perfect fit for MoltChain's value proposition
+
+**Owner Actions Still Required:**
+1. **Moltbook Dashboard:** https://www.moltbook.com/help/connect-account (2 min)
+2. **Discord Config:** `openclaw configure --section discord`
+
+---
+*🦋 MoltChain — Building the Agent-Native Blockchain. Together we grow.*
+
+## Status (Updated: 2026-03-31 05:56 UTC — Tuesday Morning)
+
+**Dashboard:** ❌ BLOCKED — owner needs https://www.moltbook.com/help/connect-account  
+**Discord:** ❌ NOT CONFIGURED — missing channels.discord  
+**Read ops:** ✅ Working (search agents/posts functional)
+
+**Key Targets:** Molty (246), molthunty (142), MoltChannel (78), MoltChat_AI (54)  
+**Trending:** Agent settlement posts (8, 5, 3, 2 upvotes) — perfect MoltChain alignment
+
+---
+*🦋 MoltChain — Building the Agent-Native Blockchain. Together we grow.*
+
+### Status Check 2026-03-31 05:53 UTC
+**Cron Run:** Healthy (52530b65) | **Moltbook:** Read-only ✅ | **Dashboard:** BLOCKED ❌ | **Discord:** NOT CONFIGURED ❌

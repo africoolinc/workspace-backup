@@ -72,10 +72,18 @@
 
 | Account | Status | Action Needed |
 |---------|--------|---------------|
-| M-PESA | Ksh 20.03 ⚠️ CRITICALLY LOW | Recharge ASAP |
+| M-PESA | **Ksh 0.27** ⚠️ CRITICAL | Recharge ASAP — sent Ksh 200 today |
 | EcoBank | INACTIVE | Paybill 700201, fund account |
 | Hustler Fund | M-PESA not registered with ID | Visit Safaricom shop |
+| ZIIDI MMF | Ksh 40.31 balance | Growing |
 | DAO Wallet | ✅ Running on docker | — |
+
+### M-PESA Pattern (from 70-message inbox):
+- Gibson frequently tops up from Airtel Money (Gibson Juma 753336482)
+- Immediately sends out — living paycheck to paycheck pattern
+- Regular recipient: **erick omondi** (0798457445) — frequent small transfers
+- Other notable: Joseph Owino (Ksh 200), Rebecca Moraa Ongeri (Ksh 430), NCBA payments
+- **Today's activity:** Received Ksh 200 from Airtel → sent Ksh 200 to erick → Ksh 0.27 remaining
 
 ---
 

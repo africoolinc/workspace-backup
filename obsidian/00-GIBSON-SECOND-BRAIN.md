@@ -1,6 +1,6 @@
 # 🧠 Gibson's Second Brain — Master Index
 
-> **Oracle running:** Yes | **Last updated:** 2026-03-30 5:37 PM EAT
+> **Oracle running:** Yes | **Last updated:** 2026-03-31 8:58 AM EAT
 > **Purpose:** Gibson's complete digital life — decisions, strategy, infrastructure, relationships.
 
 ---
@@ -12,7 +12,7 @@
 | 🔴 | **Moltbook Dashboard Setup** | ALL write ops blocked — 11 days | https://www.moltbook.com/help/connect-account |
 | 🔴 | **Google Storage at 4%** | Backup WILL stop — data loss risk | Free 0.49 GB at myaccount.google.com |
 | 🔴 | **Google Security Alerts (3)** | Notion + 2FA changed — suspicious? | Review at myaccount.google.com/security |
-| 🔴 | **M-PESA Balance: Ksh 20.03** | CRITICALLY LOW — last recharge Mar 29 | Fund account ASAP |
+| 🔴 | **M-PESA Balance: Ksh 0.27** | CRITICALLY LOW — Ksh 200 received + sent today, 0.27 remaining | Fund account URGENTLY |
 | 🟡 | **EcoBank Account Inactive** | Dormancy risk | Paybill 700201, fund acct |
 | 🟡 | **Call 0723288566 (RUFAS ATENG)** | 10+ missed calls over 6 weeks — likely about Ksh 530 | Call TODAY |
 | 🟡 | **Hustler Fund — National ID** | M-PESA not registered with ID | Visit Safaricom shop |
@@ -33,26 +33,22 @@
 
 ---
 
-## ⚠️ ADB STATUS: DISCONNECTED (2026-03-30)
+## ✅ ADB STATUS: RECONNECTED (2026-03-31 8:58 AM)
 
 - **Device:** LG V20 (Android 13) — `20429563B4043064`
-- **Connection:** USB — CABLE DISCONNECTED (was working Mar 29)
-- **SMS access:** ❌ LOST this session — needs reconnection
-- **Last known M-PESA intelligence:** Ksh 20.03 balance, frequent contact erick omondi
-- **Fix:** Reconnect USB cable → grant trust on phone → verify with `adb devices`
+- **Connection:** USB ✅ — Full SMS access restored
+- **M-PESA Intel:** Ksh 0.27 remaining (Ksh 200 received + sent same day)
+- **Erick Omondi:** Frequent M-PESA contact — sent Ksh 200 today
+- **Unknown Contact:** 0796591902 messaged "Pls check WhatsApp" — still unread (from yesterday)
+- **Keep alive:** Don't disconnect USB cable
 
 ---
 
-## 🔥 MOLTCHAIN STATUS (Updated 2026-03-30)
+## 🔥 MOLTCHAIN STATUS (Updated 2026-03-31 8:58 AM EAT)
 
-**AhieJuma:** 119 karma (unchanged — write ops blocked) | Read ✅ | Write ❌ BLOCKED
+**AhieJuma:** 119 karma (unchanged — write ops blocked 12+ days) | Read ✅ | Write ❌ BLOCKED
 
-**Trending Alignment: PERFECT 🔥🔥🔥**
-- "The settlement layer problem for AI agent economies" — 10+ upvotes
-- "The settlement layer nobody is building" — 12 upvotes
-- "An agent realizes settlement speed is working capital velocity" — PayRam
-
-**This is MoltChain's EXACT value prop. Window may be closing — dashboard setup is urgent.**
+**Trending Alignment: PERFECT 🔥🔥🔥** — Settlement layer discussions still hot on Moltbook
 
 ### Priority Outreach Targets
 | Agent | Karma | Priority | Strategy |
@@ -190,6 +186,13 @@ Gibson's Second Brain/
 
 **The story of the day:**
 Another day of powerful infrastructure but critical items aging. The MoltChain trending alignment is perfect — but without the dashboard, Gibson can't capitalize. ADB also disconnected, losing Oracle's visibility into the phone.
+
+**Gibson's highest leverage action: Saturday 2-hour sprint on the Big 4 Unlocks.**
+
+---
+
+*Last updated: 2026-03-30 3:37 PM EAT | Oracle — Gibson's Second Brain*
+day of powerful infrastructure but critical items aging. The MoltChain trending alignment is perfect — but without the dashboard, Gibson can't capitalize. ADB also disconnected, losing Oracle's visibility into the phone.
 
 **Gibson's highest leverage action: Saturday 2-hour sprint on the Big 4 Unlocks.**
 

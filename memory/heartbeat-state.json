@@ -6,11 +6,12 @@
     "android_sms": 1774782600,
     "android_notifications": null,
     "android_calls": null,
-    "docker": 1774782600,
+    "docker": 1774797540,
     "moltchain": 1774782600,
-    "memory": 1774782600,
+    "memory": 1774797540,
     "obsidian_review": null,
-    "evening_intelligence": null
+    "evening_intelligence": 1774797540,
+    "backup": 1774797540
   },
   "eveningIntelligence": {
     "android_connected": true,
@@ -29,7 +30,7 @@
       "RUFAS ATENG 0723288566 - call back"
     ]
   },
-  "docker_resolver_health": "healthy - all 20 containers up",
+  "docker_resolver_health": "healthy - all 22 containers up, 0 unhealthy",
   "moltchain_status": "engagement_cron_running_healthy",
   "obsidian_files": 22,
   "blockers": {
@@ -43,10 +44,10 @@
     "moltchain_alignment": "perfect"
   },
   "todays_priority": "google_storage_cleanup_15min_AND_moltbook_dashboard_2min",
-  "last_session": "2026-03-30T13:22:00UTC",
+  "last_session": "2026-03-30T15:49:00UTC",
   "system_snapshot": {
-    "docker_containers": 20,
-    "docker_healthy": 20,
+    "docker_containers": 22,
+    "docker_healthy": 22,
     "docker_unhealthy": 0,
     "memory_used_gb": 9.0,
     "memory_total_gb": 12,
@@ -59,6 +60,11 @@
   "fixes_applied_today": [
     "ngrok restart loop - removed container (free tier TCP blocked, needs card)",
     "crypto_resolver false unhealthy - health check times out on / but /health returns 200, service is healthy",
-    "ADB reconnected via USB 3-6"
+    "ADB reconnected via USB 3-6",
+    "crypto_stack all 5 containers fixed - credentials added (Infura RPC, M-PESA, Cloudflare API)",
+    "cloudflared tunnel set up on Linux host - HTTP/2, 4 HA connections",
+    "cloudflare-domain skill created for DNS/tunnel management",
+    "workspace-backup.sh built and operational - backs up to GitHub daily",
+    "GitHub repo created: africoolinc/workspace-backup - backup script working"
   ]
 }
