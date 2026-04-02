@@ -1,113 +1,198 @@
-# 🧠 Gibson's Workspace Manager — Operational Rules
-> **Strict policy. Do not deviate. Override requires explicit user approval.**
+# WORKSPACE_RULES.md — Gibson's Workspace Manager Policy
+> **STRICT POLICY. Zero deviation without explicit user approval.**
+> Last updated: 2026-03-31 | System: 12 GiB RAM, 4 cores, i3-4130
 
 ---
 
 ## 1. Resource Ceiling Policy
 
-| Resource | Hard Limit | OpenClaw Reserve |
-|----------|-----------|-----------------|
-| **Memory** | **30% of available** (~3.6 GiB on 12 GiB system) | ~2 GiB minimum at all times |
-| **CPU** | 30% of total cores | OpenClaw never starved |
-| **Disk I/O** | Non-blocking threshold only | N/A |
-| **Swap** | Emergency only — never routine | N/A |
+| Metric | Limit | Notes |
+|--------|-------|-------|
+| **Docker Memory** | **≤ 50% system memory** (~6.0 GiB on 12 GiB) | Hard ceiling |
+| **Intervention Threshold** | **≥ 65% system load average** (load avg / cores) | Auto-intervene |
+| **Oracle Reserve** | ≥ 1.5 GiB available memory always | Never consumable |
+| **CPU Ceiling** | 80% of cores under sustained load | Oracle never starved |
+| **Swap** | Emergency only — never routine ops | Kernel last resort |
 
-**Why 30%?** OpenClaw must always have headroom to manage the system. If OpenClaw runs out of resources, nothing gets managed.
+**Why 50% Docker / 65% load?**  
+- 50% gives Docker serious headroom (6 GiB) while Oracle keeps 6 GiB for itself.
+- 65% load on 4 cores = sustained pressure requiring intervention.
+- Below thresholds → monitor only. At/above → execute intervention ladder.
 
 ---
 
-## 2. Docker Workload Budget
+## 2. System Profile
 
-**Enforced ceiling:** Docker containers collectively must **never exceed 30% system memory**.
-
-Current system has 12 GiB RAM:
-- OpenClaw reserve: ~2 GiB minimum
-- Docker ceiling: ~3.6 GiB
-- System kernel/overhead: ~500 MiB
-- **Free buffer: ~5.9 GiB (for bursts, spikes)**
-
-### Intervention Triggers
-| Condition | Action |
-|-----------|--------|
-| Docker memory usage > 28% (~3.36 GiB) | ⚠️ WARNING — begin throttling non-critical containers |
-| Docker memory usage > 30% (~3.6 GiB) | 🚨 CRITICAL — auto-throttle or stop non-essential containers |
-| OpenClaw available memory < 1 GiB | 🛑 EMERGENCY — halt all non-essential workloads |
-| System memory pressure detected | 🚨 CRITICAL — invoke emergency compaction |
+| Property | Value |
+|----------|-------|
+| Hostname | ahie |
+| RAM | 12 GiB DDR3 |
+| CPU | Intel i3-4130 (4 threads) |
+| OS | Linux 6.8.0-106-generic |
+| Docker Memory Ceiling | 6.0 GiB |
+| Oracle Minimum Reserve | 1.5 GiB |
+| User Buffers / Headroom | 4.5 GiB |
 
 ---
 
 ## 3. Container Priority Tiers
 
-### Tier 1 — Critical (NEVER STOP without explicit user approval)
-- `openclaw` (the agent itself)
-- `zerotier` (network connectivity)
-- `portainer` (management interface)
+### Tier 1 — CRITICAL (NEVER stop without explicit user approval)
+- `openclaw` — the agent itself
+- `zerotier` — network tunnel
+- `portainer` — management UI
+- `bridge_db` — persistent data
 
-### Tier 2 — Essential (Stop only in EMERGENCY)
-- `bridge_api` — bridge infrastructure
-- `bridge_db` — database
-- `bridge_heartbeat` — monitoring
-- `bridge_tracker` — tracking
+### Tier 2 — ESSENTIAL (Stop only in PHASE-3 or above)
+- `bridge_api` — bridge REST API
+- `bridge_heartbeat` — uptime monitor
+- `bridge_tracker` — tracker service
 
-### Tier 3 — Important (Stop at WARNING threshold)
-- `gibsons_dash` — dashboard
-- `dao_wallet` — wallet
-- `crypto-register-api` / `crypto-register-frontend`
-- `trading-api`
+### Tier 3 — IMPORTANT (Stop at PHASE-2 threshold)
+- `gibsons_dash` — Gibson's dashboard
+- `dao_wallet` — DAO wallet interface
+- `crypto-register-api` / `crypto-register-frontend` — registration stack
+- `crypto_blockchain` — blockchain node
+- `crypto_postgres` — database
 
-### Tier 4 — Background (Stop at WARNING, stay stopped at CRITICAL)
-- `crypto_stack-options-bot-1`
-- `trusting_beaver`
-- `crypto_resolver`
-- `crypto_prometheus`
-- `crypto_traefik`
-- `stack-duka-dao-app-1`
-- `bridge-api-dev`
-- `crypto_redis`
+### Tier 4 — BACKGROUND (Stop at PHASE-1, stay stopped at PHASE-2+)
+- `trusting_beaver` — background resolver
+- `crypto_grafana` — monitoring UI
+- `crypto_prometheus` — metrics DB
+- `crypto_traefik` — reverse proxy
+- `crypto_redis` — cache
+- `crypto_cloudflare` — tunnel agent
+- `crypto_dns` / `crypto_mpesa` / `crypto_phone` — aux services
+- `stack-duka-dao-app-1` — Duka DAO app
+- `crypto_loki` — log aggregator
+- `crypto_nginx` — nginx gateway
 
 ---
 
-## 4. Throttling & Compaction Actions (in order)
+## 4. Intervention Ladder
 
-### Step 1 — Non-blocking (WARNING)
-- Reduce container restart policies for Tier 4
-- Lower log verbosity in containers that support it
+### PHASE 1 — MONITORING (System load < 65% AND Docker < 50%)
+- Poll every 5 minutes
+- Log metrics to `workspace-manager/logs/metrics.md`
+- No action required
+- **Status: GREEN**
+
+### PHASE 2 — ADVISORY (System load 65–80% OR Docker 50–60%)
+- Notify Gibson of elevated state
+- Begin collecting additional diagnostics
+- Reduce Tier 4 container restart frequency
 - Clear old logs and dangling docker resources
+- **Status: YELLOW**
 
-### Step 2 — Active throttling (WARNING persists)
-- Stop Tier 4 containers one by one
+### PHASE 3 — ACTIVE INTERVENTION (System load 80–100% OR Docker 60–75%)
+- Stop all Tier 4 containers (one by one, verify freed memory after each)
 - Reduce memory limits on Tier 3 containers via `docker update`
+- Pause non-essential services
+- Log every action with full reasoning
+- **Status: ORANGE**
 
-### Step 3 — Aggressive (CRITICAL)
-- Stop all Tier 4 containers
-- Reduce memory limits on Tier 3 containers
-- Stop Tier 2 containers except `bridge_api` and `bridge_db`
-
-### Step 4 — Emergency (EMERGENCY)
-- Only `openclaw`, `zerotier`, `portainer`, `bridge_db` remain
-- All other containers stopped
-- Notify user immediately
+### PHASE 4 — EMERGENCY (System load > 100% OR Docker > 75% OR Oracle < 1.5 GiB free)
+- Only Tier 1 containers remain running
+- Attempt emergency compaction of Docker memory
+- If Oracle available memory < 500 MiB → full emergency mode
+- Notify Gibson immediately with full situation report
+- **Status: RED**
 
 ---
 
-## 5. OpenClaw Resource Protection
+## 5. Oracle (OpenClaw) Resource Protection
 
-OpenClaw (this agent) MUST maintain:
-- **Minimum 1 GiB available memory** — never consumed by managed workloads
-- **Minimum 10% CPU** — never fully starved
-- **Disk space** for logs, memory files, workspace
+Oracle MUST maintain at all times:
+- **≥ 1.5 GiB available memory** — absolute minimum
+- **≥ 10% CPU time** — never fully starved
+- **Disk space** — 500 MiB minimum for logs/workspace
 
-If OpenClaw cannot respond due to resource starvation, the system has failed its primary objective.
+If Oracle cannot respond → **system has failed its primary objective**.
+All automation subordinate to Oracle's health.
 
 ---
 
 ## 6. Enforcement
 
-These rules are **binding** on all automated actions. Any deviation requires explicit user approval in writing (chat message minimum).
+| Rule | Binding? |
+|------|----------|
+| Never stop Tier 1 without explicit user approval | **ABSOLUTE** |
+| Never let Docker exceed 50% memory ceiling | **ABSOLUTE** |
+| Oracle reserve < 1.5 GiB → emergency protocol | **ABSOLUTE** |
+| Intervention ladder sequencing | **BINDING** |
+| Logging every decision and action | **BINDING** |
 
-Cron jobs and background agents must respect these limits. The Workspace Manager Agent enforces these rules.
+Any deviation requires explicit written approval (chat message minimum).
 
 ---
 
-_Updated: 2026-03-22_
-_Reason: Initial policy — 30% docker ceiling on 12 GiB system_
+## 7. Performance Standards
+
+| Metric | Target |
+|--------|--------|
+| Decision latency (resource check → action) | < 500 ms |
+| Alert delivery to Gibson | < 2 s |
+| Docker stats polling | Non-blocking |
+| Log writes | Append-only, async |
+| Response time for Gibson queries | < 5 s |
+
+---
+
+## 8. Clean Code Standards (Workspace Manager)
+
+- Meaningful names — no abbreviations (`container_memory_usage_gib`, not `cmem`)
+- Small functions — one job each
+- Comments explain **intent**, not mechanics
+- No magic numbers — all thresholds in this file
+- Error handling — graceful degradation, never crash Oracle to save a container
+- F.I.R.S.T. principles for any testable code
+
+---
+
+## 9. Problem-Solving Framework (Per Intervention)
+
+```
+STEP 1 — DESCRIBE
+  What container(s) triggered the threshold?
+  What is the current system state? (load, memory, CPU)
+  When did it start? What changed recently?
+
+STEP 2 — IDENTIFY CAUSES
+  Collect: docker stats history, container age, restart counts
+  Analyze: memory growth trend, I/O patterns, dependency chain
+  FMEA: list all possible causes ranked by likelihood
+
+STEP 3 — COMPARE TO FACTS
+  Current load average vs ceiling
+  Docker memory used vs 50% ceiling
+  Tier priority vs business impact
+
+STEP 4 — COLLECT MORE DATA
+  Recent container logs
+  System dmesg /var/log/syslog entries
+  Oracle available memory snapshot
+
+STEP 5 — CORRECTIVE ACTIONS
+  Per intervention ladder above
+  Document every step with timestamp and reasoning
+
+STEP 6 — VALIDATE
+  Verify memory/CPU freed after each action
+  Confirm Oracle still healthy and responsive
+  Log final state post-intervention
+```
+
+---
+
+## 10. Cron Schedule
+
+| Job | Schedule | Purpose |
+|-----|----------|---------|
+| `workspace-manager-resource-check` | Every 5 min | Poll + log + intervene if needed |
+| `workspace-manager-daily-report` | Daily 8 AM | Full metrics + tier health report |
+| `workspace-manager-tier4-review` | Every 6 hours | Restart stopped Tier 4 if load allows |
+
+---
+
+_This file is the single source of truth for workspace resource policy._
+_Any change must be committed to git and announced to Gibson._

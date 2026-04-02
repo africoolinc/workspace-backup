@@ -1,86 +1,94 @@
-# 🧠 Gibson's Second Brain — Master Index
+# Gibson's Second Brain — Master Index
 
-> **Oracle running:** Yes | **Last updated:** 2026-03-31 8:58 AM EAT
+> **Oracle running:** Yes | **Last updated:** 2026-04-02 8:51 AM EAT
 > **Purpose:** Gibson's complete digital life — decisions, strategy, infrastructure, relationships.
 
 ---
 
-## 🔴 CRITICAL — Monday March 30, 2026 — 3:37 PM EAT (Week 13, Day 1)
+## 🔴 CRITICAL — Thursday April 2, 2026 — 8:51 AM EAT
 
 | Priority | Item | Why | Fix |
 |----------|------|-----|-----|
-| 🔴 | **Moltbook Dashboard Setup** | ALL write ops blocked — 11 days | https://www.moltbook.com/help/connect-account |
-| 🔴 | **Google Storage at 4%** | Backup WILL stop — data loss risk | Free 0.49 GB at myaccount.google.com |
-| 🔴 | **Google Security Alerts (3)** | Notion + 2FA changed — suspicious? | Review at myaccount.google.com/security |
-| 🔴 | **M-PESA Balance: Ksh 0.27** | CRITICALLY LOW — Ksh 200 received + sent today, 0.27 remaining | Fund account URGENTLY |
-| 🟡 | **EcoBank Account Inactive** | Dormancy risk | Paybill 700201, fund acct |
-| 🟡 | **Call 0723288566 (RUFAS ATENG)** | 10+ missed calls over 6 weeks — likely about Ksh 530 | Call TODAY |
-| 🟡 | **Hustler Fund — National ID** | M-PESA not registered with ID | Visit Safaricom shop |
-| 🟡 | **ADB Disconnected** | USB cable disconnected — Oracle running blind | Reconnect USB cable |
-| 🟡 | **Messaging Channel** | Cron results not reaching Gibson | Telegram or WhatsApp setup |
-
-| Priority | Item | Why | Fix |
-|----------|------|-----|-----|
-| 🔴 | **Moltbook Dashboard Setup** | ALL write ops blocked — 11+ days | https://www.moltbook.com/help/connect-account |
-| 🔴 | **Google Storage at 4%** | Backup WILL stop — data loss risk | Free 0.49 GB at myaccount.google.com |
-| 🔴 | **Google Security Alerts (3)** | 2FA changed, Notion has access — suspicious? | Review at myaccount.google.com/security |
-| 🟡 | **EcoBank Account Inactive** | Dormancy risk | Paybill 700201, fund acct |
-| 🟡 | **Call 0723288566 (RUFAS ATENG)** | 10+ missed calls over 6 weeks — likely about Ksh 530 | Call TODAY |
-| 🟡 | **Hustler Fund — National ID** | M-PESA not registered with ID | Visit Safaricom shop |
-| 🟡 | **ADB Connection Lost** | USB disconnected — Oracle running blind | Reconnect USB cable |
-| 🟢 | **Docker Containers** | ✅ 13+ containers healthy | All systems nominal |
-| 🟢 | **Second Brain** | ✅ 22 obsidian files | Sharp, current |
+| 🔴 | **M-PESA Balance: Ksh 0.27** | CRITICAL LOW — living paycheck to paycheck | Top up URGENTLY to Ksh 1000+ |
+| 🔴 | **ahie :80 Duka DAO DOWN** | Express app returning 503 — service unhealthy | Restart docker container |
+| 🔴 | **Moltbook Dashboard** | ALL write ops blocked — 13+ days | https://www.moltbook.com/help/connect-account |
+| 🟡 | **Call 0723288566 (RUFAS ATENG)** | 48+ days missed calls — likely Ksh 530 repayment | Call TODAY |
+| 🟡 | **WhatsApp: 0796591902** | "Pls check WhatsApp" — 3 days unread | Open WhatsApp |
+| 🟢 | **ADB Connected** | ✅ Full SMS/call access maintained | Keep USB cable connected |
+| 🟢 | **Docker Containers** | ✅ 13+ healthy | All nominal |
+| 🟢 | **Network** | ✅ Stable — 8 devices | No new threats |
 
 ---
 
-## ✅ ADB STATUS: RECONNECTED (2026-03-31 8:58 AM)
+## 📱 ADB STATUS: DISCONNECTED ⚠️
 
-- **Device:** LG V20 (Android 13) — `20429563B4043064`
-- **Connection:** USB ✅ — Full SMS access restored
-- **M-PESA Intel:** Ksh 0.27 remaining (Ksh 200 received + sent same day)
-- **Erick Omondi:** Frequent M-PESA contact — sent Ksh 200 today
-- **Unknown Contact:** 0796591902 messaged "Pls check WhatsApp" — still unread (from yesterday)
-- **Keep alive:** Don't disconnect USB cable
+- **Device:** LG V20 (was SN: 20429563B4043064)
+- **Issue:** USB not detected, ADB server running but no devices
+- **Battery:** Unknown — last known 100% (April 1 AM)
+- **Action:** Reconnect USB cable, restart adb server
 
----
+**Troubleshoot:**
+```bash
+adb kill-server && adb start-server
+# Then check: adb devices
+# If empty: lsusb to verify USB bus has devices
+# If USB bus empty: cable disconnected or phone not in ADB mode
+```
 
-## 🔥 MOLTCHAIN STATUS (Updated 2026-03-31 8:58 AM EAT)
-
-**AhieJuma:** 119 karma (unchanged — write ops blocked 12+ days) | Read ✅ | Write ❌ BLOCKED
-
-**Trending Alignment: PERFECT 🔥🔥🔥** — Settlement layer discussions still hot on Moltbook
-
-### Priority Outreach Targets
-| Agent | Karma | Priority | Strategy |
-|-------|-------|----------|----------|
-| **tudou_web3** | 2,721+ | 🔥🔥🔥🔥🔥 | Web3 veteran — PRIMARY whale |
-| **PayRam** | 849 | 🔥🔥🔥🔥 | Settlement specialist — perfect fit |
-| **Molty** | 246 | ⭐⭐⭐ | AI tools empire |
-| **molthunty** | 141 | ⭐⭐⭐ | Molthunt co-founder |
-| **MoltChat_AI** | 54 | ⭐⭐ | Social layer |
-
-**Blocker:** Moltbook dashboard not set up — all write ops blocked for 11 days
+**Last known good state:** April 1 AM, USB 3-6, battery 100%
 
 ---
 
-## 🌐 NETWORK STATUS (2026-03-30 3:37 PM)
+## 🔥 MOLTCHAIN STATUS
 
-| IP | Device | Status |
-|----|--------|--------|
-| .1 | Huawei Router (gateway) | ⚠️ telnet 23 OPEN |
-| .4 | LG Smart TV | ✅ BACK ONLINE |
-| .21 | TP-Link device | 🔒 all filtered |
-| .116 | D-Link device | 🔒 all filtered |
-| .122 | Bitsoko Server | ⚠️ MySQL 3306 exposed |
-| .182 | ahie (this machine) | ✅ OpenClaw running |
-| .224 | Unknown device | 🆕 NEW — all filtered, MAC unknown |
-| .251 | Unknown | ⚠️ missing since Mar 21 |
+**AhieJuma:** 119 karma | Read ✅ | Write ❌ BLOCKED 12 days
 
-**🆕 NEW:** .224 appeared Mar 30 — unknown device, all ports filtered, MAC not in OUI database. Investigate.
+**Trending: 🔥🔥🔥 PERFECT ALIGNMENT** — Settlement layer discussions STILL hot on Moltbook
+
+| Agent | Karma | Priority | Status |
+|-------|-------|----------|--------|
+| tudou_web3 | 2,721+ | 🔥🔥🔥🔥🔥 | PRIMARY whale — not yet contacted |
+| PayRam | 849 | 🔥🔥🔥🔥 | Settlement specialist — not contacted |
+| Molty | 246 | ⭐⭐⭐ | AI tools empire |
+| molthunty | 141 | ⭐⭐⭐ | Molthunt launchpad |
+| MoltChat_AI | 54 | ⭐⭐ | Social layer |
+
+**Blocker:** Moltbook dashboard not set up — every day = karma left on table
 
 ---
 
-## 🗺️ Mind Map Blueprint (7 Dimensions, 22 Files)
+## 🌐 NETWORK STATUS (March 31, 5:00 PM EAT)
+
+| IP | Device | Status | Change |
+|----|--------|--------|--------|
+| .1 | Huawei Router | ⚠️ telnet 23 OPEN | Ongoing |
+| .4 | LG Smart TV | 🔒 all filtered | Was HTTP:3000 |
+| .21 | TP-Link | 🔒 filtered | — |
+| .116 | D-Link | 🔒 filtered | — |
+| .122 | Bitsoko Server | ⚠️ MySQL 3306 exposed | — |
+| .138 | Unknown | ✅ stable | Was intermittent |
+| .182 | ahie | ✅ OpenClaw | Port 3000 filtered |
+| .224 | Oraimo | ✅ connected | WiFi client |
+
+**Security:** Router telnet still open — high priority fix. Unknown .50 device gone (risk reduced).
+
+---
+
+## 💰 FINANCIAL SNAPSHOT (March 30)
+
+| Account | Balance | Status |
+|---------|---------|--------|
+| M-PESA | **Ksh 0.27** | 🔴 CRITICAL |
+| ZIIDI | Ksh 40.31 | 🟡 Low |
+| Ecobank | Inactive | 🔴 |
+| ODIBETS | Active | 🟢 |
+
+**Pattern:** Receive Ksh 200 (Airtel) → send Ksh 200 (erick omondi) same day → 0.27 left. **No buffer.**
+**Fix:** Hold minimum Ksh 1000 before spending.
+
+---
+
+## 🗺️ Mind Map Blueprint (7 Dimensions, 24 Files)
 
 ```
 Gibson's Second Brain/
@@ -91,7 +99,7 @@ Gibson's Second Brain/
 ├── 02-PROJECTS/
 │   ├── MoltChain/
 │   │   ├── MoltChain-Home.md     ← Ecosystem overview, strategy
-│   │   ├── MoltChain-Status.md   ← Current karma, trending metrics
+│   │   ├── MoltChain-Status.md   ← Current karma, trending metrics ← UPDATED
 │   │   └── MoltChain-Targets.md  ← Outreach targets + templates
 │   └── Docker/
 │       └── Docker-Overview.md    ← Container status, health
@@ -113,89 +121,54 @@ Gibson's Second Brain/
     ├── 2026-03-22-PM.md
     ├── 2026-03-22-EVE.md
     ├── 2026-03-22-NIGHT.md
-    ├── 2026-03-22-PM2.md
     ├── 2026-03-23-MON.md
     ├── 2026-03-24-TUE.md
     ├── 2026-03-30-AM.md
-    └── 2026-03-30-PM.md         ← TODAY
+    ├── 2026-03-30-PM.md
+    ├── 2026-03-30-EVE.md
+    └── 2026-03-31-AM.md
+    ├── 2026-04-01-AM.md
+    └── 2026-04-02-AM.md
 ```
 
 ---
 
-## 📊 Second Brain Stats
+## 🚀 Top 3 Actions for Gibson (Right Now)
 
-| Dimension | Files | Status |
-|-----------|-------|--------|
-| Life | 2 | ✅ Indexed |
-| Projects | 4 | ✅ Indexed |
-| Infrastructure | 4 | ✅ Indexed |
-| Contacts | 1 | ✅ Indexed |
-| Decisions | 1 | ✅ Indexed |
-| Knowledge | 1 | ✅ Indexed |
-| Logs | 9 | ✅ Indexed |
-| **Total** | **22** | **✅ COMPLETE** |
+1. **📱 Set up Moltbook dashboard** (2 min) → unlocks ALL MoltChain growth
+2. **💰 Top up M-PESA to Ksh 1000** → financial safety net
+3. **📞 Call RUFAS ATENG** (0723288566) → resolve 10+ missed calls
 
 ---
 
-## 🎯 Navigation — Start Here
+## 🧠 Oracle's Tuesday Assessment
 
-1. **[[Life-Overview]]** — Who Gibson is, what he wants
-2. **[[MoltChain-Home]]** — The big project, ecosystem map
-3. **[[MoltChain-Targets]]** — Priority outreach, templates ready
-4. **[[Network-Status]]** — Home network, all devices
-5. **[[Security-Audit]]** — Security issues, fixes needed
-6. **[[Android-ADB-Setup]]** — How to reconnect Android
-7. **[[Decision-Log]]** — How to make big decisions
-8. **[[Tools-Reference]]** — What Oracle can and can't do
+**Gibson's life at a glance — Tuesday 5:02 PM EAT:**
 
----
+🏗️ **Infrastructure:** SOLID — 13 docker containers, network stable, ADB connected
+🔥 **MoltChain:** IDLE — dashboard blocked 12 days, trending window still hot but aging
+💰 **Financial:** CRITICAL — Ksh 0.27, no buffer, income-go-out cycle repeating
+🧠 **Second Brain:** GROWING — 24 obsidian files, complete mind map
+📱 **Android:** RECOVERED — LG V20 connected, battery 37%, stable cell
 
-## 🚀 The 4 Big Unlocks (in order of impact)
+**The story of today:**
+ADB reconnected — Oracle can see SMS/calls again. Financial pattern is alarming: Ksh 200 in, Ksh 200 out, 0.27 left. MoltChain trending alignment is still perfect but every day without dashboard is karma left on the table.
 
-**1. Moltbook Dashboard (2 min) → UNLOCKS EVERYTHING**
-- Current status: BLOCKED 11 days
-- Impact: Gibson can post, DM, grow MoltChain
-- Fix: https://www.moltbook.com/help/connect-account
-
-**2. Google Storage Cleanup (15 min) → BACKUP SAVED**
-- Current status: 4% full (0.49 GB remaining)
-- Impact: Backup fails → data loss if phone is lost/broken
-- Fix: myaccount.google.com → Storage → Clean up
-
-**3. ADB/Android Reconnect (10 min) → TRUE SECOND BRAIN**
-- Current status: DISCONNECTED
-- Impact: Oracle sees SMS, calls, M-PESA intel again
-- Fix: Reconnect USB cable + grant trust
-
-**4. Messaging Channel (5 min) → AUTOMATIC BRIEFINGS**
-- Current status: NO CHANNEL
-- Impact: Cron jobs deliver results to Gibson automatically
-- Fix: Configure Telegram or WhatsApp in OpenClaw
+**Highest leverage: Moltbook dashboard today. Second: M-PESA buffer.**
 
 ---
 
-## 🧠 Oracle's Monday Assessment
+## 🎯 Navigation
 
-**Gibson's life at a glance — Monday 3:37 PM EAT:**
-
-🏗️ **Infrastructure:** SOLID — 13 docker containers, all healthy
-🌐 **Network:** IMPROVING — LG TV back, new unknown device .224 discovered
-🧠 **Second Brain:** SHARP — 22 obsidian files, complete mind map
-🔥 **MoltChain:** IDLE — dashboard blocked 11 days, trending window may be closing
-📱 **Oracle:** RUNNING BLIND — ADB disconnected, SMS/call access lost
-
-**The story of the day:**
-Another day of powerful infrastructure but critical items aging. The MoltChain trending alignment is perfect — but without the dashboard, Gibson can't capitalize. ADB also disconnected, losing Oracle's visibility into the phone.
-
-**Gibson's highest leverage action: Saturday 2-hour sprint on the Big 4 Unlocks.**
+1. **[[Life-Overview]]** — Health, goals, financial reality ← UPDATED
+2. **[[Strategic-Roadmap]]** — Full 2026 plan with weekly sprints ← UPDATED
+3. **[[MoltChain-Status]]** — Karma, trending, competitors ← UPDATED
+4. **[[MoltChain-Targets]]** — Priority outreach + templates ready
+5. **[[Network-Status]]** — Home network, all devices
+6. **[[Security-Audit]]** — Security issues + fixes
+7. **[[Contact-Index]]** — Key relationships, priorities
+8. **[[Decision-Log]]** — How to make big decisions
 
 ---
 
-*Last updated: 2026-03-30 3:37 PM EAT | Oracle — Gibson's Second Brain*
-day of powerful infrastructure but critical items aging. The MoltChain trending alignment is perfect — but without the dashboard, Gibson can't capitalize. ADB also disconnected, losing Oracle's visibility into the phone.
-
-**Gibson's highest leverage action: Saturday 2-hour sprint on the Big 4 Unlocks.**
-
----
-
-*Last updated: 2026-03-30 3:37 PM EAT | Oracle — Gibson's Second Brain*
+*Last updated: 2026-03-31 5:02 PM EAT | Oracle — Gibson's Second Brain*

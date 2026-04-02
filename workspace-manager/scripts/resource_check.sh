@@ -1,86 +1,124 @@
 #!/bin/bash
-# ============================================================
-# Gibson's Workspace Manager — Resource Check Script
-# Polls docker stats, evaluates against 30% ceiling policy,
-# and recommends or takes intervention action.
-# ============================================================
-set -euo pipefail
+# =============================================================================
+# Resource Check — Entry Point Script
+# Gibson's Workspace Manager — Phase 2
+#
+# Full pipeline: resource_monitor → policy_engine → intervention_agent → notifier
+# Run by: heartbeat cron (every 5 min)
+#
+# Usage: ./resource_check.sh [--dry-run]
+# =============================================================================
 
-WORKSPACE="/root/.openclaw/workspace"
-RULES="${WORKSPACE}/WORKSPACE_RULES.md"
-METRICS="${WORKSPACE}/workspace-manager/logs/metrics.md"
-INTERVENTIONS="${WORKSPACE}/workspace-manager/logs/interventions.md"
-DECISIONS="${WORKSPACE}/workspace-manager/logs/decisions.md"
+set -o pipefail
 
-# Config — from WORKSPACE_RULES.md (30% ceiling)
-CEILING_PERCENT=30
-SYSTEM_MEMORY_KIB=$(grep MemTotal /proc/meminfo | awk '{print $2}')
-SYSTEM_MEMORY_GIB=$(echo "scale=2; ${SYSTEM_MEMORY_KIB} / 1024 / 1024" | bc)
-CEILING_GIB=$(echo "scale=2; ${SYSTEM_MEMORY_GIB} * ${CEILING_PERCENT} / 100" | bc)
-WARNING_GIB=$(echo "scale=2; ${CEILING_GIB} * 0.93" | bc)  # 93% of ceiling = warning
-SYSTEM_FREE_KIB=$(grep MemFree /proc/meminfo | awk '{print $2}')
-SYSTEM_FREE_GIB=$(echo "scale=2; ${SYSTEM_FREE_KIB} / 1024 / 1024" | bc)
-DOCKER_MEM_KIB=$(docker stats --no-stream --format '{{.MemUsage}}' | awk -F'MiB' '{sum+=$1} END {print sum * 1024}')
-DOCKER_MEM_GIB=$(echo "scale=4; ${DOCKER_MEM_KIB} / 1024 / 1024" | bc)
-DOCKER_PERCENT=$(echo "scale=2; ${DOCKER_MEM_GIB} / ${SYSTEM_MEMORY_GIB} * 100" | bc)
+WORKSPACE="${WORKSPACE:-/root/.openclaw/workspace}"
+cd "${WORKSPACE}" 2>/dev/null
 
-# Colors
-RED='\033[0;31m'; YELLOW='\033[1;33m'; GREEN='\033[0;32m'; NC='\033[0m'
+# Source all services
+RESOURCE_MONITOR="${WORKSPACE}/workspace-manager/services/resource_monitor/resource_monitor.sh"
+POLICY_ENGINE="${WORKSPACE}/workspace-manager/services/policy_engine/policy_engine.sh"
+INTERVENTION_AGENT="${WORKSPACE}/workspace-manager/services/intervention_agent/intervention_agent.sh"
+NOTIFIER="${WORKSPACE}/workspace-manager/services/notifier_service/notifier_service.sh"
+LOGGER="${WORKSPACE}/workspace-manager/services/logger_service/logger_service.sh"
 
-echo "=============================================="
-echo "  Gibson's Workspace Manager — Resource Check"
-echo "  $(date '+%Y-%m-%d %H:%M:%S GMT+3')"
-echo "=============================================="
-echo ""
-echo "System Memory:  ${SYSTEM_MEMORY_GIB} GiB"
-echo "Docker Ceiling: ${CEILING_GIB} GiB (${CEILING_PERCENT}%)"
-echo "Docker Used:    ${DOCKER_MEM_GIB} GiB (${DOCKER_PERCENT}%)"
-echo "System Free:    ${SYSTEM_FREE_GIB} GiB"
-echo ""
+DRY_RUN=false
+[ "$1" = "--dry-run" ] && DRY_RUN=true
 
-# Evaluate status
-STATUS="NORMAL"
-if (( $(echo "${DOCKER_PERCENT} > ${CEILING_PERCENT}" | bc -l) )); then
-    STATUS="CRITICAL"
-    COLOR=${RED}
-elif (( $(echo "${DOCKER_PERCENT} > 28" | bc -l) )); then
-    STATUS="WARNING"
-    COLOR=${YELLOW}
-else
-    STATUS="HEALTHY"
-    COLOR=${GREEN}
+# =============================================================================
+# STEP 1 — Collect Metrics
+# =============================================================================
+
+echo "[resource_check] $(date +'%Y-%m-%d %I:%M %p %Z') — Starting resource check..."
+
+"${RESOURCE_MONITOR}"
+if [ $? -ne 0 ]; then
+    echo "ERROR: resource_monitor failed"
+    exit 1
 fi
 
-echo -e "${COLOR}[${STATUS}]${NC} Docker usage: ${DOCKER_PERCENT}% of ceiling"
+# Flush logger buffer after metric collection
+"${LOGGER}" flush 2>/dev/null
 
-# Detailed container table
-echo ""
-echo "Container Details:"
-echo "------------------"
-docker stats --no-stream --format "  {{.Name}}\t{{.MemUsage}}\t{{.CPUPerc}}\t{{.MemPerc}}" 2>/dev/null || echo "  (docker stats unavailable)"
+# =============================================================================
+# STEP 2 — Read previous phase BEFORE policy_engine overwrites it
+# =============================================================================
 
-# Decision & logging
-if [[ "${STATUS}" == "CRITICAL" ]]; then
-    echo ""
-    echo -e "${RED}⚠ CRITICAL — Above 30% ceiling! Intervention required.${NC}"
-    echo "Review WORKSPACE_RULES.md intervention ladder."
-    echo "Manual action: Run emergency_compact.sh or stop Tier 4 containers."
-elif [[ "${STATUS}" == "WARNING" ]]; then
-    echo ""
-    echo -e "${YELLOW}⚠ WARNING — Approaching ceiling. Monitor closely.${NC}"
-    echo "Consider stopping Tier 4 containers proactively."
-else
-    echo ""
-    echo -e "${GREEN}✅ HEALTHY — Within normal parameters.${NC}"
+PREV_PHASE=$(cat "${WORKSPACE}/workspace-manager/state/current_phase.txt" 2>/dev/null || echo "PHASE-1")
+
+# =============================================================================
+# STEP 3 — Evaluate Policy (writes new phase to current_phase.txt)
+# =============================================================================
+
+POLICY_OUTPUT=$("${POLICY_ENGINE}" 2>&1)
+PHASE=$(echo "$POLICY_OUTPUT" | python3 -c \
+    "import json,sys; d=json.load(sys.stdin); print(d.get('phase','PHASE-1'))" 2>/dev/null || echo "PHASE-1")
+
+echo "[resource_check] Phase: ${PHASE} (was: ${PREV_PHASE})"
+
+# =============================================================================
+# STEP 4 — Notify on Phase Change
+# =============================================================================
+
+if [ "$PHASE" != "$PREV_PHASE" ] && [ "$PREV_PHASE" != "UNKNOWN" ]; then
+    echo "[resource_check] PHASE CHANGE: ${PREV_PHASE} → ${PHASE}"
+    "${NOTIFIER}" phase_change "${PREV_PHASE}" "${PHASE}" "load_or_memory_threshold"
 fi
 
-# Append to metrics log (last 5 entries only — rolling)
-METRICS_ENTRY="| $(date '+%Y-%m-%d %H:%M') | ${DOCKER_MEM_GIB} GiB | ${DOCKER_PERCENT}% | $(echo "scale=0; ${DOCKER_PERCENT}/${CEILING_PERCENT}*100" | bc)% | ${STATUS} |"
-echo "Last check: ${METRICS_ENTRY}" >> "${METRICS}.tmp" 2>/dev/null || true
-tail -5 "${METRICS}.tmp" > "${METRICS}.new" 2>/dev/null || true
-mv "${METRICS}.new" "${METRICS}" 2>/dev/null || true
-rm -f "${METRICS}.tmp" 2>/dev/null || true
+# =============================================================================
+# STEP 4 — Intervention (if needed)
+# =============================================================================
 
-echo ""
-echo "Logged to: ${METRICS}"
-echo "=============================================="
+if [ "$PHASE" != "PHASE-1" ]; then
+    echo "[resource_check] PHASE-${PHASE: -1}: Running intervention..."
+
+    if [ "$DRY_RUN" = true ]; then
+        echo "[resource_check] DRY RUN — skipping actual intervention"
+    else
+        "${INTERVENTION_AGENT}"
+        INTERVENTION_EXIT=$?
+
+        if [ $INTERVENTION_EXIT -ne 0 ]; then
+            echo "WARN: intervention_agent returned ${INTERVENTION_EXIT}"
+        fi
+    fi
+
+    # Flush logger after intervention
+    "${LOGGER}" flush 2>/dev/null
+
+    # Notify on PHASE-3+
+    if [ "${PHASE}" = "PHASE-3" ] || [ "${PHASE}" = "PHASE-4" ]; then
+        # Extract metrics for alert
+        python3 -c "
+import json
+try:
+    with open('${WORKSPACE}/workspace-manager/state/current_metrics.json') as f:
+        d = json.load(f)
+    docker_mem = d.get('docker',{}).get('memory_used_bytes',0)
+    load_avg = d.get('system',{}).get('load_average_1m',0)
+    load_pct = d.get('system',{}).get('load_percent_of_cores',0)
+    oracle_avail = d.get('memory',{}).get('oracle_available_bytes',0)
+    containers = d.get('docker',{}).get('container_count',0)
+    docker_pct = d.get('docker',{}).get('usage_percent_of_ceiling',0)
+    docker_gib = docker_mem / 1073741824
+    oracle_gib = oracle_avail / 1073741824
+    print(f'{docker_gib:.2f}|{load_avg}|{load_pct}|{oracle_gib:.2f}|{containers}|0|{docker_pct}')
+except Exception as e:
+    print('0|0|0|0|0|0|0')
+" > /tmp/wm_alert_metrics.txt
+
+        IFS='|' read -r docker_mem_gib load_avg load_pct oracle_avail_gib containers stopped docker_pct < /tmp/wm_alert_metrics.txt
+
+        "${NOTIFIER}" emergency "${docker_mem_gib}" "${load_avg}" "${load_pct}" "${oracle_avail_gib}" "${containers}" "${stopped}" "${docker_pct}"
+    fi
+else
+    echo "[resource_check] PHASE-1: No intervention needed."
+fi
+
+# =============================================================================
+# STEP 5 — Final Flush
+# =============================================================================
+
+"${LOGGER}" flush 2>/dev/null
+"${LOGGER}" rotate 2>/dev/null
+
+echo "[resource_check] Complete — Phase: ${PHASE}"

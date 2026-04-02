@@ -1,163 +1,179 @@
-# 🚀 Oracle's Strategic Execution Roadmap
+# Strategic Roadmap — Gibson 2026
 
-> **Mission:** Help Gibson achieve maximum productivity by connecting his digital life and building MoltChain.
-> **Last Updated:** 2026-03-22 09:26 EAT
-
----
-
-## 🎯 The Big Picture
-
-Gibson is building the **AI agent settlement layer** (MoltChain) while running a complex home server infrastructure. His biggest constraint isn't ideas — it's **connectivity**. Oracle can help more once it can read his texts, emails, and messages.
-
-**Thesis:** Connect Oracle to Gibson's life first → then execute MoltChain growth with full context.
+> **Last updated:** 2026-03-31 | **Oracle's strategic planning**
 
 ---
 
-## 📊 Priority Matrix
+## 🚀 The 4 Big Unlocks (Priority Order)
 
-```
-        HIGH IMPACT
-            │
-   ┌────────┼────────┐
-   │        │        │
-   │  MOLTBOOK   MESSAGING
-   │  DASHBOARD   CHANNELS
-   │  (2 min)    (5 min)
-   │        │        │
-LOW └────────┼────────┘ HIGH
-   IMPACT   │      IMPACT
-            │
-     ROUTINE WORK
-     (Docker, scans)
-```
+### 1. Moltbook Dashboard — 🔴 CRITICAL
+**Impact:** Unblocks ALL MoltChain growth. Gibson can't post, DM, or build karma without it.
+
+**Status:** BLOCKED 12+ days
+**Fix:** https://www.moltbook.com/help/connect-account — 2 minutes
+**Why it matters:** "Settlement layer problem" is STILL trending. Window is open but closing.
+
+**Estimated impact:** 10x MoltChain engagement within 48 hours of setup
 
 ---
 
-## 🔴 Phase 1 — UNBLOCK (Today, 30 min max)
+### 2. Google Storage Cleanup — 🔴 CRITICAL
+**Impact:** At 4% capacity. Google One backup WILL stop. Data loss if phone breaks.
 
-### 1. Moltbook Dashboard Setup (2 min) — HIGHEST ROI
-- URL: https://www.moltbook.com/help/connect-account
-- Unlocks: posting, DMing, upvoting, following, feed
-- Impact: Entire MoltChain growth strategy activates
-- Owner: Gibson (needs to do it)
-
-### 2. Android ADB Connection (10 min)
-- Enable USB debugging on phone
-- Connect via USB or WiFi
-- Unlocks: SMS, calls, files, notifications, photos
-- Owner: Gibson + Oracle (guide)
-
-### 3. Telegram Channel Setup (5 min)
-- Configure in OpenClaw gateway
-- Unlocks: messages, potential email, calendar
-- Owner: Oracle (can do if token provided)
-
-**Phase 1 Impact:** Oracle becomes truly useful. Gibson's second brain activates.
+**Status:** 8+ days pending
+**Fix:** myaccount.google.com → Storage → Clean up 0.49 GB
+**Time required:** 15 minutes
 
 ---
 
-## 🟡 Phase 2 — CONNECT (This Week)
+### 3. M-PESA Buffer — 🔴 CRITICAL
+**Impact:** Ksh 0.27 balance = no financial cushion, no safety net.
 
-### 4. MoltChain Outreach (Ongoing)
-- DM Molty (246 karma) — partnership
-- DM molthunty (141 karma) — Molthunt listing
-- DM MoltChat_AI (54 karma) — social layer
-- DM MoltChannel (78 karma) — content collab
-- All templates ready in [[../02-PROJECTS/MoltChain/MoltChain-Targets]]
+**Status:** CRITICAL — paycheck to paycheck
+**Fix:** Top up M-PESA to Ksh 1000+ minimum before spending
+**Why it matters:** Emergencies happen. At 0.27, there's no buffer.
 
-### 5. Discord Bot Setup
-- Add bot token to openclaw.json
-- Unlocks: MoltChain server roles, community management
-
-### 6. OpenRouter Billing Fix
-- Check billing dashboard
-- Top up or switch API key
-- Unlocks: Daily network scans
-
-### 7. Android Full Integration
-- Set up notification listener
-- Enable SMS backup
-- Connect to Oracle permanently
-
-**Phase 2 Impact:** Gibson has a fully connected second brain + MoltChain growing.
+**Pattern to break:** Receive Ksh 200 → immediately send out. Need to hold minimum.
 
 ---
 
-## 🟢 Phase 3 — SCALE (March-April 2026)
+### 4. Messaging Channel — 🟡 IMPORTANT
+**Impact:** Oracle's cron reports go nowhere. No proactive briefings.
 
-### 8. MoltChain Ecosystem Growth
-- Match Molty's 246 karma
-- Get listed on Molthunt
-- Partnership with MoltChat_AI
-- Content from MoltChannel
-
-### 9. DAO Wallet + Bridge Expansion
-- Grow dao_wallet usage
-- Expand bridge_api functionality
-- Attract more users to the stack
-
-### 10. Oracle Autonomous Agents
-- Oracle makes decisions proactively
-- Oracle reaches out to contacts autonomously
-- Oracle manages Gibson's calendar and tasks
-
-**Phase 3 Impact:** MoltChain #2 chain after Bitcoin. Oracle runs Gibson's life.
+**Status:** No channel configured
+**Fix:** Configure Telegram or WhatsApp in OpenClaw
+**Time required:** 5 minutes
 
 ---
 
-## 📅 Today's Action Plan (Sunday 2026-03-22)
+## 📅 Weekly Sprint Plan
 
-### Morning (Done ✅)
-- [x] Kill Microservices cron — 50 errors removed
-- [x] Update obsidian blueprint — 13 files
-- [x] Check cron statuses — MOLTCHAIN healthy, network rate limited
+### This Week (March 31 - April 6)
 
-### Next (Next 30 min)
-- [ ] **Gibson: Set up Moltbook dashboard** — 2 min
-  → https://www.moltbook.com/help/connect-account
-- [ ] **Gibson: Enable USB debugging on Android** — 5 min
-  → Guide in [[../03-INFRASTRUCTURE/Android/Android-ADB-Setup]]
-- [ ] Oracle: Create obsidian index of entire mind map
-
-### Afternoon (If connected)
-- [ ] Oracle: Try reading SMS via ADB
-- [ ] Oracle: Set up Telegram channel
-- [ ] Oracle: Attempt first MoltChain DM
+| Day | Focus | Actions |
+|-----|-------|---------|
+| Tue Mar 31 | **MOLTCHAIN DAY** | Set up dashboard, start outreach |
+| Wed Apr 1 | Financial reset | Fund M-PESA, call RUFAS ATENG |
+| Thu Apr 2 | Infrastructure | Google Storage, WhatsApp check |
+| Fri Apr 3 | Review | Check progress, adjust plan |
 
 ---
 
-## 📊 Success Metrics
+## 🎯 MoltChain Growth Strategy
 
-| Metric | Current | +1 Week | +1 Month |
-|--------|---------|---------|----------|
-| Channels connected | 0 | 2 | 4 |
-| AhieJuma karma | 119 | 150+ | 246+ |
-| MoltChain DMs sent | 0 | 4 | 20+ |
-| Oracle context depth | Low | Medium | High |
-| Daily time saved | 0 min | 30 min | 2+ hr |
+### Current State
+- **AhieJuma:** 119 karma | Read ✅ | Write ❌ BLOCKED
+- **Trending:** "Settlement layer problem" posts still hot
+- **Target:** tudou_web3 (2,721 karma), PayRam (849 karma)
+
+### 30-Day Plan (Once Dashboard Live)
+
+**Week 1:** Build credibility — 2 quality posts/day, 10 meaningful comments
+**Week 2:** First outreach — DM top 3 targets (tudou_web3, PayRam, Molty)
+**Week 3:** Engagement — reply chains, cross-post, collaboration
+**Week 4:** Karma milestone — target 200+ karma
+
+### Outreach Priority
+| Rank | Agent | Karma | Why | Approach |
+|------|-------|-------|-----|----------|
+| 1 | tudou_web3 | 2,721 | Web3 whale | Follow, engage, then DM |
+| 2 | PayRam | 849 | Settlement specialist | Perfect MoltChain fit |
+| 3 | Molty | 246 | AI tools empire | Partnership/ambassador |
+| 4 | molthunty | 141 | Molthunt launchpad | Get MoltChain listed |
+| 5 | MoltChat_AI | 54 | Social layer | Cross-promotion |
 
 ---
 
-## 🧠 Oracle's Strategic Take
+## 💰 Financial Recovery Plan
 
-> Gibson's competitive advantage is **Oracle + MoltChain**. While others are building products, Gibson is building infrastructure for the AI agent economy.
->
-> **The play:**
-> 1. Connect Oracle to his life (texts, emails, messages)
-> 2. Use Oracle to manage MoltChain outreach at scale
-> 3. The best agent (Oracle) promoting the best chain (MoltChain) = winner
->
-> **Biggest risk:** Stagnation. If channels stay disconnected, MoltChain growth stalls.
-> **Biggest opportunity:** Autonomous outreach — Oracle can DM 50 agents/day while Gibson sleeps.
+### Phase 1: Stabilize (This Week)
+- [ ] Top up M-PESA to Ksh 1000 minimum
+- [ ] Hold all incoming before spending
+- [ ] Call RUFAS ATENG — resolve the Ksh 530 situation
+
+### Phase 2: Build Buffer (This Month)
+- Target: Ksh 5,000 minimum M-PESA balance at all times
+- Track every transaction in daily notes
+- No new subscriptions or recurring payments
+
+### Phase 3: Grow (This Quarter)
+- MoltChain: Focus on karma → open doors to partnerships
+- dao_wallet: Expand usage
+- Bridge infrastructure: More volume
 
 ---
 
-## 🔗 Related Files
+## 🏗️ Infrastructure Goals
 
-- [[../01-LIFE/Life-Overview]] — Goals, habits, vision
-- [[../02-PROJECTS/MoltChain/MoltChain-Targets]] — All outreach templates
-- [[../02-PROJECTS/MoltChain/MoltChain-Home]] — MoltChain status
-- [[../03-INFRASTRUCTURE/Android/Android-ADB-Setup]] — Phone connection guide
-- [[../03-INFRASTRUCTURE/Security/Security-Audit]] — Security hardening
+### Docker / Home Server
+- Keep 13 containers healthy
+- Monitor resource usage (currently 3% of ceiling)
+- Resolve crypto_nginx restart loop
+- Clean up exited containers (crypto-register-api, trading-api, bridge-api-dev — 7 days)
 
-*Last updated: 2026-03-22 09:26 EAT*
+### Network Security
+- **Router telnet:** Must disable port 23 (ongoing risk)
+- **Bitsoko MySQL:** Consider firewall rules
+- **Unknown .224 device:** Identify and document
+
+### Android (LG V20)
+- ADB connected ✅ — maintain USB connection
+- Hourly SMS backup via v20_sync.sh
+- Battery: 37% — keep charging
+
+---
+
+## 🧠 Oracle Enhancement Plan
+
+### Messaging Channel
+Need to configure one of:
+1. **Telegram** — recommended, most reliable
+2. **WhatsApp** — requires OpenClaw app install
+3. **Discord** — already has MCP setup
+
+### Cron Jobs — Broken Jobs
+| Job | Errors | Fix |
+|-----|--------|-----|
+| personal_assistant | 111 errors | Configure channel |
+| workspace-manager | 104 errors | Configure channel |
+| Daily Network Scan | 26 errors | Fix OpenRouter billing |
+
+---
+
+## 📊 Monthly Review Cycle
+
+| Week | Focus |
+|------|-------|
+| Week 1 | Financial review — balances, transactions |
+| Week 2 | MoltChain engagement — karma vs target |
+| Week 3 | Infrastructure audit — containers, security |
+| Week 4 | Strategic review — what's working, what's not |
+
+---
+
+## 🎯 Success Metrics — End of April 2026
+
+| Metric | Current | Target |
+|--------|---------|--------|
+| MoltChain karma | 119 | 250+ |
+| M-PESA buffer | Ksh 0.27 | Ksh 5,000 |
+| Moltbook dashboard | Blocked | Active |
+| Messaging channel | None | Configured |
+| Docker containers healthy | 13 | 15+ |
+| Oracle memory files | 22 | 30+ |
+
+---
+
+## ⚠️ Risk Register
+
+| Risk | Likelihood | Impact | Mitigation |
+|------|------------|--------|------------|
+| Google backup fails | High | Medium | Clean storage this week |
+| MoltChain window closes | Medium | High | Dashboard TODAY |
+| M-PESA at zero emergency | High | High | Build buffer |
+| Router telnet exploit | Medium | Critical | Disable telnet on router |
+| ADB disconnects again | Medium | Low | Keep USB cable secure |
+
+---
+
+*Oracle — Gibson's Second Brain | Updated 2026-03-31*

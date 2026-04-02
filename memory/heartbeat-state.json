@@ -2,69 +2,34 @@
   "lastChecks": {
     "email": null,
     "calendar": null,
-    "weather": null,
+    "weather": 1774800720,
     "android_sms": 1774782600,
     "android_notifications": null,
     "android_calls": null,
-    "docker": 1774797540,
+    "docker": 1774800720,
     "moltchain": 1774782600,
-    "memory": 1774797540,
+    "memory": 1774800720,
     "obsidian_review": null,
     "evening_intelligence": 1774797540,
-    "backup": 1774797540
+    "backup": 1774800720
   },
-  "eveningIntelligence": {
-    "android_connected": true,
-    "adb_checked": true,
-    "adb_result": "Reconnected via USB 3-6, serial 20429563B4043064, SMS provider query returned no rows (permission may have changed)",
+  "morningCheck": {
+    "time": "2026-03-31T07:02:00UTC",
+    "gmail_access": "blocked - needs app password",
     "gmail_storage_critical": true,
     "gmail_security_alerts": 3,
-    "ecobank_inactive": true,
-    "frequent_caller": "0723288566",
-    "moltbook_dashboard_still_pending": true,
-    "critical_actions": [
-      "Google Storage 4% full - BACKUP FAILING - 0.49GB remaining",
-      "Google 2FA settings changed - SECURITY RISK",
-      "Notion has Google access - REVIEW NEEDED",
-      "EcoBank inactive - fund via Paybill 700201",
-      "RUFAS ATENG 0723288566 - call back"
-    ]
-  },
-  "docker_resolver_health": "healthy - all 22 containers up, 0 unhealthy",
-  "moltchain_status": "engagement_cron_running_healthy",
-  "obsidian_files": 22,
-  "blockers": {
-    "moltbook_dashboard": 7,
-    "messaging_channel": 7,
-    "android_adb": 7
-  },
-  "viral_moment": {
-    "topic": "settlement layer problem for AI agent economies",
-    "window_open": true,
-    "moltchain_alignment": "perfect"
-  },
-  "todays_priority": "google_storage_cleanup_15min_AND_moltbook_dashboard_2min",
-  "last_session": "2026-03-30T15:49:00UTC",
-  "system_snapshot": {
+    "nairobi_weather": "⛅ +2°C",
+    "system_healthy": true,
     "docker_containers": 22,
     "docker_healthy": 22,
-    "docker_unhealthy": 0,
-    "memory_used_gb": 9.0,
-    "memory_total_gb": 12,
-    "disk_used_tb": 0.208,
-    "disk_total_tb": 0.457,
     "adb_connected": true,
-    "ngrok_removed": true,
-    "bridge_api_healthy": true
+    "backup_script": "operational",
+    "ngrok_removed": true
   },
-  "fixes_applied_today": [
-    "ngrok restart loop - removed container (free tier TCP blocked, needs card)",
-    "crypto_resolver false unhealthy - health check times out on / but /health returns 200, service is healthy",
-    "ADB reconnected via USB 3-6",
-    "crypto_stack all 5 containers fixed - credentials added (Infura RPC, M-PESA, Cloudflare API)",
-    "cloudflared tunnel set up on Linux host - HTTP/2, 4 HA connections",
-    "cloudflare-domain skill created for DNS/tunnel management",
-    "workspace-backup.sh built and operational - backs up to GitHub daily",
-    "GitHub repo created: africoolinc/workspace-backup - backup script working"
+  "critical_actions_today": [
+    "Google Storage 4% full - backups at risk",
+    "M-PESA critically low - recharge needed",
+    "Moltbook dashboard still pending setup",
+    "Gmail needs app password for me to check emails"
   ]
 }

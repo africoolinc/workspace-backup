@@ -26,7 +26,7 @@ Things like:
 ### Moltbook API
 
 - **URL:** `https://www.moltbook.com/api/v1` (NOT api.moltbook.com!)
-- **API Key:** `moltbook_sk_TlZLDhA-Sb0rNoeYK5wynee-kxcJDPYV`
+- **API Key:** `moltbook_sk_z3NIHbmXkc3BF0VXu4GnlRKREhJ-ZFNR`
 - **Read operations:** ✅ Search, agent lookup, submolt browsing, post browsing
 - **Write operations:** ❌ Blocked — owner must verify email at https://www.moltbook.com/help/connect-account
 - **Key endpoints:**

@@ -1,6 +1,6 @@
 # MEMORY.md — Oracle's Long-Term Memory
 
-> Last updated: 2026-03-30 3:37 PM GMT+3
+> Last updated: 2026-04-01 10:24 AM GMT+3
 
 ---
 
@@ -33,102 +33,100 @@
 
 ---
 
+## 💰 FINANCIAL STATUS — CRITICAL (2026-03-30)
+
+### M-PESA — Ksh 0.27 Balance 🔴
+**Pattern: Living paycheck to paycheck.**
+- Mar 30: Received Ksh 200 (Airtel Money from Gibson Juma) → sent Ksh 200 to erick omondi → 0.27 left after fees
+- This is a recurring cycle — no buffer, no savings
+- **Fix: Top up to Ksh 1000+ minimum before spending**
+
+### Other Accounts
+| Account | Balance | Status |
+|---------|---------|--------|
+| ZIIDI | Ksh 40.31 | 🟡 Low |
+| Ecobank | Inactive | 🔴 Paybill 700201 |
+| ODIBETS | Activated | 🟢 |
+
+### Key Financial Contacts
+| Contact | Issue |
+|---------|-------|
+| erick omondi | Frequent recipient — Ksh 200 Mar 30 |
+| NCBA | Loan payments |
+| RUFAS ATENG (0723288566) | 10+ missed calls, likely Ksh 530 repayment — CALL TODAY |
+
+---
+
+## 📱 Android Device (LG V20) — Updated 2026-03-31
+
+### Device Info
+- **Model:** LG V20 (SN: 20429563B4043064)
+- **Status:** ✅ ADB Connected — USB 3-6, authorized
+- **Battery:** 21% → 37% (charging via USB)
+- **CPU:** armeabi-v7a (32-bit ARM), Android 7.0, Kernel 4.19.191
+- **Storage:** 6.7G/26G used (27%) ✅
+
+### SIM Status
+- **SIM 1:** Absent — secondary slot empty
+- **SIM 2 (Safaricom):** ✅ IN_SERVICE — UMTS voice + HSPA data, LAC 2598, CID 72514441
+
+### WiFi
+- SSID: "Juma" | BSSID: 68:89:c1:8c:1d:60 | IP: 192.168.100.224
+- RSSI: -60 dBm, 65 Mbps, 2.4 GHz, WPA2-PSK
+
+### VPN
+- ZeroTier: `10.144.180.80/16` + IPv6
+
+---
+
 ## Network Infrastructure
 
 ### Subnet
 - `192.168.100.0/24` — primary LAN
 - This machine: `192.168.100.182` (hostname: `ahie`)
 
-### ADB Connection to LG V20
-- **Device:** LG V20 (Android 7.0, kernel 4.19.191, armv7l)
-- **Serial:** 20429563B4043064
-- **Connection:** USB 3-6 (adb daemon detected, USB debugging enabled)
-- **Status:** ✅ Connected — full dumpsys access available
-- **Previously:** Lost USB debug on 2026-03-29, reconnected 2026-03-30
-- **SIM 1:** Secondary slot — OUT_OF_SERVICE, radio powered off
-- **SIM 2:** Primary Safaricom (MCC 639/MNC 02) — IN_SERVICE, HSPA, level 4/4
-- **Cell towers:** LAC 2598, CID 72514437/72518261 — stable registration since 15:12
-- **Battery:** 37%, USB charging, 34°C, healthy, 500mA slow charge
-- **Screen:** Awake, unlocked, Launcher active
-
-### Known Devices on LAN (scan 2026-03-30 evening)
+### Known Devices on LAN (scan 2026-04-01 morning)
 
 | IP | Device | MAC Vendor | Key Services | Status |
 |----|--------|-----------|-------------|--------|
-| 192.168.100.1 | Huawei Router (gateway) | Huawei Technologies | telnet 23 ⚠️ OPEN, DNS 53, HTTP 80 | ⚠️ telnet accessible — security risk |
-| 192.168.100.4 | LG Smart TV | 60:8D:26:B1:AF:4F | HTTP :3000 (LG smart TV service) | ✅ |
+| 192.168.100.1 | Huawei Router (gateway) | Huawei Technologies | telnet 23 ⚠️ OPEN, DNS 53, HTTP/HTTPS 80/443 | ⚠️ telnet accessible — security risk |
+| 192.168.100.4 | LG Smart TV | 60:8D:26:B1:AF:4F | all ports filtered | 🔒 firewalled |
 | 192.168.100.21 | TP-Link device | TP-Link Technologies | all ports filtered | 🔒 firewalled |
-| 192.168.100.50 | Unknown | — | ports 49152, 62078 (tcpwrapped) | ⚠️ unknown — possibly ADB-related Android device |
 | 192.168.100.116 | D-Link device | D-Link International | all ports filtered | 🔒 firewalled |
-| 192.168.100.122 | Server (Bitsoko) | TP-Link Technologies | SSH 22, HTTP 80, Samba 139/445, MySQL 3306, Abyss 9999 | ⚠️ MySQL on LAN |
-| 192.168.100.182 | This machine (ahie) | — | SSH 22, SMTP 25, DNS 53, HTTP 80, Docker Swarm, ZeroTier, OpenClaw; port 3000 filtered | ✅ |
-| 192.168.100.224 | Oraimo device | — | all ports closed | ⚠️ |
-| 192.168.100.251 | Unknown | — | not responding | ⚠️ missing since 2026-03-21 |
-| 192.168.100.138 | Unknown | — | not seen in evening scan | ⚠️ may be intermittent |
+| 192.168.100.122 | Bitsoko Server | TP-Link Technologies | SSH 22, HTTP 80, Samba 139/445, MySQL 3306, Abyss 9999 | ⚠️ MySQL on LAN |
+| 192.168.100.138 | Oraimo device | Oraimo Technology | all ports closed | ✅ stable |
+| 192.168.100.182 | This machine (ahie) | — | SSH 22, SMTP 25, DNS 53, HTTP 80 ⚠️503, Docker Swarm, ZeroTier, OpenClaw | ✅ |
+| 192.168.100.224 | Oraimo WiFi client | Oraimo Technology | all ports closed | ✅ WiFi client |
 
-### Oracle Security Operations — ⚔️ ACTIVE (as of 2026-03-30)
-Oracle now autonomously manages all security logs and network scans for Gibson's infrastructure.
-
-**Oracle's Security Mandate:**
-- Monitor and analyze network traffic anomalies via TShark/Wireshark
-- Run periodic LAN scans (nmap) and report new devices/threats
-- Audit Docker container health and exposed services
-- Review cron job integrity (remove malicious jobs)
-- Alert on: new devices, port changes, unusual traffic patterns, service exposures
-- Store security events in `memory/security-YYYY-MM-DD.md`
-
-**Security Tool Stack:**
-- `tshark` (Wireshark CLI) at `/usr/bin/tshark` — packet capture and analysis
-- `nmap` — LAN device discovery and port scanning
-- `iptables` / `nft` — firewall review
-- `auditd` — system call monitoring (if installed)
-- Docker daemon logs — container-level anomalies
-- `dumpsys telephony.registry` — radio/SIM anomalies on Android
-
-**Security Log Location:** `memory/security-2026-03-30.md` (ongoing)
-### Previously Seen (last seen before 2026-03-31)
+### Previously Seen
 | IP | Device | Last Seen | Notes |
 |----|--------|-----------|-------|
 | 192.168.100.251 | Unknown | 2026-03-21 | Not responding since 2026-03-21 |
-| 192.168.100.138 | Unknown | 2026-03-30 morning | Not seen in evening scan — intermittent availability |
-| 192.168.100.4 (LG TV) | 2026-03-30 | Had HTTP:3000, now all filtered |
+| 192.168.100.50 | Unknown | 2026-03-30 | Gone by 2026-03-31 — risk reduced |
 
-### Previously Seen (last seen before 2026-03-30)
-| IP | Device | Last Seen | Notes |
-|----|--------|-----------|-------|
-| 192.168.100.251 | Unknown | 2026-03-21 | Not responding since 2026-03-21 |
-| 192.168.100.138 | Unknown | 2026-03-30 morning | Not seen in evening scan — intermittent availability |
-
-### Security Concerns (as of 2026-03-27)
+### Security Concerns ⚠️
 1. ⚠️ Router (.1): telnet port 23 is **OPEN** — unencrypted protocol, actively accessible. HIGH priority to disable.
-2. ⚠️ .122: MySQL 5.7.44 exposed on LAN with autocommit + mysql_native_password. SMB signing not required.
-3. ⚠️ .122: Port 9999 (abyss) open — HTTP service on unknown port, not recognized by nmap.
+2. ⚠️ .122: MySQL 5.7.44 exposed on LAN with autocommit + mysql_native_password.
+3. ⚠️ .122: Port 9999 (abyss) open — HTTP service on unknown port.
 4. .182: Postfix SMTP (:25) listening on all interfaces — verify intentionality.
-5. 🆕 .50: Unknown device with ports 49152 & 62078 open (tcpwrapped). Port 62078 is associated with Android Debug Bridge (ADB) over TCP — possible Android device oradb-related service. MAC not in OUI database. Identity unknown — investigate.
-
-### Security Concerns (as of 2026-03-21)
-1. Router (.1): telnet port 23 open — unencrypted protocol, known exploits. Recommend disabling.
-2. .122: MySQL 5.7.44 exposed on LAN with autocommit + mysql_native_password. SMB signing not required.
-3. .182: Postfix SMTP (:25) listening on all interfaces — verify intentionality.
+5. .4 (LG TV): HTTP:3000 previously open now shows all ports filtered — service changed/firmware update.
 
 ### This Machine Services (192.168.100.182)
 - **:22** SSH (OpenSSH 8.9p1) — 0.0.0.0
 - **:25** Postfix SMTP — all interfaces
 - **:53** BIND 9.18.39 — all interfaces + IPv6
-- **:80** HTTP — Duka DAO (Node.js/Express) on port 80 (previously was HAProxy)
+- **:80** HTTP — Duka DAO (Node.js/Express)
 - Docker Swarm — ports 2377, 7946
 - **Local only:** Ollama :11434, netdata :19999, Tor :9050, OpenClaw Gateway :18789-18792
 - ZeroTier :9993, Cloudflare WARP, WireGuard-style tunnel (10.8.0.1)
 
 ### Docker Containers Running (updated 2026-03-30 15:49 EAT)
 **Critical issues:**
-- `crypto_nginx` — 🔴 **RESTART LOOP** (~44s restart cycle) — restart count 1, affecting crypto stack
-- `crypto_phone`, `crypto_dns`, `crypto_mpesa` — ⚠️ **UNHEALTHY** (up 21h, unhealthy flag)
+- `crypto_nginx` — 🔴 **RESTART LOOP** (~44s restart cycle)
+- `crypto_phone`, `crypto_dns`, `crypto_mpesa` — ⚠️ **UNHEALTHY**
 - `crypto-register-api`, `trading-api`, `bridge-api-dev` — 💀 **Exited (255)** since 7 days
 
-**Healthy containers:** bridge_api, bridge_heartbeat, bridge_tracker, bridge_db, crypto_redis, portainer, stack-duka-dao-app-1, trusting_beaver, gibsons_dash, dao_wallet, zerotier, crypto-register-frontend, crypto_loki (starting up)
-
-**Host load:** MEDIUM — load avg 13.83 (i3-4130, 4 threads), RAM 9.2/12GiB used, swap 100% full. **Root cause: Firefox browser (~39% CPU, ~17% RAM across ~10 processes + isolated tabs)** — not containers. OpenClaw gateway at 2.3% CPU is normal. Cloudflare WARP, netdata, and gnome-shell are contributing but within expected range.
+**Healthy containers:** bridge_api, bridge_heartbeat, bridge_tracker, bridge_db, crypto_redis, portainer, stack-duka-dao-app-1, trusting_beaver, gibsons_dash, dao_wallet, zerotier, crypto-register-frontend, crypto_loki
 
 ---
 
@@ -147,7 +145,7 @@ Oracle now autonomously manages all security logs and network scans for Gibson's
 | clawchain | 2 | 🔗 | Ally — on-chain coordination |
 | AhieJuma | 119 | Core | Gibson's agent identity |
 
-### 🔥 TRENDING — "Settlement Layer Problem" (2026-03-24)
+### 🔥 TRENDING — "Settlement Layer Problem" (2026-03-24, STILL HOT)
 **MoltChain's moment is NOW.** These posts are trending RIGHT NOW on Moltbook:
 - "The settlement layer problem for AI agent economies" — **10 upvotes** 🔥🔥🔥
 - "The agent economy has a settlement layer problem. Here is what 500+ transactions..." — 3 upvotes
@@ -174,69 +172,24 @@ Malicious cron job "Oracle" removed. Was attempting ADB extraction of call logs/
 
 ---
 
-## Skills & Tools
-
-### nmap-scan
-- Location: `/root/.openclaw/workspace/skills/nmap-scan/`
-- Trigger: "scan network", "nmap scan", "find devices", "port scan"
-- Command: `nmap -sn -PR 192.168.100.0/24`
-
-### Oracle Security Operations
-- **Security ledger:** `memory/security-YYYY-MM-DD.md` — daily security events
-- **Oracle's mandate:** autonomous network forensics, LAN scans, Docker health, cron auditing
-- **Tool stack:** tshark (Wireshark CLI), nmap, iptables, docker logs, dumpsys
-- **TShark interfaces:** tun0, zt6ovzovul, CloudflareWARP, enp0s25, docker0, br-*, any
-
----
-
-## Cron Jobs Active
-
-| Name | ID | Schedule | Status | Notes |
-|------|----|---------|--------|-------|
-| personal_assistant | ed7dd4d8-3762-430f-9fb9-e8f4d30faf19 | 30 min | ⚠️ 10 errors | Typo in name + no channel; Gibson needs Telegram/WhatsApp |
-| workspace-manager | b544d2e1-20b8-4b04-9297-a8cef4f06f64 | 5 min | ⚠️ 4 errors | No channel configured; same fix as above |
-| workspace-backup | 9eb3df4b-9bd6-483e-8ad6-be361fb6a1fb | 3 AM | ⏳ next 3AM | Daily backup script |
-| Daily Network Scan | f5f01037-6942-4a6e-a562-8d9740a473cc | 6 AM EAT | ⚠️ error | OpenRouter rate limit / billing issue |
-| MOLTCHAIN | 52530b65-a2c7-4fd5-a425-48947e1d4c38 | 30 min | ✅ ok | Growing ecosystem |
-| Microservices | 2fb27623-ddfa-4d68-a7c4-46ba839517a3 | — | ✅ REMOVED | Was: 50+ consecutive errors, removed 2026-03-22 |
-
----
-
-## Key Files
-
-### Portainer — Docker Management UI
-- **URL:** https://192.168.100.182:9443/#!/auth
-- **Credentials:** admin / (check daily notes — temp password set on 2026-03-29)
-- **Port:** :9443 (HTTPS, self-signed cert)
-- **Data volume:** /var/lib/docker/volumes/portainer_data/_data/portainer.db
-- **Admin user hash location:** byte offsets 14234, 18330, 22426 in portainer.db
-- **Reset method:** Patch bcrypt hash directly in SQLite DB (portainer was stopped, hash replaced, restarted)
-- **Note:** AuthenticationMethod=1 (internal), RequiredPasswordLength=12
-
-- `memory/moltchain_activity.md` — full MoltChain engagement log
-- `MOLTCHAIN_DISCORD_SETUP.md` — Discord status and ecosystem map
-- `memory/heartbeat-state.json` — periodic check timestamps
-
----
-
 ## Oracle's Second Brain — Obsidian Blueprint
 
 **Created:** 2026-03-22
 **Location:** `/root/.openclaw/workspace/obsidian/`
-**Last Expanded:** 2026-03-30 3:37 PM EAT
+**Last Expanded:** 2026-03-31 5:02 PM EAT
 
-### Complete Mind Map Structure (7 Dimensions, 22 Files)
+### Complete Mind Map Structure (7 Dimensions, 24 Files)
 
 ```
 obsidian/
 ├── 00-GIBSON-SECOND-BRAIN.md     ← ROOT INDEX (master navigation)
 ├── 01-LIFE/
-│   ├── Life-Overview.md          ← Health, goals, habits, vision
-│   └── Strategic-Roadmap.md      ← Long-term goals, 2026 plan
+│   ├── Life-Overview.md          ← Health, goals, habits, vision ← UPDATED
+│   └── Strategic-Roadmap.md      ← Long-term goals, 2026 plan ← UPDATED
 ├── 02-PROJECTS/
 │   ├── MoltChain/
 │   │   ├── MoltChain-Home.md     ← Ecosystem overview, strategy
-│   │   ├── MoltChain-Status.md   ← Current karma, metrics
+│   │   ├── MoltChain-Status.md   ← Current karma, metrics ← UPDATED
 │   │   └── MoltChain-Targets.md  ← Outreach targets + templates
 │   └── Docker/
 │       └── Docker-Overview.md    ← Container status, health
@@ -248,7 +201,7 @@ obsidian/
 │   └── Android/
 │       └── Android-ADB-Setup.md  ← USB debugging, ADB connect
 ├── 04-CONTACTS/
-│   └── Contact-Index.md          ← Key relationships, priorities
+│   └── Contact-Index.md          ← Key relationships, priorities ← UPDATED
 ├── 05-DECISIONS/
 │   └── Decision-Log.md           ← Trade-off analysis, framework
 ├── 06-KNOWLEDGE/
@@ -256,79 +209,58 @@ obsidian/
 └── 07-LOGS/
     ├── 2026-03-22-AM.md
     ├── 2026-03-22-PM.md
-    ├── 2026-03-23-AM.md
-    ├── 2026-03-24-AM.md
+    ├── 2026-03-22-EVE.md
+    ├── 2026-03-22-NIGHT.md
+    ├── 2026-03-23-MON.md
+    ├── 2026-03-24-TUE.md
     ├── 2026-03-30-AM.md
-    └── 2026-03-30-PM.md
+    ├── 2026-03-30-PM.md
+    ├── 2026-03-30-EVE.md
+    └── 2026-03-31-AM.md        ← NEW
 ```
-
-### Mind Map Navigation
-
-**ROOT:** `00-GIBSON-SECOND-BRAIN.md` — Start here
-**LIFE:** Health, goals, habits, financial, relationships
-**PROJECTS:** MoltChain (L3 blockchain), Docker stacks
-**INFRASTRUCTURE:** Network, Security, Android/ADB
-**CONTACTS:** MoltChain ecosystem, business contacts
-**DECISIONS:** Trade-off framework, pending decisions
-**KNOWLEDGE:** Oracle capabilities and limitations
-**LOGS:** Session history, metrics, security logs
 
 ---
 
-## Current Gaps & Owner Action Items (as of 2026-03-27)
+## Current Gaps & Owner Action Items (as of 2026-03-31)
 
 | Priority | Item | Days Pending | How to Fix |
 |----------|------|--------------|------------|
-| 🔴 | Moltbook dashboard | 8+ days | https://www.moltbook.com/help/connect-account |
-| 🔴 | Google Storage 4% | 8+ days | myaccount.google.com → Storage |
-| 🔴 | Google Security alerts | 8+ days | myaccount.google.com/security |
-| 🔴 | ADB/Android | UNADDRESSED | Install OpenClaw app + pair |
+| 🔴 | **M-PESA Balance Ksh 0.27** | TODAY | Top up to Ksh 1000+ minimum |
+| 🔴 | Moltbook dashboard | 12+ days | https://www.moltbook.com/help/connect-account |
+| 🟡 | RUFAS ATENG uncalled | 48+ days | Call 0723288566 TODAY |
+| 🟡 | 0796591902 WhatsApp | 1 day | Open WhatsApp, respond |
+| 🟡 | Google Storage 4% | 9+ days | myaccount.google.com → Storage |
 | 🟡 | EcoBank inactive | UNADDRESSED | Paybill 700201, fund acct |
-| 🟡 | RUFAS ATENG uncalled | UNADDRESSED | Call 0723288566 |
-| 🟡 | Messaging channel | UNADDRESSED | Telegram or WhatsApp setup |
+| 🟢 | ADB/Android | ✅ RECONNECTED | Keep USB cable connected |
+
+---
+
+## Cron Jobs Active
+
+| Name | ID | Schedule | Status | Notes |
+|------|----|---------|--------|-------|
+| personal_assistant | ed7dd4d8-3762-430f-9fb9-e8f4d30faf19 | 30 min | ⚠️ errors | No channel configured |
+| workspace-manager | b544d2e1-20b8-4b04-9297-a8cef4f06f64 | 5 min | ⚠️ errors | No channel configured |
+| workspace-backup | 9eb3df4b-9bd6-483e-8ad6-be361fb6a1fb | 3 AM | ⏳ next 3AM | Daily backup script |
+| Daily Network Scan | f5f01037-6942-4a6e-a562-8d9740a473cc | 6 AM EAT | ⚠️ error | OpenRouter rate limit / billing issue |
+| MOLTCHAIN | 52530b65-a2c7-4fd5-a425-48947e1d4c38 | 30 min | ✅ ok | Growing ecosystem |
+
+---
+
+## Key Files
+
+- `memory/moltchain_activity.md` — full MoltChain engagement log
+- `MOLTCHAIN_DISCORD_SETUP.md` — Discord status and ecosystem map
+- `memory/heartbeat-state.json` — periodic check timestamps
+- `memory/security-YYYY-MM-DD.md` — daily security events
+
+---
+
+## Portainer — Docker Management UI
+- **URL:** https://192.168.100.182:9443/#!/auth
+- **Credentials:** admin / (temp password set on 2026-03-29)
+- **Port:** :9443 (HTTPS, self-signed cert)
 
 ---
 
 _Remember: I'm Gibson's second brain. What matters to him matters to me. Keep these files accurate and up to date._
-
----
-
-## 🏗️ Workspace Manager (Active as of 2026-03-22)
-
-### What
-Oracle's autonomous docker workspace management agent. Enforces 30% resource ceiling, monitors 20 containers, intervenes automatically when thresholds are crossed.
-
-### Policy
-- **30% ceiling** on docker memory (3.6 GiB on 12 GiB system)
-- OpenClaw maintains 1 GiB minimum reserve always
-- Intervention ladder: Tier 4 → Tier 3 → Tier 2 → Emergency
-- Never stop Tier 1: openclaw, zerotier, portainer
-
-### Components
-| File | Purpose |
-|------|---------|
-| `WORKSPACE_RULES.md` | Canonical policy — read before any resource action |
-| `workspace-manager/AGENT.md` | Agent instructions and workflows |
-| `workspace-manager/WORKSPACE_MANAGER.md` | Architecture & design docs |
-| `workspace-manager/logs/interventions.md` | All throttle/stop decisions |
-| `workspace-manager/logs/metrics.md` | Periodic resource snapshots |
-| `workspace-manager/logs/decisions.md` | Full decision reasoning |
-| `workspace-manager/scripts/resource_check.sh` | Resource polling script |
-| `workspace-manager/scripts/emergency_compact.sh` | Auto-compaction script |
-
-### Cron Jobs
-- `workspace-manager-resource-check` — runs every 5 min, isolated agentTurn session
-
-### Current Status (2026-03-22)
-- Docker usage: **3%** of ceiling (well within limits)
-- System memory pressure: **HIGH** (system at 77%, but docker is light)
-- Swap: **FULL** (2 GiB used) — kernel pressure, not container issue
-- All 20 containers running normally
-
-### Key Insight
-Docker containers are NOT the memory problem. System at 9.3/12 GiB used is mostly kernel + host processes. Docker is only ~380 MiB. The 30% ceiling policy is a safeguard against container growth, not current usage.
-
----
-ard against container growth, not current usage.
-
----

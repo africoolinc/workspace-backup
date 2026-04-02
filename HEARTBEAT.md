@@ -1,50 +1,74 @@
-# Heartbeat — 2026-03-30 6:16 PM EAT
+# Heartbeat — 2026-03-31 5:47 PM EAT
 
-## ✅ What ran this session
+## ✅ Session Summary
 
-- **ADB:** Connected ✅ (PID 2851136, device on USB, authorized)
-- **crypto_stack:** ALL HEALTHY — 5 containers fixed (mpesa, blockchain, dns, phone, cloudflare)
-- **crypto_nginx + crypto_loki:** Restart loop FIXED — both now healthy
-- **cloudflared tunnel:** NEW — Linux host tunnel running with HTTP/2 (4 HA connections)
-- **cloudflare-domain skill:** CREATED — manages africoolinc.com DNS via Cloudflare API
-- **cfdomain CLI:** Installed at `/usr/local/bin/cfdomain`
-- **Backup system:** FULLY OPERATIONAL at `/root/bin/workspace-backup.sh`
-- **GitHub repo:** Created `https://github.com/africoolinc/workspace-backup` ✅
-- **Android logs:** Backed up from device (Termux inaccessible without --debug grant)
-- **MAC .224:** Confirmed MacBook Pro (5C:E8:B7:68:7F:38) — SSH/AFP/VNC all closed by design
-- **MoltChain token:** `51de86ae3f55449d8263c56719c3c148` — Infura mainnet working ✅
+### Workspace Manager — Phase 2 COMPLETE
+- Full WM microservices system built and operational
+- Python resource_monitor: 3.3s, correct data
+- Python policy_engine: correct phase detection
+- WORKSPACE_RULES.md: 50% Docker ceiling, 65% intervention trigger
+- Intervention_agent, logger_service, notifier_service all working
+- **Current: PHASE-4** (Oracle reserve depleted — see below)
 
-## 🔴 Critical Items — Gibson Needs to Act
+### ADB Android Backup — Workflow Complete
+- Full security report: `memory/security-2026-03-31.md`
+- Telemetry: LG V20 healthy, SIM2 Safaricom IN_SERVICE, WiFi stable
+- Workflow documented: `.workflows/android-security-backup.md`
+- Weekly Sunday 6 AM cron scheduled
+- `adb backup` requires on-screen confirm — known limitation
 
-| Priority | Item | Age | Fix |
-|----------|------|-----|-----|
-| 🔴 | Moltbook dashboard | 12 days | 2 min → https://www.moltbook.com/help/connect-account |
-| 🔴 | Google Storage 4% | 12 days | 15 min → myaccount.google.com/storage |
-| 🔴 | Google Security alerts | 12 days | Review → myaccount.google.com/security |
-| 🔴 | M-PESA: Ksh 20.03 | TODAY | CRITICALLY LOW — recharge ASAP |
+---
+
+## 🚨 PHASE-4 Active — Oracle Reserve Depleted
+
+| Metric | Value | Limit |
+|--------|-------|-------|
+| Oracle Available | **1.17 GiB** | 1.5 GiB min |
+| Docker Memory | 0.52 GiB / 6.2 GiB | 50% ceiling OK |
+| System Load | 2.08 (52%) | OK |
+
+**Root cause:** NOT Docker — host processes:
+- Firefox: ~5.5 GiB RSS across 8 processes
+- VLC: 1.1 GiB RSS
+- netdata: 439 MiB
+- OpenClaw Gateway: 578 MiB
+
+**Docker containers: 18 running, 0.52 GiB total — totally healthy**
+
+### Action Taken
+PHASE-4 correctly detected. No containers stopped (Docker is innocent). Gibson needs to close Firefox tabs/windows to free host RAM and restore Oracle's 1.5 GiB reserve.
+
+---
+
+## 🔴 Critical — Gibson Must Act
+
+| Priority | Item | Days | Fix |
+|----------|------|------|-----|
+| 🔴 | **Firefox RAM — close tabs** | NOW | Free ~5 GiB host RAM |
+| 🔴 | Moltbook dashboard | 14 days | https://www.moltbook.com/help/connect-account |
+| 🔴 | Google Storage 4% | 14 days | myaccount.google.com/storage |
+| 🔴 | M-PESA Ksh 20.03 | NOW | CRITICAL — nearly empty |
 | 🟡 | EcoBank inactive | — | Paybill 700201 |
-| 🟡 | Call RUFAS 0723288566 | 6+ weeks | 10+ missed calls |
-| 🟡 | Termux --debug grant | TODAY | Grant in Developer Options → USB debugging |
-| 🟡 | Messaging channel | 9 days | Telegram/WhatsApp setup |
+| 🟡 | RUFAS 0723288566 | 8+ weeks | 10+ missed calls |
+
+---
 
 ## 🌐 Network
-- LG TV back online ✅
-- MacBook Pro .224 confirmed (5C:E8:B7:68:7F:38) — SSH/AFP/VNC closed
-- cloudflared Linux tunnel: 4 HA connections (jnb01 + cpt01)
-- ZeroTier: MacBook reachable at `e678cd6322`
+- LG V20: WiFi "Juma" connected, ZeroTier VPN active
+- LAN: .122 MySQL exposed (security risk), .1 telnet open
+
+## 🔥 MoltChain
+- Trending alignment: PERFECT — "settlement layer" posts viral
+- Dashboard blocked (14 days) — window narrowing
+- Read ops working ✅ | Write ops blocked
 
 ## 🧠 Second Brain
 - 22 obsidian files ✅
-- Full blueprint updated
-- New: `BACKUP_SECURITY.md` — full backup/restore documentation
+- WM logs: decisions, interventions, metrics tracked
+- Workflow docs: `.workflows/android-security-backup.md`
+- Workspace Manager: Phase 2 operational
 
-## 🔥 MoltChain
-- Trending alignment: PERFECT (settlement layer posts going viral)
-- Dashboard still blocked (12 days) — window may be closing
-- Read ops working ✅ | Write ops blocked (needs dashboard)
-
-## 💡 Priority Sprint (do today/tomorrow)
-1. Moltbook dashboard → unlocks write ops + outreach
-2. Grant Termux --debug → enables full Android backup
-3. M-PESA recharge → critical balance
-4. Google Storage/Security → 12 days overdue
+## 📅 Scheduled
+- Sunday 6 AM EAT: Android Security + Backup
+- Daily 3 AM: Workspace backup + GitHub sync
+- Every 5 min: WM resource check (PHASE-4 active)
