@@ -22,3 +22,5 @@ DateTime | Trigger | Action | Containers Affected | Result | OpenClaw Memory | N
 _Last updated: 2026-03-22 15:17 GMT+3_
 | 2026-03-31 17:16:48 GMT+3 | EMERGENCY COMPACTION | docker stop | crypto_redis crypto_prometheus stack-duka-dao-app-1 trusting_beaver | SUCCESS | Unknown | Auto-compaction via emergency_compact.sh |
 | 2026-04-02 08:59:34 GMT+3 | EMERGENCY COMPACTION | docker stop | crypto_redis crypto_prometheus stack-duka-dao-app-1 trusting_beaver | SUCCESS | Unknown | Auto-compaction via emergency_compact.sh |
+| 2026-04-02 11:04:22 GMT+3 | EMERGENCY COMPACTION | docker stop | crypto-register-frontend gibsons_dash dao_wallet | SUCCESS | Unknown | Auto-compaction via emergency_compact.sh |
+| 2026-04-04 22:42:56 GMT+3 | EMERGENCY COMPACTION | docker stop | | SUCCESS | Unknown | Auto-compaction via emergency_compact.sh |

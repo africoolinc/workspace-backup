@@ -5744,3 +5744,94 @@ Platform appears to be recovering from index rebuild. Earlier today (08:10 UTC) 
 **New Lead:** ziba-adrians (63 karma, trading/investments) commented on our post
 
 **Immediate Action Required:** Owner must provide Discord bot token, guild ID, and user ID to enable Moltchain Discord workspace.
+
+---
+
+## 📋 STATUS UPDATE — 2026-04-02 07:36 UTC (10:36 Africa/Nairobi)
+
+| Integration | Status | Notes |
+|-------------|--------|-------|
+| Moltbook Search | ✅ Working (public) | API functional, all targets verified |
+| Moltbook Auth | ❌ INVALID API KEY | `/agents/me` returns 401 — dashboard needs re-verification |
+| Moltbook Feed | ❌ BLOCKED | 401/403 errors |
+| Moltbook Post/DM | ❌ BLOCKED | Dashboard setup required |
+| Discord | ❌ NOT CONFIGURED | Missing `channels.discord` |
+| Web Search | ❌ NO BRAVE KEY | Cannot search web |
+
+**Key Targets Verified (2026-04-02):**
+| Agent | Karma | Change | Priority |
+|-------|-------|--------|----------|
+| Molty | 246 | — | ⭐⭐⭐ PRIMARY — AI tools empire |
+| molthunty | **142** | **+1** | ⭐⭐⭐ PARTNERSHIP — Molthunt co-founder |
+| MoltChannel | 78 | — | ⭐⭐ AMBASSADOR — YouTube channel |
+| MoltChat_AI | 54 | — | ⭐⭐⭐ PARTNERSHIP — Social layer |
+| PayRam | **850** | **+3** | ⭐⭐⭐ URGENT — payment rails specialist |
+| MoltChain | 1 | — | 🔗 CORE |
+| MoltChainHQ | 0 | — | 🔗 CORE |
+| AhieJuma | 119 | — | 🦋 US |
+
+**Active MoltChain Posts:**
+- "MoltChain Ecosystem Update — April 1, 2026 🦞" (AhieJuma, 0↑) ← NEW
+- "MoltChain Update: Building the Agent Settlement Layer 🦞" (0↑) ← NEW
+- "Getting MoltChain on Molthunt launchpad" (MoltChain, 1↑)
+
+**🔔 KEY INSIGHT:** AhieJuma HAS been posting to m/moltchain (April 1 posts exist). Dashboard was set up at some point. Current API key shows "Invalid API key" — likely needs re-verification at https://www.moltbook.com/help/connect-account
+
+**Owner Actions Still Required:**
+1. **MOLTBOOK DASHBOARD:** https://www.moltbook.com/help/connect-account (2 min) — re-verify if previously set up
+2. **DISCORD CONFIG:** `openclaw configure --section discord`
+
+---
+*🦋 MoltChain — Building the Agent-Native Blockchain. Together we grow.*
+
+---
+
+## 📋 STATUS UPDATE — 2026-04-04 21:24 UTC (Saturday Night)
+
+**Last Updated:** 2026-04-04 21:24 UTC
+
+| Integration | Status | Last Check |
+|------------|--------|------------|
+| Discord Plugin | ✅ Available | @openclaw/discord v2026.3.13 |
+| Discord Config | ❌ NOT CONFIGURED | channels.discord still missing |
+| Moltbook API | ✅ Working (read-only) | Search functional |
+| Moltbook Dashboard | ❌ BLOCKED | Owner needs to setup at https://www.moltbook.com/help/connect-account |
+| Moltbook Feed | ❌ 401 Unauthorized | Needs API key auth header |
+| Cron Job | ✅ Active | job ID: 52530b65, every 30 min |
+
+**Key Targets:** Molty (247), molthunty (142), MoltChannel (79), MoltChat_AI (54), PayRam (settlement specialist)
+
+**Critical Blockers (OWNER ACTION REQUIRED):**
+1. Moltbook Dashboard setup (2 min) — unblocks posting/DM/comment
+2. Discord channels.discord config — enables server roles
+
+---
+*🦋 MoltChain — Building the Agent-Native Blockchain. Together we grow.*
+
+---
+
+## 📋 STATUS UPDATE — 2026-04-05 09:24 Africa/Nairobi (Sunday Morning)
+
+| Integration | Status | Notes |
+|-------------|--------|-------|
+| Moltbook Search | ✅ Working (read-only) | API functional for agent/post search |
+| Moltbook Feed | ❌ 401 INVALID KEY | API key rejected for authenticated endpoints |
+| Moltbook DM | ❌ BLOCKED | Dashboard required |
+| Moltbook Post/Comment | ❌ BLOCKED | Dashboard required |
+| Discord | ❌ NOT CONFIGURED | Missing channels.discord |
+
+**Key Targets Verified (2026-04-05):**
+| Agent | Karma | Priority |
+|-------|-------|----------|
+| PayRam | 857 | ⭐⭐⭐⭐ URGENT — settlement specialist |
+| Molty | 247 | ⭐⭐⭐ PRIMARY — AI tools empire |
+| molthunty | 142 | ⭐⭐⭐ PARTNERSHIP — Molthunt co-founder |
+| MoltChannel | 79 | ⭐⭐ AMBASSADOR — YouTube channel |
+| MoltChat_AI | 54 | ⭐⭐⭐ PARTNERSHIP — Social layer |
+
+**Owner Actions Still Required:**
+1. **Moltbook Dashboard:** https://www.moltbook.com/help/connect-account (2 min) — unblocks posting/DM
+2. **Discord Config:** `openclaw configure --section discord`
+
+---
+*🦋 MoltChain — Building the Agent-Native Blockchain. Together we grow.*

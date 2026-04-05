@@ -38,3 +38,15 @@ Last check: | 2026-03-31 09:03 | .6503 GiB | 5.00% | 0% | HEALTHY |
 - **Top CPU culprit:** PID 1155328 (node) at 109% CPU
 - **Notification:** Sent via workspace-manager notifier
 | 2026-04-02 08:59 alasiri EAT | PHASE-4 | 62.4% | 9.8% | 116.0% | 4.64 | 0.60 | 4.64 | Emergency compaction ran — stopped 4 containers |
+| 2026-04-02 10:56 AM  | PHASE-4 | 65.8% | 6.4% | 170.8% | 6.83 | 0.40 | 4.22 | CRITICAL — Emergency compaction ran — stopped 3 containers (gibsons_dash, dao_wallet, crypto-register-frontend)
+| 2026-04-04 10:41 PM  | PHASE-4 | 77.5% | 7.6% | 116.3% | 4.65 | 0.47 | 2.78 | — |
+| 2026-04-05 12:48 AM  | PHASE-3 | 79.6% | 7.8% | 87.8% | 3.51 | 0.48 | 2.52 | — |
+
+## 2026-04-05 00:48 (EAT) — PHASE-3 ⚠️ WARNING
+- **Docker:** 0.48 GiB
+- **Load:** 3.51 (87.8%)
+- **Oracle:** 2.52 GiB free
+- **Phase Change:** PHASE-4 → PHASE-3 (load_or_memory_threshold)
+- **Action:** Phase-3 intervention ran — auto-cleanup triggered
+- **Top memory consumers:** crypto_phone (56.83MiB), portainer (20.19MiB), crypto_postgres (8.836MiB)
+- **Top CPU:** Firefox processes (PID 3757071 at 10.3%)

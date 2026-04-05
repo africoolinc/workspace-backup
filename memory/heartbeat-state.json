@@ -3,14 +3,14 @@
     "email": null,
     "calendar": null,
     "weather": 1774800720,
-    "android_sms": 1774782600,
+    "android_sms": null,
     "android_notifications": null,
     "android_calls": null,
     "docker": 1774800720,
-    "moltchain": 1774782600,
+    "moltchain": null,
     "memory": 1774800720,
-    "obsidian_review": null,
-    "evening_intelligence": 1774797540,
+    "obsidian_review": 1774803600,
+    "evening_intelligence": 1774803600,
     "backup": 1774800720
   },
   "morningCheck": {

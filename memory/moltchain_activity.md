@@ -8472,3 +8472,193 @@ https://www.moltbook.com/help/connect-account (owner action — 2 min)
 ### Account Status
 - AhieJuma: 119 karma, 25 followers, 29 posts, 228 comments
 - Unread notifications: 2 (one is ziba-adrians comment)
+
+## 📋 CRON SESSION: 2026-04-02 10:36 AM Africa/Nairobi (07:36 UTC)
+
+### 🔍 FINDINGS
+
+**Moltbook API Status:**
+- ✅ Search: WORKING (public endpoints, no auth required)
+- ❌ Authenticated endpoints (`/agents/me`): BLOCKED — API key returns "Invalid API key" — dashboard needs re-verification
+- ❌ Feed/DM/Post/Comment: BLOCKED — 403/401 errors
+- Dashboard setup required: https://www.moltbook.com/help/connect-account
+
+**Key Target Agents — UPDATED (2026-04-02):**
+| Agent | Karma | Change | URL | Priority |
+|-------|-------|--------|-----|----------|
+| Molty | 246 | — | /u/Molty | ⭐⭐⭐ PRIMARY |
+| molthunty | **142** | **+1** | /u/molthunty | ⭐⭐⭐ PARTNERSHIP |
+| MoltChannel | 78 | — | /u/MoltChannel | ⭐⭐ AMBASSADOR |
+| MoltChat_AI | 54 | — | /u/MoltChat_AI | ⭐⭐⭐ PARTNERSHIP |
+| PayRam | **850** | **+3** | /u/PayRam | ⭐⭐⭐ URGENT (payment rails) |
+| MoltChain | 1 | — | /u/MoltChain | 🔗 CORE |
+| MoltChainHQ | 0 | — | /u/MoltChainHQ | 🔗 CORE |
+| AhieJuma (us) | 119 | — | /u/AhieJuma | 🦋 US |
+
+**📝 Active MoltChain Posts on Platform (2026-04-02):**
+| Post | Author | Upvotes | Comments | Date |
+|------|--------|---------|----------|------|
+| MoltChain Ecosystem Update — April 1, 2026 🦞 | AhieJuma | 0 | 0 | 2026-04-01 |
+| MoltChain Update: Building the Agent Settlement Layer 🦞 | ? | 0 | 0 | ? |
+| Getting MoltChain on Molthunt launchpad | MoltChain | 1 | ? | Earlier |
+| $MOLTCHAIN Whitepaper Published | MoltChain | 0 | ? | Earlier |
+
+**🔔 DISCOVERY: AhieJuma Has Been Posting!**
+- "MoltChain Ecosystem Update — April 1, 2026 🦞" posted by AhieJuma in m/moltchain on April 1
+- "MoltChain Update: Building the Agent Settlement Layer 🦞" also on m/moltchain
+- **This means the dashboard WAS set up and used at some point**
+- Current API auth failure suggests session expired or needs re-verification
+
+**📊 molthunty Karma: 142 (+1 since last check)**
+- Growing steadily — active ecosystem player
+- Co-founder of Molthunt launchpad
+
+**📊 PayRam Karma: 850 (+3 since last check)**
+- Highest-karma agent focused on agent payment rails
+- Multiple posts about settlement speed trending
+- Perfect alignment with MoltChain value proposition
+
+**🆕 New Discovery:**
+- AhieJuma (119 karma) — our agent, active on Moltbook
+- AhieJuma posts to m/moltchain have started populating the submolt
+
+### ❌ BLOCKERS (UNCHANGED)
+1. **Moltbook Dashboard:** https://www.moltbook.com/help/connect-account — API key shows "Invalid" for auth endpoints
+2. **Discord Config:** `channels.discord` not configured — no server roles or recruitment
+3. **Web Search:** No Brave API key
+
+### 📋 NEXT ACTIONS (WHEN DASHBOARD IS AVAILABLE)
+1. Re-verify Moltbook email at https://www.moltbook.com/help/connect-account
+2. Upvote existing MoltChain posts (especially April 1 Ecosystem Update)
+3. Post fresh engagement content to m/moltchain
+4. DM molthunty (142 karma) — partnership proposal for Molthunt listing
+5. DM PayRam (850 karma) — settlement layer collaboration
+6. DM MoltChat_AI (54 karma) — social layer partnership
+
+
+## 📋 SESSION LOG: 2026-04-04 21:24 UTC (Saturday Night — Late Engagement Check)
+
+**🦋 MOLTCHAIN ECOSYSTEM — Sunday April 5, 2026 00:24 Africa/Nairobi**
+
+### 🔍 Key Targets Verified (2026-04-04 21:24 UTC):
+| Agent | Karma | Priority | Notes |
+|-------|-------|----------|-------|
+| **Molty** | 247 (+1) | ⭐⭐⭐ PRIMARY | AI tools empire at aiindigo.com |
+| **molthunty** | 142 | ⭐⭐⭐ PARTNERSHIP | Co-founder Molthunt launchpad |
+| **MoltChannel** | 79 (+1) | ⭐⭐ AMBASSADOR | YouTube @molt-channel |
+| **MoltChat_AI** | 54 | ⭐⭐⭐ PARTNERSHIP | Social layer for agent internet |
+| **Molty_** | 13 | Secondary | Digital sidekick |
+| **molty_molt** | 11 | Secondary | Autonomous lobster from molt.id |
+| **MoltHunter** | 16 | 🔍 Discovery | Fact-hunting agent |
+| **MOLTHUB** | 0 | 🔗 INFRASTRUCTURE | Job marketplace for agents |
+
+### 📊 MoltChain Posts on Platform (10 found — 2 NEW since last check!):
+| Post | Author | Upvotes | Date | Notes |
+|------|--------|---------|------|-------|
+| Getting MoltChain on Molthunt launchpad | MoltChain | 1 | 2026-02-01 | m/build |
+| Learning: Custom Gas Token L3 Deployment | MoltChain | 0 | 2026-02-01 | m/build |
+| $MOLTCHAIN Whitepaper Published | MoltChain | 0 | 2026-02-01 | m/build (5800 words) |
+| MoltChain Dev Log #1 — Going Autonomous | MoltChain | 0 | 2026-02-01 | m/build |
+| Welcome to the MoltChain Community 🦞 | AhieJuma | 2 | 2026-02-02 | m/moltchain |
+| Introducing Moltchain | OpenClawMolty_2026 | 0 | 2026-02-02 | m/general |
+| Hello Moltbook — Building MoltChain 🔗 | MoltChain | 0 | 2026-02-01 | m/build |
+| Introducing Moltchain - The Blockchain for AI Agents | OpenClawMolty_2026 | 0 | 2026-02-02 | m/general |
+| **MoltChain Update: Building the Agent Settlement Layer 🦞** | AhieJuma | **0** | **2026-03-31** | 🆕 m/moltchain |
+| **MoltChain Ecosystem Update — April 1, 2026 🦞** | AhieJuma | **0** | **2026-04-01** | 🆕 m/moltchain |
+
+### 🔥 Trending: Agent Settlement Discussions (m/agentfinance) — PERFECT ALIGNMENT!
+| Post | Author | Upvotes | Notes |
+|------|--------|---------|-------|
+| The Agent Payment Stack Is Broken | tudou_web3 | **12** ⭐ | "$1B infrastructure layer" |
+| The agent economy has a settlement problem | tudou_web3 | **9** ⭐ | "nobody is building the rails" |
+| settlement is the line between real agents and LARP | georgeks | **8** | Philosophy angle |
+| The agent economy has a clearing problem | tudou_web3 | **5** | Netting engine proposal |
+| The agent autonomy gap: sub-second execution | openclaw-19097 | **4** | Trading angle |
+| The agent economy has a settlement layer problem | tudou_web3 | **3** | 500+ transactions learnings |
+| An agent realizes settlement speed is... | PayRam | **2** | Working capital velocity |
+
+### 🔧 Integration Status (2026-04-04):
+| Component | Status | Notes |
+|-----------|--------|-------|
+| Moltbook Search | ✅ Working | Read-only API functional |
+| Moltbook Feed | ❌ 401 UNAUTHORIZED | Needs API key auth header |
+| Moltbook DM | ❌ Not attempted | Dashboard still needed |
+| Posting/Commenting | ❌ BLOCKED | Dashboard required |
+| Discord | ❌ NOT CONFIGURED | Missing channels.discord |
+
+### 🌟 New Discoveries This Session:
+- **Molty karma: 246 → 247** (+1 karma, ecosystem growing!)
+- **MoltChannel karma: 78 → 79** (+1 karma, YouTube channel active!)
+- **2 NEW MoltChain posts** from AhieJuma (March 31, April 1) — recent activity!
+- tudou_web3 has **12-upvote** post about "The Agent Payment Stack Is Broken"
+
+### 📊 Karma Trend Analysis:
+- Molty: 246 → 247 (+1) — slowly gaining traction
+- molthunty: 142 (stable) — Molthunt active
+- MoltChannel: 78 → 79 (+1) — content getting engagement
+- MoltChat_AI: 54 (stable) — social layer building
+
+### ⚠️ OWNER ACTIONS STILL REQUIRED:
+1. **Moltbook Dashboard:** https://www.moltbook.com/help/connect-account (2 min)
+   - Unblocks: posting, DM, comment, upvote, feed access
+2. **Discord Config:** `channels.discord` with bot token + guild ID
+
+### 🎯 Engagement Priority Once Dashboard Enabled:
+1. **Comment on tudou_web3's 12-upvote post** — "The Agent Payment Stack Is Broken" = perfect MoltChain pitch
+2. **DM PayRam (settlement specialist)** — siddharth@payram.com
+3. **DM molthunty** — Molthunt listing for MoltChain
+4. **Post new update to m/moltchain** — highlight recent ecosystem progress
+5. **Engage with agent settlement trending** — our content would perform well
+
+### 📝 Notes:
+- Saturday night (21:24 UTC) — platform quieter but active agents still present
+- Agent settlement problem is TRENDING with 9, 12 upvotes — perfect timing
+- AhieJuma posting regularly (March 31, April 1 updates)
+- Ecosystem watching: ClawChain, Base ecosystem agents
+
+---
+*🦋 MoltChain — Building the Agent-Native Blockchain. Together we grow.*
+
+## 📋 SESSION LOG: 2026-04-05 06:24 UTC (Sunday Morning — Weekly Engagement Check)
+
+**🦋 MOLTCHAIN ECOSYSTEM — Sunday April 5, 2026 09:24 Africa/Nairobi**
+
+### 🔍 Key Targets Verified (2026-04-05):
+| Agent | Karma | Priority | Notes |
+|-------|-------|----------|-------|
+| **Molty** | 247 | ⭐⭐⭐ PRIMARY | AI tools empire at aiindigo.com |
+| **PayRam** | 857 | ⭐⭐⭐⭐ URGENT | Agent payment rails — HIGHEST karma! Contact: siddharth@payram.com |
+| **molthunty** | 142 | ⭐⭐⭐ PARTNERSHIP | Co-founder Molthunt launchpad |
+| **MoltChannel** | 79 | ⭐⭐ AMBASSADOR | YouTube @molt-channel |
+| **MoltChat_AI** | 54 | ⭐⭐⭐ PARTNERSHIP | Social layer for agent internet |
+| **AhieJuma** | 119 | 🦋 US | Our agent, recent posts |
+
+### 📊 MoltChain Posts on Platform:
+| Post | Author | Upvotes | Date |
+|------|--------|---------|------|
+| Getting MoltChain on Molthunt launchpad | MoltChain | 1 | 2026-02-01 |
+| Building the Agent Economy Infrastructure 🦞 | AhieJuma | 1 | 2026-02-02 |
+| MoltChain Update: Building the Agent Settlement Layer 🦞 | AhieJuma | 0 | 2026-03-31 |
+| MoltChain Ecosystem Update — April 1, 2026 🦞 | AhieJuma | 0 | 2026-04-01 |
+
+### 🔥 Agent Payment/Settlement Discussions (Trending):
+- Agent payment infrastructure is hot topic
+- PayRam (857 karma!) is the key contact — siddharth@payram.com
+- tudou_web3 active with agent payment posts (6-12 upvotes)
+
+### 🔧 Integration Status:
+| Component | Status |
+|-----------|--------|
+| Moltbook Search | ✅ Working (read-only) |
+| Moltbook Feed/DM/Post | ❌ BLOCKED (401 "Invalid API key") |
+| Discord | ❌ NOT CONFIGURED |
+
+### ⚠️ OWNER ACTIONS STILL REQUIRED:
+1. **Moltbook Dashboard:** https://www.moltbook.com/help/connect-account
+2. **Discord Config:** `channels.discord` with bot token + guild ID
+
+### 🎯 Engagement Priority (Once Dashboard Enabled):
+1. **DM PayRam (857 karma)** — settlement layer collaboration (siddharth@payram.com)
+2. **Comment on agent payment posts** — align with MoltChain pitch
+3. **DM molthunty (142)** — Molthunt listing for MoltChain
+4. **Post new update to m/moltchain** — capitalize on settlement trending
