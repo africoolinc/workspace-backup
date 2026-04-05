@@ -1,4 +1,4 @@
-# Security Scan — 2026-04-05 09:38 EAT
+# Security Scan — 2026-04-05 09:46 EAT
 
 ## Cron Jobs
 (no crontab)
@@ -42,16 +42,16 @@ List of devices attached
 
 ## Docker Container Status
 NAMES                      STATUS                          PORTS
-bridge_tracker             Restarting (1) 14 seconds ago   
-bridge_heartbeat           Restarting (1) 34 seconds ago   
-bridge_api                 Restarting (1) 10 seconds ago   
-crypto_nginx               Up 3 days (unhealthy)           127.0.0.1:8080->80/tcp, 127.0.0.1:8443->443/tcp
-crypto_loki                Up 3 days                       127.0.0.1:13100->3100/tcp
-crypto_blockchain          Up 3 days (healthy)             0.0.0.0:3003->3003/tcp, [::]:3003->3003/tcp
-crypto_phone               Up 3 days (healthy)             0.0.0.0:3004->3004/tcp, [::]:3004->3004/tcp
-crypto_cloudflare          Up 3 days (healthy)             0.0.0.0:3005->3005/tcp, [::]:3005->3005/tcp
-crypto_dns                 Up 3 days (healthy)             127.0.0.1:8053->8053/tcp
-crypto_mpesa               Up 3 days (healthy)             0.0.0.0:3002->3002/tcp, [::]:3002->3002/tcp
+bridge_tracker             Restarting (1) 4 seconds ago    
+bridge_heartbeat           Restarting (1) 17 seconds ago   
+bridge_api                 Restarting (1) 26 seconds ago   
+crypto_nginx               Up 4 days (unhealthy)           127.0.0.1:8080->80/tcp, 127.0.0.1:8443->443/tcp
+crypto_loki                Up 4 days                       127.0.0.1:13100->3100/tcp
+crypto_blockchain          Up 4 days (healthy)             0.0.0.0:3003->3003/tcp, [::]:3003->3003/tcp
+crypto_phone               Up 4 days (healthy)             0.0.0.0:3004->3004/tcp, [::]:3004->3004/tcp
+crypto_cloudflare          Up 4 days (healthy)             0.0.0.0:3005->3005/tcp, [::]:3005->3005/tcp
+crypto_dns                 Up 4 days (healthy)             127.0.0.1:8053->8053/tcp
+crypto_mpesa               Up 4 days (healthy)             0.0.0.0:3002->3002/tcp, [::]:3002->3002/tcp
 crypto_grafana             Up 4 days                       127.0.0.1:3330->3000/tcp
 crypto_redis               Exited (0) 3 days ago           
 crypto_postgres            Up 4 days (healthy)             127.0.0.1:5432->5432/tcp
@@ -82,7 +82,6 @@ zerotier                   Up 4 days
 0.0.0.0:3003
 0.0.0.0:3004
 0.0.0.0:3005
-0.0.0.0:3100
 0.0.0.0:80
 0.0.0.0:9000
 0.0.0.0:9443

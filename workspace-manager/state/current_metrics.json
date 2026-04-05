@@ -1,39 +1,39 @@
 {
-  "timestamp": "2026-04-04T21:48:34Z",
-  "timestamp_local": "2026-04-05 12:48 AM ",
-  "phase": "PHASE-3",
+  "timestamp": "2026-04-05T06:40:34Z",
+  "timestamp_local": "2026-04-05 09:40 AM ",
+  "phase": "PHASE-4",
   "system": {
     "hostname": "ahie",
     "os": "Linux 6.8.0-106-generic",
     "cpu_cores": 4,
-    "load_average_1m": 3.51,
-    "load_percent_of_cores": 87.8,
+    "load_average_1m": 10.49,
+    "load_percent_of_cores": 262.2,
     "cpu_breakdown": {
-      "user": 28,
-      "system": 8,
-      "idle": 63,
-      "iowait": 0
+      "user": 10,
+      "system": 6,
+      "idle": 61,
+      "iowait": 24
     }
   },
   "memory": {
     "total_bytes": 13262774272,
     "total_gib": 12.35,
-    "available_bytes": 2701651968,
-    "available_gib": 2.52,
-    "used_bytes": 10561122304,
-    "oracle_available_bytes": 2701651968,
+    "available_bytes": 2827870208,
+    "available_gib": 2.63,
+    "used_bytes": 10434904064,
+    "oracle_available_bytes": 2827870208,
     "oracle_reserve_bytes": 1610612736,
     "oracle_healthy": true,
-    "swap_free_bytes": 294912,
-    "usage_percent": 79.6
+    "swap_free_bytes": 811008,
+    "usage_percent": 78.7
   },
   "docker": {
-    "memory_used_bytes": 515751542,
-    "memory_used_gib": 0.48,
+    "memory_used_bytes": 529128226,
+    "memory_used_gib": 0.49,
     "ceiling_bytes": 6631387136,
     "ceiling_gib": 6.2,
     "ceiling_percent_of_system": 50,
-    "usage_percent_of_ceiling": 7.8,
+    "usage_percent_of_ceiling": 8.0,
     "healthy": true,
     "container_count": 15
   },
@@ -45,65 +45,65 @@
   },
   "top_cpu_processes": [
     {
-      "pid": "860281",
-      "cpu": "94.5",
-      "mem_mb": "439368",
-      "cmd": "openclaw-gateway"
+      "pid": "940410",
+      "cpu": "104",
+      "mem_mb": "313516",
+      "cmd": "/usr/bin/node /home/africool/.npm-global/lib/node_modules/openclaw/dist/index.js gateway --port 18789"
     },
     {
       "pid": "3757071",
-      "cpu": "10.3",
-      "mem_mb": "784204",
+      "cpu": "6.9",
+      "mem_mb": "595528",
       "cmd": "/snap/firefox/8054/usr/lib/firefox/firefox"
     },
     {
+      "pid": "913561",
+      "cpu": "6.7",
+      "mem_mb": "171148",
+      "cmd": "/bin/warp-svc"
+    },
+    {
       "pid": "3851431",
-      "cpu": "6.9",
-      "mem_mb": "558696",
+      "cpu": "4.6",
+      "mem_mb": "561820",
       "cmd": "/snap/firefox/8054/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:44145 -prefMapHandle 1:284101 -jsInitHandle 2:156136 -parentBuildID 20260324124100 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {ac8d14b9-7cea-46b0-9a19-beb7418d4c39} -parentPid 3757071 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8054/usr/lib/firefox/omni.ja -appomni /snap/firefox/8054/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8054/usr/lib/firefox/browser 36 tab"
     },
     {
       "pid": "3757928",
-      "cpu": "6.6",
-      "mem_mb": "96456",
+      "cpu": "4.3",
+      "mem_mb": "92232",
       "cmd": "/snap/firefox/8054/usr/lib/firefox/firefox -contentproc -parentBuildID 20260324124100 -prefsHandle 0:36706 -prefMapHandle 1:284101 -sandboxReporter 2 -chrootClient 3 -ipcHandle 4 -initialChannelId {1186953f-66c1-4661-a1d4-809ee7d85179} -parentPid 3757071 -crashReporter 5 -crashHelper 6 -appDir /snap/firefox/8054/usr/lib/firefox/browser 4 rdd"
-    },
-    {
-      "pid": "3824410",
-      "cpu": "5.8",
-      "mem_mb": "632064",
-      "cmd": "/snap/firefox/8054/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:44104 -prefMapHandle 1:284101 -jsInitHandle 2:156136 -parentBuildID 20260324124100 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {fc01196c-e5b0-49b3-bd63-75afcc64bd52} -parentPid 3757071 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8054/usr/lib/firefox/omni.ja -appomni /snap/firefox/8054/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8054/usr/lib/firefox/browser 27 tab"
     }
   ],
   "top_mem_processes": [
     {
       "pid": "2663",
-      "cpu": "1275964",
-      "mem_mb": "2.4",
+      "cpu": "1276640",
+      "mem_mb": "2.2",
       "cmd": "/usr/sbin/netdata -D"
     },
     {
-      "pid": "3757071",
-      "cpu": "784204",
-      "mem_mb": "10.3",
-      "cmd": "/snap/firefox/8054/usr/lib/firefox/firefox"
-    },
-    {
       "pid": "3851866",
-      "cpu": "757088",
-      "mem_mb": "2.6",
+      "cpu": "726012",
+      "mem_mb": "1.7",
       "cmd": "/snap/firefox/8054/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:44145 -prefMapHandle 1:284101 -jsInitHandle 2:156136 -parentBuildID 20260324124100 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {98bb6bf2-643d-4134-9391-134fd95affe0} -parentPid 3757071 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8054/usr/lib/firefox/omni.ja -appomni /snap/firefox/8054/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8054/usr/lib/firefox/browser 37 tab"
     },
     {
       "pid": "3824410",
-      "cpu": "632064",
-      "mem_mb": "5.8",
+      "cpu": "597416",
+      "mem_mb": "3.9",
       "cmd": "/snap/firefox/8054/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:44104 -prefMapHandle 1:284101 -jsInitHandle 2:156136 -parentBuildID 20260324124100 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {fc01196c-e5b0-49b3-bd63-75afcc64bd52} -parentPid 3757071 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8054/usr/lib/firefox/omni.ja -appomni /snap/firefox/8054/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8054/usr/lib/firefox/browser 27 tab"
     },
     {
-      "pid": "3851431",
-      "cpu": "558696",
+      "pid": "3757071",
+      "cpu": "595528",
       "mem_mb": "6.9",
+      "cmd": "/snap/firefox/8054/usr/lib/firefox/firefox"
+    },
+    {
+      "pid": "3851431",
+      "cpu": "561820",
+      "mem_mb": "4.6",
       "cmd": "/snap/firefox/8054/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:44145 -prefMapHandle 1:284101 -jsInitHandle 2:156136 -parentBuildID 20260324124100 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {ac8d14b9-7cea-46b0-9a19-beb7418d4c39} -parentPid 3757071 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8054/usr/lib/firefox/omni.ja -appomni /snap/firefox/8054/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8054/usr/lib/firefox/browser 36 tab"
     }
   ],
@@ -133,85 +133,85 @@
       "name": "crypto_nginx",
       "status": "",
       "cpu": "0.00%",
-      "mem_usage": "1.418MiB / 12.35GiB",
-      "mem_perc": "0.01%"
+      "mem_usage": "3.938MiB / 12.35GiB",
+      "mem_perc": "0.03%"
     },
     {
       "name": "crypto_loki",
       "status": "",
-      "cpu": "1.26%",
-      "mem_usage": "52.36MiB / 12.35GiB",
-      "mem_perc": "0.41%"
+      "cpu": "0.50%",
+      "mem_usage": "58.81MiB / 12.35GiB",
+      "mem_perc": "0.46%"
     },
     {
       "name": "crypto_blockchain",
       "status": "",
-      "cpu": "0.15%",
-      "mem_usage": "58.46MiB / 12.35GiB",
-      "mem_perc": "0.46%"
+      "cpu": "0.02%",
+      "mem_usage": "60.55MiB / 12.35GiB",
+      "mem_perc": "0.48%"
     },
     {
       "name": "crypto_phone",
       "status": "",
-      "cpu": "2.23%",
-      "mem_usage": "56.83MiB / 12.35GiB",
-      "mem_perc": "0.45%"
+      "cpu": "0.00%",
+      "mem_usage": "52.54MiB / 12.35GiB",
+      "mem_perc": "0.42%"
     },
     {
       "name": "crypto_cloudflare",
       "status": "",
       "cpu": "0.01%",
-      "mem_usage": "56.22MiB / 12.35GiB",
-      "mem_perc": "0.44%"
+      "mem_usage": "57.87MiB / 12.35GiB",
+      "mem_perc": "0.46%"
     },
     {
       "name": "crypto_dns",
       "status": "",
-      "cpu": "0.01%",
-      "mem_usage": "55.6MiB / 12.35GiB",
-      "mem_perc": "0.44%"
+      "cpu": "0.00%",
+      "mem_usage": "56.38MiB / 12.35GiB",
+      "mem_perc": "0.45%"
     },
     {
       "name": "crypto_mpesa",
       "status": "",
       "cpu": "0.00%",
-      "mem_usage": "56.11MiB / 12.35GiB",
-      "mem_perc": "0.44%"
+      "mem_usage": "51.98MiB / 12.35GiB",
+      "mem_perc": "0.41%"
     },
     {
       "name": "crypto_grafana",
       "status": "",
-      "cpu": "7.27%",
-      "mem_usage": "105.9MiB / 12.35GiB",
-      "mem_perc": "0.84%"
+      "cpu": "0.30%",
+      "mem_usage": "113.4MiB / 12.35GiB",
+      "mem_perc": "0.90%"
     },
     {
       "name": "crypto_postgres",
       "status": "",
       "cpu": "0.00%",
-      "mem_usage": "8.836MiB / 12.35GiB",
+      "mem_usage": "9.359MiB / 12.35GiB",
       "mem_perc": "0.07%"
     },
     {
       "name": "portainer",
       "status": "",
       "cpu": "0.01%",
-      "mem_usage": "20.19MiB / 12.35GiB",
-      "mem_perc": "0.16%"
+      "mem_usage": "26.18MiB / 12.35GiB",
+      "mem_perc": "0.21%"
     },
     {
       "name": "bridge_db",
       "status": "",
       "cpu": "0.00%",
-      "mem_usage": "13.13MiB / 12.35GiB",
-      "mem_perc": "0.10%"
+      "mem_usage": "6.41MiB / 12.35GiB",
+      "mem_perc": "0.05%"
     },
     {
       "name": "zerotier",
       "status": "",
       "cpu": "0.05%",
-      "mem_usage": "6.805MiB / 12.35GiB",
-      "mem_perc": "0.05%"
+      "mem_usage": "7.199MiB / 12.35GiB",
+      "mem_perc": "0.06%"
     }
   ]
 }
