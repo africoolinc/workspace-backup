@@ -3,14 +3,14 @@
     "email": null,
     "calendar": null,
     "weather": 1774800720,
-    "android_sms": null,
+    "android_sms": 1775686200,
     "android_notifications": null,
     "android_calls": null,
-    "docker": 1774800720,
+    "docker": 1775215200,
     "moltchain": null,
-    "memory": 1774800720,
+    "memory": 1775686200,
     "obsidian_review": 1774803600,
-    "evening_intelligence": 1774803600,
+    "evening_intelligence": 1775215200,
     "backup": 1774800720
   },
   "morningCheck": {
@@ -27,9 +27,13 @@
     "ngrok_removed": true
   },
   "critical_actions_today": [
-    "Google Storage 4% full - backups at risk",
-    "M-PESA critically low - recharge needed",
-    "Moltbook dashboard still pending setup",
-    "Gmail needs app password for me to check emails"
-  ]
+    "Router port 23 telnet OPEN — disable via admin panel URGENT",
+    "OpenRouter $0 credit — all crons failing, add billing",
+    "M-PESA Ksh 8,862 — hold at Ksh 5,000+ minimum",
+    "Moltbook dashboard blocked — connect X account",
+    "RUFAS ATENG 0723288566 uncalled — 8+ missed calls",
+    "WhatsApp 0796591902 — 'Pls check WhatsApp' needs response",
+    "LG V20 battery 39% — plug in charger"
+  ],
+  "notes": "2026-04-09 12:30 AM — Midnight intelligence report generated. M-PESA recovered to Ksh 8,862.29 (KPLC payment). Financial pattern still concerning — each influx consumed. ADB connected, SMS pulled, Obsidian updated. All Docker healthy. Router telnet still OPEN. OpenRouter crons failing."
 }

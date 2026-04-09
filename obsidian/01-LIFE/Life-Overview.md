@@ -1,6 +1,6 @@
 # Life Overview — Gibson
 
-> **Last updated:** 2026-03-31 | **Oracle's assessment**
+> **Last updated:** 2026-04-09 | **Oracle's assessment**
 
 ---
 
@@ -14,39 +14,48 @@
 
 ---
 
-## 💰 Financial Reality (as of March 30, 2026)
+## 💰 Financial Reality (Updated April 9, 2026 — Midnight)
 
-### M-PESA — Ksh 0.27 Balance
-**Status: CRITICAL** — Gibson is living paycheck to paycheck.
+### M-PESA — Ksh 8,862.29 Balance
+**Status: 🟡 RECOVERING** — Ksh 4,000 sent to KPLC on April 8 (5:35 PM). Balance healthy but discipline gap remains.
 
-**Pattern observed:**
-- Receives money (Airtel Money from Gibson Juma) → immediately sends out
-- Ksh 200 received March 30 → Ksh 200 sent to erick omondi same day
-- Balance at 0.27 after fees
-- This is a recurring cycle — not a one-time dip
+**Pattern still concerning:**
+- Receives money (Airtel Money from Gibson Juma 753336482) → immediately sends out to erick omondi, bills, contacts
+- April 5-6: Received Ksh 500 total → spent down to Ksh 320
+- April 8: Received Ksh 300 → sent Ksh 4,030 (KPLC)
+- **Each influx consumed — no savings accumulation**
+
+### Financial Rule (NEW):
+> **Hold Ksh 5,000 minimum in M-PESA. Spend above that threshold only.**
 
 ### Active Accounts
 | Account | Balance | Status | Action |
 |---------|---------|--------|--------|
-| M-PESA | Ksh 0.27 | 🔴 CRITICAL | Top up URGENTLY |
-| ZIIDI | Ksh 40.31 | 🟡 Low | Monitor |
-| Ecobank | ? | 🔴 Inactive | Paybill 700201, fund |
-| ODIBETS | Activated | 🟢 Ready | — |
-| Hustler Fund | Blocked | 🟡 ID issue | Visit Safaricom shop |
+| M-PESA | Ksh 8,862.29 | 🟡 Recovering | Hold at Ksh 5,000+ minimum |
+| ZIIDI | ~Ksh 40 | 🟡 Low | Let grow |
+| Ecobank | Inactive | 🔴 | Paybill 700201, fund to reactivate |
+| ODIBETS | Active | 🟢 | Entertainment only |
+| Hustler Fund | Blocked | 🟡 | Visit Safaricom shop (ID issue) |
+| Airtime | Ksh 17.34 | 🟢 Adequate | Top up if needed |
 
 ### Regular M-PESA Contacts
-| Contact | Relationship | Notes |
-|---------|-------------|-------|
-| erick omondi | Friend/associate | Frequent recipient — Ksh 200 sent Mar 30 |
-| NCBA | Financial | Loan payments likely |
-| Joseph Owino | Contact | Recurring M-PESA |
-| Rebecca Moraa Ongeri | Contact | Recurring M-PESA |
-| RUFAS ATENG | Debt? | 10+ missed calls, likely Ksh 530 repayment |
+| Contact | Relationship | Last Transaction | Amount |
+|---------|-------------|-----------------|--------|
+| erick omondi | Friend/associate | Apr 6 | -Ksh 200 (pattern) |
+| Brian Muiruri | Contact | Apr 6 | -Ksh 30 |
+| Jared Ouru | Contact | Apr 6 | -Ksh 30 |
+| Samuel Maina | Contact | Apr 6 | -Ksh 30 |
+| KPLC | Utilities | Apr 8 | -Ksh 4,000 |
+| Chicken Dash | Food | Apr 6 | -Ksh 70 |
+| RUFAS ATENG | Debt? | Feb/Mar | 8+ missed calls |
 
 ### Income/Expense Pattern
-**Problem:** Gibson receives money → sends it out almost immediately. The Ksh 0.27 balance means no buffer, no savings, no breathing room.
+**Problem:** Gibson receives Ksh 200-500 chunks frequently. The cycle:
+1. Receive from Airtel Money (Gibson Juma)
+2. Send to erick omondi or pay bills
+3. End near zero
 
-**Recommendation:** Before any new income, hold Ksh 500-1000 as minimum reserve.
+**Opportunity:** With Ksh 8,862 current balance, he has breathing room. Build discipline now.
 
 ---
 
@@ -85,33 +94,39 @@
 
 ## 🧠 Mind State
 
-**Overall:** Overstretched. Infrastructure is solid (docker, network, Oracle), but the high-leverage items keep aging:
-- Moltbook dashboard blocked 12 days
-- Financial buffer at zero
-- ADB reconnected but missed a day of SMS visibility
+**Overall:** Moving forward. Ksh 8,862 gives breathing room. Oracle running smoothly. Docker healthy.
 
 **What's working:**
-- Oracle running, memory sharp
-- Network stable, no new threats
-- Docker stacks healthy
+- Oracle running, memory sharp, midnight intelligence operational
+- Network stable, docker stacks healthy (keycloak fixed April 8)
+- M-PESA buffer restored to Ksh 8,862
+- LG V20 sensor system deployed and syncing
 
 **What needs attention:**
-- Financial discipline — build a buffer
-- MoltChain — capitalize on trending window NOW
-- Messaging channel — so Oracle can reach Gibson
+- Router telnet port 23 still OPEN (critical security)
+- OpenRouter crons all failing ($0 credit)
+- MoltBook dashboard blocked (X account needed)
+- RUFAS ATENG unresolved (8+ missed calls)
+- Financial discipline — keep Ksh 5,000+ buffer
+
+**Opportunity window:**
+- Settlement layer trending on MoltBook — post NOW
+- tudou_web3 (2,721 karma) primary whale target
+- Ksh 8,862 buffer = 2+ weeks of runway
 
 ---
 
 ## 📋 Life-Project Alignment
 
-| Life Area | Project | Status |
-|-----------|---------|--------|
-| Income | MoltChain ecosystem | Blocked (dashboard) |
-| Infrastructure | Docker stacks | Healthy |
-| Financial | M-PESA / Ecobank | Critical |
-| Relationships | MoltChain outreach | Blocked (dashboard) |
-| Knowledge | MoltChain expertise | Growing |
+| Life Area | Project | Status | Next Action |
+|-----------|---------|--------|-------------|
+| Income | MoltChain ecosystem | 🟡 Trending window open | Post to MoltBook today |
+| Infrastructure | Docker stacks | ✅ Healthy | Maintain |
+| Financial | M-PESA buffer | 🟡 Ksh 8,862 | Keep above Ksh 5,000 |
+| Relationships | MoltChain outreach | 🟡 Blocked (dashboard) | Connect X account |
+| Security | Router telnet | 🔴 OPEN | Disable port 23 URGENT |
+| Knowledge | MoltChain expertise | 🟢 Growing | Post settlement content |
 
 ---
 
-*Oracle — Gibson's Second Brain | Updated 2026-03-31*
+*Oracle — Gibson's Second Brain | Updated 2026-04-09 12:30 AM EAT*

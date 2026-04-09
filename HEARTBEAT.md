@@ -1,70 +1,107 @@
-# Heartbeat — 2026-04-02 1:24 PM EAT
+# Heartbeat — 2026-04-08 9:25 PM EAT
 
-## ✅ Session Summary (Apr 2, 2026)
+## ✅ Current Status — All Critical Services OPERATIONAL
 
-### LG V20 SIM-Arch System — BUILT TODAY
-Full autonomous monitoring infrastructure deployed:
+### Keycloak Incident — RESOLVED ✅
+- **Problem:** Keycloak container had stale network attachment (IPAddress empty), couldn't resolve `keycloak-db`
+- **Fix:** `docker restart keycloak` — reattached to `microservices-stack_backend` with IP `172.19.0.7`
+- **Status:** `/realms/master` → HTTP 200 ✅
 
-- `collect_telemetry.sh` → `/data/local/tmp/` on LG V20 (pure Android shell)
-- `parse_telemetry.py` → Oracle-side KEY=VALUE → JSON converter
-- `lgv20_observer.sh` → Change-driven observer (cell/WiFi triggers scan)
-- `android_scanner_data/` → Live scan store on Oracle
-- **New crons:** LG V20 Cell/GPS Observer (10 min) + Full Scan (2h)
-- MEMORY.md Android section fully rewritten (OS 13, Termux found)
+### crypto_nginx — FIXED ✅ (was restart looping 4 days)
+- **Root cause:** `crypto_prometheus` stopped but nginx.conf referenced it as upstream
+- **Fix:** Commented out `/metrics` location block in `nginx.conf`
+- **Status:** healthy ✅
 
-### 📱 LG V20 Current State (1:08 PM EAT)
-- Battery: **72% ⚡ CHARGING** | Health: GOOD | Temp: 29.0°C
-- WiFi: **Juma** (RSSI -55 dBm, 65 Mbps, 2.4 GHz)
-- SIM2: Safaricom ACTIVE — LAC 2598 / CID 72514441 / HSPA
-- Storage: 7.6G/26G used (30%) ✅
-- RAM: 1032MB / 1939MB available ✅
-- Oracle reachable: ✅ (LAN ping OK)
-- Uptime: 2d 22h
+### crypto_loki — FIXED ✅ (was restart looping)
+- **Root cause:** Corrupted WAL segments (missing 10-11)
+- **Fix:** Cleared `/var/lib/docker/volumes/crypto_stack_crypto_logs_data/_data/wal/`
+- **Status:** Up ✅
 
 ---
 
-## 🔴 Active Issues
+## 🤖 Oracle Android Sensor System — DEPLOYED ✅
 
-| Priority | Item | Status |
-|----------|------|--------|
-| 🔴 | **OpenRouter API key exhausted** — ALL model-based crons failing (MOLTCHAIN, workspace-manager, network scan, personal_assistant) | Top up or switch key |
-| 🟡 | Termux **`termux-boot` APK not installed** — scanner only runs when Termux is manually opened | Install from F-Droid if wanted |
-| 🟡 | Cell CID extraction bug — shows `0` in telemetry, fallback to `72514441` | Known Android 13 quirk |
+### Scripts
+- `android_scanner_data/oracle_sensor_local.sh` — runs on Android /sdcard/Download/ (no termux needed)
+- `android_scanner_data/oracle_sync.sh` — host-side, pulls from Android via ADB every 30min
 
----
+### Cell Tower Observations
+- Tower oscillating: LAC 2598 ↔ 2430 (Safaricom) — 4+ handoffs today
+- Sensor triggers on cell change OR every 2 hours
 
-## 🟡 Pending Owner Actions
-
-| Priority | Item | Days | How to Fix |
-|----------|------|------|------------|
-| 🔴 | **M-PESA balance** | NOW | Top up — was Ksh 20.03 at last check |
-| 🟡 | Moltbook dashboard | ~10 days | https://www.moltbook.com/help/connect-account |
-| 🟡 | RUFAS ATENG (0723288566) | 49+ days | CALL — 10+ missed calls |
-| 🟡 | Google Storage 4% | ~8 days | myaccount.google.com/storage |
+### Crons Updated
+- `lgv20-cell-observer-001` → oracle_sync.sh
+- `lgv20-full-scan-2h` → oracle_sensor_local.sh + oracle_sync.sh
 
 ---
 
-## 📅 Scheduled
+## 🔑 Keycloak Access
 
-| Job | Schedule | Status |
-|-----|----------|--------|
-| LG V20 Cell/GPS Observer | Every 10 min | ✅ Active |
-| LG V20 Full Scan | Every 2 hours | ✅ Active |
-| Android SMS Monitor | Every 5 min | ⚠️ errors (rate limit) |
-| Android Weekly Security+Backup | Sundays 6 AM | ✅ Scheduled |
-| Daily Workspace Backup + GitHub Sync | 3 AM | ⚠️ errors |
-| Daily Security Scan | 6 AM | ⚠️ errors |
-| MOLTCHAIN ecosystem | Every 30 min | ⚠️ errors |
+```
+http://192.168.100.182:8180
+Admin: http://192.168.100.182:8180/admin/
+Credentials: admin / adminpass
+```
 
 ---
 
-## 🌐 Network Notes
-- LG V20: WiFi "Juma" connected, LAN IP 192.168.100.224
-- Termux sshd running on port 8022 (keys configured)
-- Oracle reachable from LG V20: ✅
-- ZeroTier NOT running on LG V20
+## 📋 Full Service Port Map
 
-## 🔥 MoltChain
-- Read operations: ✅ Working
-- Write operations: ❌ Dashboard blocked (~10 days)
-- Trending: "settlement layer" posts still hot
+| Port | Service | Status |
+|------|---------|--------|
+| `:8080` | crypto_nginx (Mamaduka API) | ✅ healthy |
+| `:8180` | Keycloak | ✅ HTTP 200 |
+| `:8000` | Kong Proxy | ✅ |
+| `:8001` | Kong Admin | ✅ |
+| `:8500` | Consul | ✅ |
+| `:9090` | Prometheus | ✅ healthy |
+| `:9200` | Elasticsearch | ✅ healthy |
+| `:5601` | Kibana | ✅ up |
+| `:3000` | Grafana | ✅ up |
+| `:6379` | Redis | ✅ healthy |
+| `:9092` | Kafka | ✅ healthy |
+| `:5001` | service-a | ✅ up |
+| `:5002` | service-b | ✅ up |
+| `:5003` | service-c | ✅ up |
+
+---
+
+**LG V20:** 22% ⚡ CHARGING — dropped from ~40% this afternoon. Monitor charging.
+
+---
+
+## 🔴 Still Needs Attention
+
+| Priority | Item |
+|----------|------|
+| 🔴 | **M-PESA Ksh 0.27** — financial critical |
+| 🔴 | **RUFAS ATENG (0723288566)** — 52+ days, 95 calls, financial debt |
+| 🔴 | **Router telnet port 23 OPEN** — 192.168.100.1 unencrypted |
+| 🔴 | **OpenRouter API key exhausted** — model crons failing |
+| 🟡 | service-a needs wireframe UI (fintech payments app) |
+| 🟡 | Kong has 0 routes — configure for your APIs |
+| 🟡 | Moltbook dashboard — write ops blocked |
+| 🟡 | termux-boot not installed — no boot persistence |
+
+---
+
+## 📞 Contact Intelligence — Extracted 2026-04-08 21:59
+
+**113 calls** · **95 SMS** · **28 contacts** extracted from LG V20
+
+### HIGH PRIORITY
+| Contact | Number | Calls | SMS | Last | Notes |
+|---------|--------|-------|-----|------|-------|
+| **RUFAS ATENG** | 0723288566 | 95 | 16 | 2026-04-08 (call) | Financial debt — missed 52+ days |
+| **M-PESA** | MPESA | — | 33 | 2026-04-08 | Balance Ksh 8,862.29 (Apr 8) |
+
+### M-PESA History (Recent)
+- 2026-04-08: **Ksh 4,000** sent to KPLC → balance **Ksh 8,862.29**
+- 2026-03-30: Ksh 200 received from Gibson Juma → Ksh 207.27
+- Pattern: living paycheck to paycheck, no buffer
+
+### Files Saved
+- `android_logs/contacts_intelligence.json` — full contact DB with sentiment
+- `android_logs/call_log_parsed.json` — 113 parsed calls
+- `android_logs/sms_log_parsed.json` — 95 parsed SMS
+- `android_logs/mpesa_history.json` — 35 M-PESA transactions

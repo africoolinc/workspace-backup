@@ -1,0 +1,9 @@
+# ADB Devices at  9 Aprili 2026 03:00:11 asubuhi EAT
+List of devices attached
+20429563B4043064       device usb:3-6 product:V20 model:V20 device:V20 transport_id:121
+
+
+# ADB Version
+Android Debug Bridge version 1.0.41
+Version 28.0.2-debian
+Installed as /usr/lib/android-sdk/platform-tools/adb

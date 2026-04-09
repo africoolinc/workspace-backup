@@ -196,7 +196,109 @@ sudo tshark -i any port 443 -Y "tls.handshake.type == 1" \
 
 - Preferred voice: "Nova" (warm, slightly British)
 - Default speaker: Kitchen HomePod
+
+### 🐳 Microservices Stack
+
+**Location:** `/home/africool/Documents/microservices/microservices-stack/`
+**Deploy log:** `/root/.openclaw/workspace/microservices_deploy.log`
+**Monitor:** `/root/.openclaw/workspace/microservices_stack/monitor.sh`
+
+**14 services:** consul, kong, kong-db, keycloak, keycloak-db, app-db, redis,
+zookeeper, kafka, prometheus, grafana, elasticsearch, logstash, kibana,
+service-a, service-b, service-c
+
+**Port map:**
+| Host Port | Service |
+|-----------|---------|
+| 8500 | Consul UI |
+| 8180 | Keycloak (was 8080 — conflict with crypto_nginx) |
+| 8000 | Kong proxy |
+| 8001 | Kong admin |
+| 9090 | Prometheus |
+| 3000 | Grafana |
+| 9200/9300 | Elasticsearch |
+| 5601 | Kibana |
+| 6379 | Redis |
+| 9092/29092 | Kafka |
+| 2181 | Zookeeper |
+| 5001-5003 | service-a/b/c |
+
+**Known bugs fixed:**
+- Network `microservices-stack_backend` → `backend` (sed fix applied)
+- Keycloak port 8080 → 8180 (conflict with crypto_nginx on :8080)
+
+**Commands:**
+```bash
+# Status
+cd /home/africool/Documents/microservices/microservices-stack && docker compose ps
+
+# Deploy (background)
+cd /home/africool/Documents/microservices/microservices-stack && docker compose up -d
+
+# Logs
+cd /home/africool/Documents/microservices/microservices-stack && docker compose logs -f
+
+# Health check
+bash /root/.openclaw/workspace/microservices_stack/monitor.sh
+
+# Stop stack
+cd /home/africool/Documents/microservices/microservices-stack && docker compose down
 ```
+
+**Credentials:**
+- Keycloak: admin / adminpass
+- Grafana: admin / adminpass
+```
+
+## 📱 Android / LG V20 — Oracle Sensor System
+
+### Device
+- **LG V20** (SN: 20429563B4043064) — connected via USB ADB
+- Android 13 | Battery: 39% ⚠️ (was 72% AM — discharging) | Uptime: 9 days+
+- Storage: 7.2G/26G used (29%)
+- WiFi: SSID=Juma, BSSID=68:89:c1:8c:1d:60, RSSI=-55 dBm
+
+### Oracle Android Sensor Scripts
+| Script | Location | Purpose |
+|--------|----------|---------|
+| oracle_sensor_local.sh | /sdcard/Download/ | Runs on Android, 100% offline, no termux needed |
+| oracle_sync.sh | /root/.openclaw/workspace/android_scanner_data/ | Host-side, pulls via ADB every 30min |
+
+**Sensor triggers:** Every 2 hours OR on cell tower change
+**Cell tower:** LAC 2598 ↔ 2430 oscillating (Safaricom)
+**Scan storage:** /sdcard/Download/.oracle/data/scan_lgv20_*.json (last 100)
+**Synced to:** /root/.openclaw/workspace/android_scanner_data/
+
+### ADB Commands
+```bash
+# Device status
+adb devices  # → 20429563B4043064  device
+
+# Check battery
+adb shell cat /sys/class/power_supply/battery/capacity
+
+# Run sensor manually
+adb shell 'chmod 755 /sdcard/Download/oracle_sensor_local.sh && /system/bin/sh /sdcard/Download/oracle_sensor_local.sh'
+
+# Sync + pull data
+bash /root/.openclaw/workspace/android_scanner_data/oracle_sync.sh
+
+# View sensor log
+adb shell cat /sdcard/Download/.oracle/logs/sensor.log
+```
+
+### Termux Status
+- **termux-boot APK:** NOT installed ❌ (no reboot persistence)
+- **boot.sh:** Configured ✅ (termux-wake-lock + sshd)
+- **sshd:** NOT running (port 8022 unreachable)
+- **OpenClaw:** NOT installed in Termux — runs on HOST
+- **Fix:** Install termux-boot from F-Droid for boot persistence
+
+### ⚠️ Known Issues
+- termux-boot not installed — sshd won't auto-start after reboot
+- LG V20 battery dropping fast (72% → 39% since AM)
+
+---
 
 ## Why Separate?
 

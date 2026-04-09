@@ -1,217 +1,280 @@
 {
-  "timestamp": "2026-04-05T06:40:34Z",
-  "timestamp_local": "2026-04-05 09:40 AM ",
-  "phase": "PHASE-4",
+  "timestamp": "2026-04-08T23:36:26Z",
+  "timestamp_local": "2026-04-09 02:36 AM ",
+  "phase": "PHASE-1",
   "system": {
     "hostname": "ahie",
     "os": "Linux 6.8.0-106-generic",
     "cpu_cores": 4,
-    "load_average_1m": 10.49,
-    "load_percent_of_cores": 262.2,
+    "load_average_1m": 1.61,
+    "load_percent_of_cores": 40.2,
     "cpu_breakdown": {
-      "user": 10,
-      "system": 6,
-      "idle": 61,
-      "iowait": 24
+      "user": 40,
+      "system": 5,
+      "idle": 54,
+      "iowait": 2
     }
   },
   "memory": {
-    "total_bytes": 13262774272,
+    "total_bytes": 13262651392,
     "total_gib": 12.35,
-    "available_bytes": 2827870208,
-    "available_gib": 2.63,
-    "used_bytes": 10434904064,
-    "oracle_available_bytes": 2827870208,
+    "available_bytes": 4703694848,
+    "available_gib": 4.38,
+    "used_bytes": 8558956544,
+    "oracle_available_bytes": 4703694848,
     "oracle_reserve_bytes": 1610612736,
     "oracle_healthy": true,
-    "swap_free_bytes": 811008,
-    "usage_percent": 78.7
+    "swap_free_bytes": 392220672,
+    "usage_percent": 64.5
   },
   "docker": {
-    "memory_used_bytes": 529128226,
-    "memory_used_gib": 0.49,
-    "ceiling_bytes": 6631387136,
+    "memory_used_bytes": 3048064679,
+    "memory_used_gib": 2.84,
+    "ceiling_bytes": 6631325696,
     "ceiling_gib": 6.2,
     "ceiling_percent_of_system": 50,
-    "usage_percent_of_ceiling": 8.0,
+    "usage_percent_of_ceiling": 46.0,
     "healthy": true,
-    "container_count": 15
+    "container_count": 24
   },
   "thresholds": {
-    "docker_memory_ceiling_bytes": 6631387136,
+    "docker_memory_ceiling_bytes": 6631325696,
     "intervention_load_percent": 65,
     "oracle_reserve_bytes": 1610612736,
     "swap_policy": "emergency_only"
   },
   "top_cpu_processes": [
     {
-      "pid": "940410",
-      "cpu": "104",
-      "mem_mb": "313516",
-      "cmd": "/usr/bin/node /home/africool/.npm-global/lib/node_modules/openclaw/dist/index.js gateway --port 18789"
+      "pid": "560557",
+      "cpu": "123",
+      "mem_mb": "396212",
+      "cmd": "openclaw-gateway"
     },
     {
-      "pid": "3757071",
-      "cpu": "6.9",
-      "mem_mb": "595528",
+      "pid": "52819",
+      "cpu": "12.0",
+      "mem_mb": "771332",
       "cmd": "/snap/firefox/8054/usr/lib/firefox/firefox"
     },
     {
-      "pid": "913561",
-      "cpu": "6.7",
-      "mem_mb": "171148",
-      "cmd": "/bin/warp-svc"
+      "pid": "40616",
+      "cpu": "6.0",
+      "mem_mb": "522824",
+      "cmd": "/usr/share/kibana/bin/../node/bin/node /usr/share/kibana/bin/../src/cli/dist --ops.cGroupOverrides.cpuPath=/ --ops.cGroupOverrides.cpuAcctPath=/ --elasticsearch.hosts=[\"http://elasticsearch:9200\"]"
     },
     {
-      "pid": "3851431",
-      "cpu": "4.6",
-      "mem_mb": "561820",
-      "cmd": "/snap/firefox/8054/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:44145 -prefMapHandle 1:284101 -jsInitHandle 2:156136 -parentBuildID 20260324124100 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {ac8d14b9-7cea-46b0-9a19-beb7418d4c39} -parentPid 3757071 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8054/usr/lib/firefox/omni.ja -appomni /snap/firefox/8054/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8054/usr/lib/firefox/browser 36 tab"
+      "pid": "66446",
+      "cpu": "5.9",
+      "mem_mb": "783620",
+      "cmd": "/snap/firefox/8054/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:43863 -prefMapHandle 1:284101 -jsInitHandle 2:156136 -parentBuildID 20260324124100 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {efb38437-cbbc-40b5-96d3-e8f1fe68c81f} -parentPid 52819 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8054/usr/lib/firefox/omni.ja -appomni /snap/firefox/8054/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8054/usr/lib/firefox/browser 16 tab"
     },
     {
-      "pid": "3757928",
-      "cpu": "4.3",
-      "mem_mb": "92232",
-      "cmd": "/snap/firefox/8054/usr/lib/firefox/firefox -contentproc -parentBuildID 20260324124100 -prefsHandle 0:36706 -prefMapHandle 1:284101 -sandboxReporter 2 -chrootClient 3 -ipcHandle 4 -initialChannelId {1186953f-66c1-4661-a1d4-809ee7d85179} -parentPid 3757071 -crashReporter 5 -crashHelper 6 -appDir /snap/firefox/8054/usr/lib/firefox/browser 4 rdd"
+      "pid": "2908",
+      "cpu": "5.0",
+      "mem_mb": "539276",
+      "cmd": "openclaw-gateway"
     }
   ],
   "top_mem_processes": [
     {
-      "pid": "2663",
-      "cpu": "1276640",
-      "mem_mb": "2.2",
-      "cmd": "/usr/sbin/netdata -D"
+      "pid": "48814",
+      "cpu": "1072320",
+      "mem_mb": "1.8",
+      "cmd": "/usr/share/elasticsearch/jdk/bin/java -Des.networkaddress.cache.ttl=60 -Des.networkaddress.cache.negative.ttl=10 -Djava.security.manager=allow -XX:+AlwaysPreTouch -Xss1m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djna.nosys=true -XX:-OmitStackTraceInFastThrow -Dio.netty.noUnsafe=true -Dio.netty.noKeySetOptimization=true -Dio.netty.recycler.maxCapacityPerThread=0 -Dlog4j.shutdownHookEnabled=false -Dlog4j2.disable.jmx=true -Dlog4j2.formatMsgNoLookups=true -Djava.locale.providers=SPI,COMPAT --add-opens=java.base/java.io=org.elasticsearch.preallocate --add-opens=org.apache.lucene.core/org.apache.lucene.store=org.elasticsearch.vec --enable-native-access=org.elasticsearch.nativeaccess -Des.cgroups.hierarchy.override=/ -XX:ReplayDataFile=logs/replay_pid%p.log -Djava.library.path=/usr/share/elasticsearch/lib/platform/linux-x64:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib -Djna.library.path=/usr/share/elasticsearch/lib/platform/linux-x64:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib -Des.distribution.type=docker -XX:+UnlockDiagnosticVMOptions -XX:G1NumCollectionsKeepPinned=10000000 -XX:+UseG1GC -Djava.io.tmpdir=/tmp/elasticsearch-3640976483146719919 --add-modules=jdk.incubator.vector -XX:+HeapDumpOnOutOfMemoryError -XX:+ExitOnOutOfMemoryError -XX:HeapDumpPath=data -XX:ErrorFile=logs/hs_err_pid%p.log -Xlog:gc*,gc+age=trace,safepoint:file=logs/gc.log:utctime,level,pid,tags:filecount=32,filesize=64m -Xms512m -Xmx512m -XX:MaxDirectMemorySize=268435456 -XX:G1HeapRegionSize=4m -XX:InitiatingHeapOccupancyPercent=30 -XX:G1ReservePercent=15 --module-path /usr/share/elasticsearch/lib --add-modules=jdk.net --add-modules=ALL-MODULE-PATH -m org.elasticsearch.server/org.elasticsearch.bootstrap.Elasticsearch"
     },
     {
-      "pid": "3851866",
-      "cpu": "726012",
-      "mem_mb": "1.7",
-      "cmd": "/snap/firefox/8054/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:44145 -prefMapHandle 1:284101 -jsInitHandle 2:156136 -parentBuildID 20260324124100 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {98bb6bf2-643d-4134-9391-134fd95affe0} -parentPid 3757071 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8054/usr/lib/firefox/omni.ja -appomni /snap/firefox/8054/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8054/usr/lib/firefox/browser 37 tab"
+      "pid": "66446",
+      "cpu": "783620",
+      "mem_mb": "5.9",
+      "cmd": "/snap/firefox/8054/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:43863 -prefMapHandle 1:284101 -jsInitHandle 2:156136 -parentBuildID 20260324124100 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {efb38437-cbbc-40b5-96d3-e8f1fe68c81f} -parentPid 52819 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8054/usr/lib/firefox/omni.ja -appomni /snap/firefox/8054/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8054/usr/lib/firefox/browser 16 tab"
     },
     {
-      "pid": "3824410",
-      "cpu": "597416",
-      "mem_mb": "3.9",
-      "cmd": "/snap/firefox/8054/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:44104 -prefMapHandle 1:284101 -jsInitHandle 2:156136 -parentBuildID 20260324124100 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {fc01196c-e5b0-49b3-bd63-75afcc64bd52} -parentPid 3757071 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8054/usr/lib/firefox/omni.ja -appomni /snap/firefox/8054/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8054/usr/lib/firefox/browser 27 tab"
-    },
-    {
-      "pid": "3757071",
-      "cpu": "595528",
-      "mem_mb": "6.9",
+      "pid": "52819",
+      "cpu": "771332",
+      "mem_mb": "12.0",
       "cmd": "/snap/firefox/8054/usr/lib/firefox/firefox"
     },
     {
-      "pid": "3851431",
-      "cpu": "561820",
-      "mem_mb": "4.6",
-      "cmd": "/snap/firefox/8054/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:44145 -prefMapHandle 1:284101 -jsInitHandle 2:156136 -parentBuildID 20260324124100 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {ac8d14b9-7cea-46b0-9a19-beb7418d4c39} -parentPid 3757071 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8054/usr/lib/firefox/omni.ja -appomni /snap/firefox/8054/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8054/usr/lib/firefox/browser 36 tab"
+      "pid": "2908",
+      "cpu": "539276",
+      "mem_mb": "5.0",
+      "cmd": "openclaw-gateway"
+    },
+    {
+      "pid": "40616",
+      "cpu": "522824",
+      "mem_mb": "6.0",
+      "cmd": "/usr/share/kibana/bin/../node/bin/node /usr/share/kibana/bin/../src/cli/dist --ops.cGroupOverrides.cpuPath=/ --ops.cGroupOverrides.cpuAcctPath=/ --elasticsearch.hosts=[\"http://elasticsearch:9200\"]"
     }
   ],
   "containers": [
     {
-      "name": "bridge_tracker",
+      "name": "keycloak",
+      "status": "",
+      "cpu": "0.06%",
+      "mem_usage": "413.7MiB / 12.35GiB",
+      "mem_perc": "3.27%"
+    },
+    {
+      "name": "kibana",
+      "status": "",
+      "cpu": "4.17%",
+      "mem_usage": "586.8MiB / 12.35GiB",
+      "mem_perc": "4.64%"
+    },
+    {
+      "name": "grafana",
+      "status": "",
+      "cpu": "0.02%",
+      "mem_usage": "63.01MiB / 12.35GiB",
+      "mem_perc": "0.50%"
+    },
+    {
+      "name": "consul",
+      "status": "",
+      "cpu": "0.26%",
+      "mem_usage": "95.18MiB / 12.35GiB",
+      "mem_perc": "0.75%"
+    },
+    {
+      "name": "app-db",
       "status": "",
       "cpu": "0.00%",
-      "mem_usage": "0B / 0B",
-      "mem_perc": "0.00%"
+      "mem_usage": "26.38MiB / 12.35GiB",
+      "mem_perc": "0.21%"
+    },
+    {
+      "name": "elasticsearch",
+      "status": "",
+      "cpu": "0.70%",
+      "mem_usage": "1.14GiB / 12.35GiB",
+      "mem_perc": "9.23%"
+    },
+    {
+      "name": "kong-db",
+      "status": "",
+      "cpu": "0.00%",
+      "mem_usage": "24.66MiB / 12.35GiB",
+      "mem_perc": "0.19%"
+    },
+    {
+      "name": "keycloak-db",
+      "status": "",
+      "cpu": "0.00%",
+      "mem_usage": "28.77MiB / 12.35GiB",
+      "mem_perc": "0.23%"
+    },
+    {
+      "name": "bridge_tracker",
+      "status": "",
+      "cpu": "0.28%",
+      "mem_usage": "23.23MiB / 12.35GiB",
+      "mem_perc": "0.18%"
     },
     {
       "name": "bridge_heartbeat",
       "status": "",
-      "cpu": "0.00%",
-      "mem_usage": "0B / 0B",
-      "mem_perc": "0.00%"
+      "cpu": "0.29%",
+      "mem_usage": "26.57MiB / 12.35GiB",
+      "mem_perc": "0.21%"
     },
     {
       "name": "bridge_api",
       "status": "",
-      "cpu": "0.00%",
-      "mem_usage": "0B / 0B",
-      "mem_perc": "0.00%"
+      "cpu": "0.30%",
+      "mem_usage": "63.8MiB / 12.35GiB",
+      "mem_perc": "0.50%"
     },
     {
       "name": "crypto_nginx",
       "status": "",
       "cpu": "0.00%",
-      "mem_usage": "3.938MiB / 12.35GiB",
-      "mem_perc": "0.03%"
+      "mem_usage": "1.527MiB / 12.35GiB",
+      "mem_perc": "0.01%"
     },
     {
       "name": "crypto_loki",
       "status": "",
-      "cpu": "0.50%",
-      "mem_usage": "58.81MiB / 12.35GiB",
-      "mem_perc": "0.46%"
+      "cpu": "0.51%",
+      "mem_usage": "73.59MiB / 12.35GiB",
+      "mem_perc": "0.58%"
     },
     {
       "name": "crypto_blockchain",
       "status": "",
-      "cpu": "0.02%",
-      "mem_usage": "60.55MiB / 12.35GiB",
-      "mem_perc": "0.48%"
+      "cpu": "0.04%",
+      "mem_usage": "27.59MiB / 12.35GiB",
+      "mem_perc": "0.22%"
     },
     {
       "name": "crypto_phone",
       "status": "",
       "cpu": "0.00%",
-      "mem_usage": "52.54MiB / 12.35GiB",
-      "mem_perc": "0.42%"
+      "mem_usage": "24.92MiB / 12.35GiB",
+      "mem_perc": "0.20%"
     },
     {
       "name": "crypto_cloudflare",
       "status": "",
       "cpu": "0.01%",
-      "mem_usage": "57.87MiB / 12.35GiB",
-      "mem_perc": "0.46%"
+      "mem_usage": "24.79MiB / 12.35GiB",
+      "mem_perc": "0.20%"
     },
     {
       "name": "crypto_dns",
       "status": "",
-      "cpu": "0.00%",
-      "mem_usage": "56.38MiB / 12.35GiB",
-      "mem_perc": "0.45%"
+      "cpu": "0.04%",
+      "mem_usage": "27.38MiB / 12.35GiB",
+      "mem_perc": "0.22%"
     },
     {
       "name": "crypto_mpesa",
       "status": "",
       "cpu": "0.00%",
-      "mem_usage": "51.98MiB / 12.35GiB",
-      "mem_perc": "0.41%"
+      "mem_usage": "27.56MiB / 12.35GiB",
+      "mem_perc": "0.22%"
     },
     {
       "name": "crypto_grafana",
       "status": "",
-      "cpu": "0.30%",
-      "mem_usage": "113.4MiB / 12.35GiB",
-      "mem_perc": "0.90%"
+      "cpu": "0.24%",
+      "mem_usage": "106.9MiB / 12.35GiB",
+      "mem_perc": "0.85%"
     },
     {
       "name": "crypto_postgres",
       "status": "",
-      "cpu": "0.00%",
-      "mem_usage": "9.359MiB / 12.35GiB",
-      "mem_perc": "0.07%"
+      "cpu": "2.85%",
+      "mem_usage": "14.02MiB / 12.35GiB",
+      "mem_perc": "0.11%"
     },
     {
       "name": "portainer",
       "status": "",
-      "cpu": "0.01%",
-      "mem_usage": "26.18MiB / 12.35GiB",
-      "mem_perc": "0.21%"
+      "cpu": "0.00%",
+      "mem_usage": "25.45MiB / 12.35GiB",
+      "mem_perc": "0.20%"
     },
     {
       "name": "bridge_db",
       "status": "",
       "cpu": "0.00%",
-      "mem_usage": "6.41MiB / 12.35GiB",
+      "mem_usage": "6.363MiB / 12.35GiB",
       "mem_perc": "0.05%"
+    },
+    {
+      "name": "trusting_beaver",
+      "status": "",
+      "cpu": "0.03%",
+      "mem_usage": "22.42MiB / 12.35GiB",
+      "mem_perc": "0.18%"
     },
     {
       "name": "zerotier",
       "status": "",
-      "cpu": "0.05%",
-      "mem_usage": "7.199MiB / 12.35GiB",
-      "mem_perc": "0.06%"
+      "cpu": "0.06%",
+      "mem_usage": "4.891MiB / 12.35GiB",
+      "mem_perc": "0.04%"
     }
   ]
 }

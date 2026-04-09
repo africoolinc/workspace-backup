@@ -5835,3 +5835,250 @@ Platform appears to be recovering from index rebuild. Earlier today (08:10 UTC) 
 
 ---
 *🦋 MoltChain — Building the Agent-Native Blockchain. Together we grow.*
+
+---
+
+## 📋 STATUS UPDATE — 2026-04-05 11:24 Africa/Nairobi (Sunday)
+
+| Integration | Status | Notes |
+|-------------|--------|-------|
+| Moltbook Search | ✅ Working (read-only) | All targets verified |
+| Moltbook Feed | ❌ 401 | "Invalid API key" — key may be expired/invalidated |
+| Moltbook Write | ❌ BLOCKED | Dashboard setup required |
+| Moltbook DM | ❌ 404 | Endpoint not found |
+| Discord | ❌ NOT CONFIGURED | Missing channels.discord |
+| Web Search | ❌ NO BRAVE KEY | Cannot search web |
+
+**⚠️ API KEY WARNING:** moltbook_sk key returned 401 on /feed. Need to re-verify at https://www.moltbook.com/help/connect-account
+
+**Key Targets Verified (2026-04-05):**
+| Agent | Karma | Priority |
+|-------|-------|----------|
+| Molty | 247 ⬆️ | ⭐⭐⭐ PRIMARY — AI tools empire |
+| molthunty | 142 ⬆️ | ⭐⭐⭐ PARTNERSHIP — Molthunt co-founder |
+| MoltChannel | 79 ⬆️ | ⭐⭐ AMBASSADOR — YouTube channel |
+| MoltChat_AI | 54 | ⭐⭐⭐ PARTNERSHIP — Social layer |
+| PayRam | ? | ⭐⭐⭐ URGENT — settlement layer |
+
+**MoltChain Posts (3 found):**
+- [4↑] Building the Agent Settlement Layer 🦞 — AhieJuma (best performer!)
+- [0] MoltChain Update: Building the Agent Settlement Layer 🦞 — AhieJuma (Mar 31)
+- [0] MoltChain Ecosystem Update — April 1, 2026 🦞 — AhieJuma
+
+**Owner Actions Required:**
+1. **Moltbook API key may be expired** — verify at https://www.moltbook.com/help/connect-account
+2. **Moltbook Dashboard:** https://www.moltbook.com/help/connect-account (2 min) — unblocks posting/DM
+3. **Discord Config:** `openclaw configure --section discord`
+
+---
+*🦋 MoltChain — Building the Agent-Native Blockchain. Together we grow.*
+
+---
+
+## 📅 STATUS UPDATE — 2026-04-05 10:25 UTC / 1:25 PM Africa/Nairobi (Sunday)
+
+### 🔴 SITUATION SUMMARY (2026-04-05):
+
+**What Exists:**
+- ✅ Cron job running every 30 min (job ID: `52530b65`) — healthy
+- ✅ **Moltbook Search API WORKING** — Read-only operations functional
+- ✅ **AhieJuma Active** — Posted twice this week (Apr 1 Ecosystem Update, Mar 31 Settlement Layer Update)
+- ✅ **All key target agents verified present on Moltbook:**
+  - tudou_web3: 2,883 karma (⬆️ +141 from 2,744!)
+  - PayRam: 857 karma (⬆️ +9 from 848)
+  - Molty: 247 karma (⬆️ +1)
+  - molthunty: 142 karma (stable)
+  - MoltChannel: 79 karma (⬆️ +1)
+  - MoltChat_AI: 54 karma (stable)
+  - AhieJuma: 119 karma (stable)
+- ✅ **Settlement layer discussions still TRENDING** — tudou_web3 has 12, 9, 5, 3, 2 upvotes on settlement posts
+
+**⚠️ CRITICAL NEW ISSUE — API Key Invalid:**
+- /agents/me → 401 "Invalid API key" — key no longer valid!
+- /feed → 401 "Invalid API key" — same issue
+- Search still works (public endpoint)
+- **Owner must check:** https://www.moltbook.com/settings/api for key renewal
+
+**Critical Blockers — OWNER ACTION REQUIRED:**
+1. ⚠️ **API KEY RENEWAL** — Key showing invalid on authenticated endpoints. Check https://www.moltbook.com/settings/api
+2. ⚠️ **MOLTBOOK DASHBOARD** — Needs setup at https://www.moltbook.com/help/connect-account (unblocks posting/DM)
+3. ❌ `channels.discord` missing from openclaw.json
+
+**🦋 MOLTCHAIN ECOSYSTEM GROWING:**
+- AhieJuma (our agent) posted twice this week!
+- Ecosystem momentum: tudou_web3 +141 karma in 12 days, PayRam +9 karma
+- Agent settlement problem still the #1 conversation topic on platform
+
+---
+*🦋 MoltChain — Building the Agent-Native Blockchain. Together we grow.*
+
+---
+
+## 📅 STATUS UPDATE #2 — 2026-04-05 10:30 UTC (Sunday)
+
+### 🔧 API Testing Results:
+
+| Endpoint | Method | Result | Notes |
+|----------|--------|--------|-------|
+| Search agents/posts | GET | ✅ Working | Public read-only |
+| Post lookup | GET | ✅ Working | Individual posts accessible |
+| /api/v1/posts | POST | ❌ 401 Invalid Key | API key no longer valid |
+| /api/v1/comments | POST | ❌ 404 Not Found | Endpoint doesn't exist |
+| /api/v1/upvotes | POST | ❌ 404 Not Found | Endpoint doesn't exist |
+| /agents/me | GET | ❌ 401 Invalid Key | API key no longer valid |
+| /feed | GET | ❌ 401 Invalid Key | API key no longer valid |
+
+**Conclusion:** API key is expired/invalid. Posting, commenting, upvoting, DM all BLOCKED. Dashboard setup also blocked until key is renewed.
+
+**Owner Action Required:**
+1. **Renew API key** at https://www.moltbook.com/settings/api (MOST URGENT)
+2. **Set up Dashboard** at https://www.moltbook.com/help/connect-account (after key renewal)
+3. **Configure Discord** via `openclaw configure --section discord`
+
+---
+*🦋 MoltChain — Building the Agent-Native Blockchain*
+
+---
+
+## 📋 STATUS UPDATE — 2026-04-05 18:25 UTC (Sunday Evening)
+
+**Integration Status (Updated):**
+
+| Integration | Status | Last Checked | Notes |
+|-------------|--------|--------------|-------|
+| Moltbook Search | ✅ Working | 2026-04-05 18:25 | Read-only API functional |
+| Moltbook Feed | ❌ BLOCKED | 2026-04-05 18:25 | Dashboard required — https://www.moltbook.com/help/connect-account |
+| Moltbook DM | ❌ BLOCKED | 2026-04-05 18:25 | Dashboard required |
+| Moltbook Post/Comment | ❌ BLOCKED | 2026-04-05 18:25 | Dashboard required |
+| Discord Plugin | ✅ Available | 2026-04-05 18:25 | `@openclaw/discord` v2026.3.13 |
+| Discord Config | ❌ NOT CONFIGURED | 2026-04-05 18:25 | Missing channels.discord block |
+| Web Search | ❌ NO BRAVE KEY | 2026-04-05 18:25 | Cannot search web |
+
+**Key Target Updates (2026-04-05):**
+- Molty: 246 → 247 karma (+1) — AI tools empire, PRIMARY recruit
+- MoltChannel: 78 → 79 karma (+1) — YouTube @molt-channel, ambassador
+- molthunty: 142 karma (stable) — Molthunt co-founder
+- MoltChat_AI: 54 karma (stable) — Social layer partnership
+
+**AhieJuma (Gibson's account):**
+- Karma: 119 (blocked 13+ days per daily log)
+- Bio updated: now references "agent-native settlement layer for Bitcoin" + sister @TrudyJuma
+
+**New MoltChain Posts:**
+- "MoltChain Update: Building the Agent Settlement Layer 🦞" — AhieJuma (March 31) in m/moltchain
+
+**Trending Agent Settlement Discussions (m/agentfinance):**
+- 9↑ "The agent economy has a settlement problem..." — tudou_web3 🔥
+- 5↑ "the agent economy has a clearing problem..." — tudou_web3
+- 3↑ "The agent economy has a settlement layer problem..." — tudou_web3
+- 2↑ "An agent realizes settlement speed is engine of working capital velocity" — PayRam
+
+**OWNER ACTIONS STILL REQUIRED:**
+1. **Moltbook Dashboard:** https://www.moltbook.com/help/connect-account (2 min) — unblocks posting/DM/comment
+2. **Discord Config:** `openclaw configure --section discord` — missing channels.discord with token + guild ID
+
+**🦋 Status: Read-only engagement active | Dashboard blocked | Discord not configured**
+
+## 📋 STATUS UPDATE — 2026-04-08 15:17 UTC / 18:17 Africa/Nairobi
+
+| Integration | Status | Notes |
+|-------------|--------|-------|
+| Moltbook Search | ✅ Working (read-only) | API functional for agents/posts |
+| Moltbook Feed | ❌ 401 BLOCKED | "Invalid API key" — key may need refresh |
+| Moltbook DM | ❌ 404 BLOCKED | Endpoint not found |
+| Moltbook Post/Comment | ❌ BLOCKED | Dashboard setup required |
+| Discord | ❌ NOT CONFIGURED | Missing channels.discord |
+| Web Search | ❌ NO BRAVE KEY | Cannot search web |
+
+**Key Targets Verified (15:17 UTC):**
+| Agent | Karma | Priority |
+|-------|-------|----------|
+| PayRam | 857 | ⭐⭐⭐⭐ URGENT — settlement layer specialist |
+| Molty | 247 | ⭐⭐⭐ PRIMARY — AI tools empire |
+| molthunty | 142 | ⭐⭐⭐ PARTNERSHIP — Molthunt co-founder |
+| MoltChannel | 87 | ⭐⭐ AMBASSADOR — YouTube channel (growing!) |
+| MoltChat_AI | 54 | ⭐⭐⭐ PARTNERSHIP — Social layer |
+
+**Discoveries This Session:**
+- MoltChannel grew from 78 → 87 karma (+9 since last check) — actively growing!
+- PayRam (857 karma) confirmed as top settlement layer priority
+- Moltbook API key may need refresh — feed returns 401
+
+**Owner Actions Still Required:**
+1. **Moltbook Dashboard:** https://www.moltbook.com/help/connect-account (2 min)
+2. **Discord Config:** `openclaw configure --section discord`
+3. **Moltbook API Key:** May need refresh if feed/dm returns 401
+
+---
+*🦋 MoltChain — Building the Agent-Native Blockchain. Together we grow.*
+
+---
+
+## Status (Updated: 2026-04-08 21:17 UTC — Wednesday Night)
+
+**Discord Integration:** ❌ NOT CONFIGURED  
+**channels.discord block:** Absent from openclaw.json  
+**Moltbook Dashboard:** ❌ BLOCKED — https://www.moltbook.com/help/connect-account (owner action pending)  
+**Moltbook API Key:** ⚠️ Credentials file issue — no valid key found
+
+**Key Targets (Wednesday Night):**
+| Agent | Karma | Δ | Priority | Notes |
+|-------|-------|---|----------|-------|
+| PayRam | **857** | +10 | ⭐⭐⭐⭐ URGENT | Settlement layer specialist |
+| Molty | **247** | +1 | ⭐⭐⭐ PRIMARY | AI tools empire, growing |
+| molthunty | **142** | — | ⭐⭐⭐ PARTNERSHIP | Molthunt co-founder |
+| MoltChannel | **87** | +9 | ⭐⭐ AMBASSADOR | YouTube channel, strong growth! |
+| MoltChat_AI | **54** | — | ⭐⭐⭐ PARTNERSHIP | Social layer for agents |
+| MoltChain | 1 | — | 🔗 CORE | Building L3 on Base |
+| AhieJuma | 119 | — | 🦋 US | Our agent — posted April 1 update |
+
+**Key Change This Session:**
+- MoltChannel jumped 78→87 karma (+9) — active growth!
+- AhieJuma posted "MoltChain Ecosystem Update — April 1, 2026" (new post)
+- API key credentials file issue — feed inaccessible
+
+**OWNER ACTIONS REQUIRED:**
+1. **Moltbook Dashboard:** https://www.moltbook.com/help/connect-account
+2. **Discord Config:** `openclaw configure --section discord`
+3. **Verify API Key:** Check credentials file at `~/.config/moltbook/credentials.json`
+
+---
+
+## 📋 STATUS UPDATE — 2026-04-09 02:17 UTC / 05:17 Africa/Nairobi (Thursday Night)
+
+| Integration | Status | Notes |
+|------------|--------|-------|
+| Moltbook Search | ✅ Working (read-only) | Agent/post search functional |
+| Moltbook Feed | ❌ 401 Unauthorized | No API key in auth header |
+| Moltbook Agent Profile | ❌ 404 Not Found | Direct profile lookup not working |
+| Moltbook DM | ❌ 404 Not Found | Endpoint not found |
+| Moltbook Write | ❌ BLOCKED | Dashboard setup required |
+| Discord | ❌ NOT CONFIGURED | Missing channels.discord |
+
+**Key Targets Verified (2026-04-09 02:17 UTC):**
+| Agent | Karma | Priority | Trend |
+|-------|-------|----------|-------|
+| tudou_web3 | 2,889 | ⭐⭐⭐⭐⭐ URGENT | ⬆️ +161 karma since last check |
+| PayRam | 857 | ⭐⭐⭐⭐ URGENT | ⬆️ +9 karma, settlement specialist |
+| Molty | 246 | ⭐⭐⭐ PRIMARY | Stable |
+| molthunty | 142 | ⭐⭐⭐ PARTNERSHIP | Stable |
+| MoltChannel | 87 | ⭐⭐ AMBASSADOR | ⬆️ +9 karma |
+| MoltChat_AI | 54 | ⭐⭐⭐ PARTNERSHIP | Stable |
+
+**New Discoveries This Session:**
+- PayRam (857 karma) — agent payment rails, settlement speed evangelist
+- tudou_web3 (2,889 karma) — Web3 veteran, airdrop studio, viral settlement posts
+- MOLTHUB — job marketplace for agents ("humans post jobs, agents apply")
+
+**Trending:** Agent settlement layer discussions still hot on Moltbook — aligns perfectly with MoltChain's value prop
+
+**Blockers (UNCHANGED):**
+1. **Moltbook Dashboard:** https://www.moltbook.com/help/connect-account (2 min) — owner action needed
+2. **Discord Config:** `openclaw configure --section discord`
+
+**Owner Actions Required:**
+1. Visit https://www.moltbook.com/help/connect-account (2 min) — unblocks posting/DM/comment/upvote
+2. Run `openclaw configure --section discord` — enables server roles and recruitment
+
+---
+*🦋 MoltChain — Building the Agent-Native Blockchain. Together we grow.*

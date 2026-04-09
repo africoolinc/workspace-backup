@@ -62,3 +62,88 @@ Last check: | 2026-03-31 09:03 | .6503 GiB | 5.00% | 0% | HEALTHY |
 - **Firefox processes:** ~15.8% combined CPU (user activity)
 - **Note:** Load primarily from gateway process, not containers
 | 2026-04-05 09:40 alasiri EAT | PHASE-4 | 78.7% | 8.0% | 262.2% | 10.49 | 0.49 | 2.63 | CRITICAL — Emergency compaction ran — 0 stopped (gate |
+| 2026-04-05 11:40 AM  | PHASE-2 | 75.1% | 8.2% | 78.5% | 3.14 | 0.50 | 3.07 | — |
+
+## 2026-04-05 11:40 AM EAT — Resource Check
+**Status:** ⚠️ WARNING (PHASE-2)
+
+### Metrics
+| Metric | Value |
+|--------|-------|
+| Docker Memory | 541 MB / 6 GB (8.4%) |
+| System Load | 3.14 (78.5% of cores) |
+| Oracle Memory | 3.07 GiB free |
+| Phase | PHASE-2 (was PHASE-4) |
+
+### Phase Change Alert
+- **Trigger:** load_or_memory_threshold
+- **Change:** PHASE-4 → PHASE-2
+- **Action:** Gibson notified, intervention ran
+
+### Top Memory Consumers (Docker)
+- crypto_phone: 56.84 MiB
+- portainer: 20.74 MiB
+- crypto_postgres: 8.95 MiB
+- zerotier: 7.28 MiB
+- crypto_nginx: 2.76 MiB
+
+### Top CPU Processes (Host)
+- Firefox (PID 3757071): 6.8% CPU
+- Firefox (PID 3851431): 4.8% CPU
+- Firefox (PID 3757928): 4.0% CPU
+- Firefox (PID 3824410): 3.7% CPU
+- gnome-shell (PID 3524): 2.9% CPU
+
+### Notes
+- Gibson was notified of phase change
+- PHASE-2 intervention executed
+- No CRITICAL threshold breached; monitoring continues
+
+| 2026-04-05 01:41 PM  | PHASE-4 | 49.1% | 7.9% | 160.0% | 6.4 | 0.49 | 6.28 | — |
+| 2026-04-05 05:40 PM  | PHASE-4 | 62.3% | 75.6% | 84.2% | 3.37 | 4.67 | 4.66 | — |
+
+### 2026-04-05 05:40 PM  | PHASE-4 | 62.3% | 75.6% | 84.2% | 3.37 | 4.67 | 4.66 | — 
+**STATUS: CRITICAL** — Emergency compaction executed. `trusting_beaver` stopped.
+| 2026-04-05 09:42 PM  | PHASE-3 | 65.5% | 69.5% | 78.5% | 3.14 | 4.29 | 4.26 | — |
+
+| 2026-04-05 09:42 PM  | PHASE-3 | 65.5% | 69.5% | 78.5% | 3.14 | 4.29 | 4.26 | — |
+| 2026-04-08 06:36 PM  | PHASE-3 | 64.6% | 60.5% | 36.2% | 1.45 | 3.73 | 4.37 | — |
+
+## 2026-04-08 06:36 PM (EAT) — PHASE-3 ⚠️ WARNING
+- **Docker:** 3.73 GiB (60.5%)
+- **Load:** 1.45 (36.2% of cores)
+- **Oracle:** 4.37 GiB free
+- **Phase Change:** No change (PHASE-3 → PHASE-3)
+- **Action:** Phase-3 intervention ran (auto-cleanup triggered)
+- **Top memory consumers (docker):** zookeeper 94.21MiB, prometheus 39.36MiB, trusting_beaver 20.66MiB, redis 8.723MiB
+- **Top CPU:** openclaw-gateway (PID 1739448) at 135% CPU ⚠️
+- **Container events:** Process exited with SIGKILL (expected during cleanup)
+| 2026-04-08 08:36 PM  | PHASE-2 | 52.8% | 16.2% | 75.0% | 3.0 | 1.00 | 5.83 | — |
+
+## 2026-04-08 08:36 PM (EAT) — PHASE-2 ⚠️ WARNING
+- **Docker:** 1.00 GiB (16.2%)
+- **Load:** 3.0 (75.0% of cores)
+- **Oracle:** 5.83 GiB free
+- **Phase Change:** PHASE-3 → PHASE-2 (load_or_memory_threshold)
+- **Action:** Phase-2 intervention ran; Gibson notified of phase change
+- **Top memory consumers (docker):** trusting_beaver 40.09MiB, portainer 90.43MiB, crypto_phone 34.23MiB, crypto_postgres 28.4MiB, zerotier 12.78MiB
+- **Top CPU (host):** Firefox multiple tabs (27.5%, 15.6%, 6.0%, 5.9%), openclaw-gateway 8.7%
+- **Container events:** None unusual
+- **STATUS: WARNING** — Load elevated but resources manageable; no emergency compaction needed
+| 2026-04-09 12:36 AM  | PHASE-1 | 62.5% | 46.5% | 43.8% | 1.75 | 2.87 | 4.63 | — |
+
+## 2026-04-09 00:36 UTC (EAT)
+
+| Metric | Value |
+|--------|-------|
+| **Status** | ✅ HEALTHY |
+| **Phase** | PHASE-1 (was PHASE-2) |
+| **Docker Memory** | 2.87 GiB |
+| **System Load** | 1.75 (43.8%) |
+| **Oracle Free RAM** | 4.63 GiB |
+| **Trigger** | load_or_memory_threshold |
+
+> 📉 Phase change: PHASE-2 → PHASE-1. No intervention needed.
+
+| 2026-04-09 02:36 AM  | PHASE-1 | 64.5% | 46.0% | 40.2% | 1.61 | 2.84 | 4.38 | — |
+[resource_check] 2026-04-09 02:36:32 — PHASE-1 HEALTHY | Docker: 2.84 GiB | Load: 1.61 (40.2%) | Oracle: 4.38 GiB free
