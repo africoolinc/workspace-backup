@@ -2,38 +2,13 @@
   "lastChecks": {
     "email": null,
     "calendar": null,
-    "weather": 1774800720,
-    "android_sms": 1775686200,
-    "android_notifications": null,
-    "android_calls": null,
-    "docker": 1775215200,
-    "moltchain": null,
-    "memory": 1775686200,
-    "obsidian_review": 1774803600,
-    "evening_intelligence": 1775215200,
-    "backup": 1774800720
+    "weather": null,
+    "sms": 1744195791
   },
-  "morningCheck": {
-    "time": "2026-03-31T07:02:00UTC",
-    "gmail_access": "blocked - needs app password",
-    "gmail_storage_critical": true,
-    "gmail_security_alerts": 3,
-    "nairobi_weather": "⛅ +2°C",
-    "system_healthy": true,
-    "docker_containers": 22,
-    "docker_healthy": 22,
-    "adb_connected": true,
-    "backup_script": "operational",
-    "ngrok_removed": true
+  "android": {
+    "lgv20_adb_connected": false,
+    "last_sms_id": 66,
+    "note": "LG V20 disconnected — ADB device not found"
   },
-  "critical_actions_today": [
-    "Router port 23 telnet OPEN — disable via admin panel URGENT",
-    "OpenRouter $0 credit — all crons failing, add billing",
-    "M-PESA Ksh 8,862 — hold at Ksh 5,000+ minimum",
-    "Moltbook dashboard blocked — connect X account",
-    "RUFAS ATENG 0723288566 uncalled — 8+ missed calls",
-    "WhatsApp 0796591902 — 'Pls check WhatsApp' needs response",
-    "LG V20 battery 39% — plug in charger"
-  ],
-  "notes": "2026-04-09 12:30 AM — Midnight intelligence report generated. M-PESA recovered to Ksh 8,862.29 (KPLC payment). Financial pattern still concerning — each influx consumed. ADB connected, SMS pulled, Obsidian updated. All Docker healthy. Router telnet still OPEN. OpenRouter crons failing."
+  "lastHeartbeat": 1744197300
 }

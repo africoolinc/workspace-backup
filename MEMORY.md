@@ -129,20 +129,23 @@
 | IP | Device | MAC Vendor | Key Services | Status |
 |----|--------|-----------|-------------|--------|
 | 192.168.100.1 | Huawei Router (gateway) | Huawei Technologies | telnet 23 ⚠️ OPEN, DNS 53, HTTP/HTTPS 80/443 | ⚠️ telnet accessible — security risk |
-| 192.168.100.105 | Unknown (likely TP-Link) | TP-Link Technologies | all ports filtered | 🔒 |
+| 192.168.100.4 | LG Smart TV | 60:8D:26:B1:AF:4F | port 3000 (LG smart TV http service) | ✅ returned 2026-04-09 |
+| 192.168.100.104 | Unknown | 8A:83:61:00:5E:38 | port 49152 (tcpwrapped) | ⚠️ NEW 2026-04-09 — identify |
+| 192.168.100.105 | TP-Link device | F4:F2:6D:CE:85:D0 | all ports filtered | 🔒 |
 | 192.168.100.116 | D-Link device | 78:54:2E:88:F6:40 | all ports filtered | 🔒 |
 | 192.168.100.122 | Bitsoko Server | CC:32:E5:0A:7D:7B | SSH 22, HTTP 80, Samba 139/445, MySQL 3306, Abyss 9999 | ⚠️ MySQL on LAN |
 | 192.168.100.182 | This machine (ahie) | — | SSH 22, SMTP 25, DNS 53, HTTP 80, Docker Swarm, ZeroTier, OpenClaw | ✅ |
-| ~~192.168.100.4~~ | ~~LG Smart TV~~ | ~~60:8D:26:B1:AF:4F~~ | ~~Gone 2026-04-09 — not responding to ARP~~ | ❌ gone |
+| 192.168.100.251 | Unknown | 7E:E3:F5:AC:34:71 | port 49152 (tcpwrapped) | ⚠️ |
+| 192.168.100.253 | Unknown | 52:AF:EF:87:F3:C5 | all ports closed | ⚠️ NEW 2026-04-09 |
 | ~~192.168.100.21~~ | ~~TP-Link device~~ | ~~F4:F2:6D:CE:85:D0~~ | ~~Gone 2026-04-08~~ | ❌ gone |
-| ~~192.168.100.224~~ | ~~Oraimo WiFi client~~ | ~~Oraimo Technology~~ | ~~Gone 2026-04-02~~ | ❌ gone |
-| ~~192.168.100.23~~ | ~~TP-Link/SZ Teleone~~ | ~~F8:6C:03:65:82:4C~~ | ~~Gone 2026-04-09~~ | ❌ gone |
 | ~~192.168.100.251~~ | ~~Unknown~~ | ~~—~~ | ~~Gone 2026-04-09~~ | ❌ gone |
 
 ### Previously Seen
 | IP | Device | Last Seen | Notes |
 |----|--------|-----------|-------|
-| 192.168.100.4 | LG Smart TV | 2026-04-05 | **Gone 2026-04-09** — not responding to ARP. May be powered off or sleeping. |
+| 192.168.100.4 | LG Smart TV | 2026-04-09 | **Returned 2026-04-09** — port 3000 (LG smart TV http service) now responding. Was gone since ~2026-04-05. |
+| 192.168.100.104 | Unknown | 2026-04-09 | **NEW 2026-04-09** — port 49152 open (tcpwrapped). MAC 8A:83:61:00:5E:38. Unknown vendor. Investigate. |
+| 192.168.100.253 | Unknown | 2026-04-09 | **NEW 2026-04-09** — all ports closed. MAC 52:AF:EF:87:F3:C5. Unknown vendor. |
 | 192.168.100.21 | TP-Link device | 2026-04-05 | **Gone 2026-04-08** — all ports filtered, no longer responding. |
 | 192.168.100.23 | TP-Link/SZ Teleone | 2026-04-05 | **Gone 2026-04-09** — previously returned after absence. |
 | 192.168.100.33 | Nagios/Linux host | 2026-04-05 AM | **Gone by PM** — SSH 22, Nagios NSCA 8008. Unknown device. |
@@ -155,10 +158,11 @@
 1. ⚠️ Router (.1): telnet port 23 is **OPEN** — unencrypted protocol, actively accessible. HIGH priority to disable.
 2. ⚠️ .122: MySQL 5.7.44 exposed on LAN with autocommit + mysql_native_password.
 3. ⚠️ .122: Port 9999 (abyss) open — HTTP service on unknown port.
-4. ⚠️ .105: Unknown device on network — TP-Link MAC detected. All ports filtered. Possibly same hardware as .21/.23 (roaming DHCP).
-5. ✅ .23: TP-Link device left network 2026-04-09 — no longer responding. Was previously filtered-only after port 8080 risk was eliminated.
-6. ✅ .251: Unknown device left network 2026-04-09 — previously returned after ~2.5 weeks of silence.
-7. ❌ .4: LG Smart TV left network 2026-04-09 — not responding to ARP probes.
+4. ⚠️ .104: **NEW 2026-04-09** — Unknown device with port 49152 open. MAC 8A:83:61:00:5E:38 (unknown vendor). Investigate.
+5. ⚠️ .253: **NEW 2026-04-09** — Unknown device with all ports closed. MAC 52:AF:EF:87:F3:C5. May be a device that only responds to ARP.
+6. ✅ .4: LG Smart TV returned 2026-04-09 after being gone since ~Apr 5.
+7. ✅ .251: Unknown device returned 2026-04-09 — port 49152 (tcpwrapped) still open.
+8. ✅ .23: TP-Link device left network 2026-04-09 — no longer responding.
 
 ### This Machine Services (192.168.100.182)
 - **:22** SSH (OpenSSH 8.9p1) — 0.0.0.0

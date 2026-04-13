@@ -1,0 +1,139 @@
+# Security Scan — 2026-04-13 09:47 EAT
+
+## Cron Jobs
+(no crontab)
+
+## Network Listeners
+State  Recv-Q Send-Q                               Local Address:Port  Peer Address:PortProcess                                    
+LISTEN 0      10                                      172.19.0.1:53         0.0.0.0:*    users:(("named",pid=1543,fd=137))         
+LISTEN 0      10                                      172.19.0.1:53         0.0.0.0:*    users:(("named",pid=1543,fd=139))         
+LISTEN 0      10                                      172.19.0.1:53         0.0.0.0:*    users:(("named",pid=1543,fd=138))         
+LISTEN 0      10                                      172.19.0.1:53         0.0.0.0:*    users:(("named",pid=1543,fd=136))         
+LISTEN 0      10                                      172.30.0.1:53         0.0.0.0:*    users:(("named",pid=1543,fd=156))         
+LISTEN 0      10                                      172.30.0.1:53         0.0.0.0:*    users:(("named",pid=1543,fd=155))         
+LISTEN 0      10                                      172.30.0.1:53         0.0.0.0:*    users:(("named",pid=1543,fd=154))         
+LISTEN 0      10                                      172.30.0.1:53         0.0.0.0:*    users:(("named",pid=1543,fd=153))         
+LISTEN 0      511                                      127.0.0.1:18791      0.0.0.0:*    users:(("openclaw-gatewa",pid=3730,fd=30))
+LISTEN 0      10                                      172.18.0.1:53         0.0.0.0:*    users:(("named",pid=1543,fd=297))         
+LISTEN 0      10                                      172.18.0.1:53         0.0.0.0:*    users:(("named",pid=1543,fd=296))         
+LISTEN 0      10                                      172.18.0.1:53         0.0.0.0:*    users:(("named",pid=1543,fd=298))         
+LISTEN 0      10                                      172.18.0.1:53         0.0.0.0:*    users:(("named",pid=1543,fd=299))         
+LISTEN 0      10                                      172.20.0.1:53         0.0.0.0:*    users:(("named",pid=1543,fd=163))         
+LISTEN 0      10                                      172.20.0.1:53         0.0.0.0:*    users:(("named",pid=1543,fd=162))         
+LISTEN 0      10                                      172.20.0.1:53         0.0.0.0:*    users:(("named",pid=1543,fd=164))         
+LISTEN 0      10                                      172.20.0.1:53         0.0.0.0:*    users:(("named",pid=1543,fd=161))         
+LISTEN 0      10                                      172.16.0.2:53         0.0.0.0:*    users:(("named",pid=1543,fd=106))         
+LISTEN 0      10                                      172.16.0.2:53         0.0.0.0:*    users:(("named",pid=1543,fd=105))         
+LISTEN 0      10                                      172.16.0.2:53         0.0.0.0:*    users:(("named",pid=1543,fd=107))         
+LISTEN 0      10                                      172.16.0.2:53         0.0.0.0:*    users:(("named",pid=1543,fd=104))         
+LISTEN 0      4096                                     127.0.0.1:11434      0.0.0.0:*    users:(("ollama",pid=1738,fd=3))          
+LISTEN 0      4096                                     127.0.0.1:19999      0.0.0.0:*    users:(("netdata",pid=3359,fd=5))         
+LISTEN 0      10                                       127.0.0.1:53         0.0.0.0:*    users:(("named",pid=1543,fd=47))          
+LISTEN 0      10                                       127.0.0.1:53         0.0.0.0:*    users:(("named",pid=1543,fd=48))          
+LISTEN 0      10                                       127.0.0.1:53         0.0.0.0:*    users:(("named",pid=1543,fd=46))          
+LISTEN 0      10                                       127.0.0.1:53         0.0.0.0:*    users:(("named",pid=1543,fd=45))          
+LISTEN 0      10                                 192.168.100.182:53         0.0.0.0:*    users:(("named",pid=1543,fd=84))          
+LISTEN 0      10                                 192.168.100.182:53         0.0.0.0:*    users:(("named",pid=1543,fd=85))          
+(ss timeout/error)
+
+## ADB Devices
+List of devices attached
+
+
+## Docker Container Status
+NAMES                      STATUS                      PORTS
+stack-duka-dao-app-1       Up 16 minutes (healthy)     0.0.0.0:3001->3000/tcp, [::]:3001->3000/tcp
+service-c                  Exited (255) 37 hours ago   0.0.0.0:5003->5000/tcp, [::]:5003->5000/tcp
+service-a                  Exited (255) 2 days ago     0.0.0.0:5001->5000/tcp, [::]:5001->5000/tcp
+service-b                  Exited (255) 2 days ago     0.0.0.0:5002->5000/tcp, [::]:5002->5000/tcp
+kong                       Exited (1) 12 minutes ago   
+kafka                      Exited (1) 10 minutes ago   
+kibana                     Exited (255) 17 hours ago   0.0.0.0:5601->5601/tcp, [::]:5601->5601/tcp
+logstash                   Up 14 minutes               5044/tcp, 0.0.0.0:9600->9600/tcp, [::]:9600->9600/tcp, 0.0.0.0:5010->5000/tcp, [::]:5010->5000/tcp
+grafana                    Up 14 minutes               0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp
+keycloak                   Up 13 minutes (unhealthy)   8443/tcp, 9000/tcp, 0.0.0.0:8180->8080/tcp, [::]:8180->8080/tcp
+zookeeper                  Up 14 minutes               2888/tcp, 0.0.0.0:2181->2181/tcp, [::]:2181->2181/tcp, 3888/tcp
+keycloak-db                Up 14 minutes (healthy)     5432/tcp
+redis                      Up 14 minutes (healthy)     0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp
+consul                     Up 14 minutes (healthy)     8300-8302/tcp, 8600/tcp, 8301-8302/udp, 0.0.0.0:8500->8500/tcp, [::]:8500->8500/tcp, 0.0.0.0:8600->8600/udp, [::]:8600->8600/udp
+prometheus                 Up 14 minutes (healthy)     0.0.0.0:9090->9090/tcp, [::]:9090->9090/tcp
+elasticsearch              Up 14 minutes (healthy)     0.0.0.0:9200->9200/tcp, [::]:9200->9200/tcp, 0.0.0.0:9300->9300/tcp, [::]:9300->9300/tcp
+kong-db                    Up 14 minutes (healthy)     5432/tcp
+app-db                     Up 14 minutes (healthy)     5432/tcp
+bridge_tracker             Up 19 minutes (healthy)     0.0.0.0:3102->3002/tcp, [::]:3102->3002/tcp
+bridge_heartbeat           Up 19 minutes (healthy)     0.0.0.0:3101->3001/tcp, [::]:3101->3001/tcp
+bridge_api                 Up 19 minutes (healthy)     0.0.0.0:3100->3000/tcp, [::]:3100->3000/tcp
+crypto_nginx               Exited (0) 3 days ago       
+crypto_loki                Exited (0) 3 days ago       
+crypto_blockchain          Exited (137) 3 days ago     
+crypto_phone               Exited (137) 3 days ago     
+crypto_cloudflare          Exited (137) 3 days ago     
+crypto_dns                 Exited (137) 3 days ago     
+crypto_mpesa               Exited (137) 3 days ago     
+crypto_grafana             Exited (0) 3 days ago       
+crypto_redis               Exited (0) 11 days ago      
+crypto_postgres            Exited (0) 3 days ago       
+crypto_prometheus          Exited (0) 11 days ago      
+portainer                  Up 19 minutes               0.0.0.0:9000->9000/tcp, [::]:9000->9000/tcp, 8000/tcp, 0.0.0.0:9443->9443/tcp, [::]:9443->9443/tcp
+crypto-register-api        Exited (255) 3 weeks ago    0.0.0.0:10112->3002/tcp, [::]:10112->3002/tcp
+crypto-register-frontend   Exited (0) 10 days ago      
+trading-api                Exited (255) 3 weeks ago    0.0.0.0:5200->5200/tcp, [::]:5200->5200/tcp
+bridge-api-dev             Exited (255) 3 weeks ago    0.0.0.0:5100->5100/tcp, [::]:5100->5100/tcp
+bridge_db                  Up 19 minutes (healthy)     5432/tcp
+trusting_beaver            Up 19 minutes               
+gibsons_dash               Exited (137) 10 days ago    
+dao_wallet                 Exited (137) 10 days ago    
+zerotier                   Up 19 minutes               
+
+## Secret Exposure Check
+(no matches)
+
+## UFW Firewall
+(ufw not active)
+
+## Open Ports Summary
+0.0.0.0:18789
+0.0.0.0:2181
+0.0.0.0:22
+0.0.0.0:25
+0.0.0.0:3000
+0.0.0.0:3001
+0.0.0.0:3100
+0.0.0.0:3101
+0.0.0.0:3102
+0.0.0.0:5010
+0.0.0.0:6379
+0.0.0.0:80
+0.0.0.0:8180
+0.0.0.0:8500
+0.0.0.0:9000
+0.0.0.0:9090
+0.0.0.0:9200
+0.0.0.0:9300
+0.0.0.0:9443
+0.0.0.0:9600
+0.0.0.0:9993
+10.144.205.141:53
+10.8.0.1:53
+127.0.0.1:11434
+127.0.0.1:18791
+127.0.0.1:19999
+127.0.0.1:5037
+127.0.0.1:53
+127.0.0.1:631
+127.0.0.1:8125
+127.0.0.1:9050
+127.0.0.1:953
+127.0.0.53%lo:53
+127.0.2.2:53
+127.0.2.3:53
+172.16.0.2:53
+172.17.0.1:53
+172.18.0.1:53
+172.19.0.1:53
+172.20.0.1:53
+172.21.0.1:53
+172.22.0.1:53
+172.23.0.1:53
+172.30.0.1:53
+192.168.100.182:53

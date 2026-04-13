@@ -1,280 +1,245 @@
 {
-  "timestamp": "2026-04-08T23:36:26Z",
-  "timestamp_local": "2026-04-09 02:36 AM ",
-  "phase": "PHASE-1",
+  "timestamp": "2026-04-13T06:46:51Z",
+  "timestamp_local": "2026-04-13 09:46 AM ",
+  "phase": "PHASE-4",
   "system": {
     "hostname": "ahie",
     "os": "Linux 6.8.0-106-generic",
     "cpu_cores": 4,
-    "load_average_1m": 1.61,
-    "load_percent_of_cores": 40.2,
+    "load_average_1m": 4.23,
+    "load_percent_of_cores": 105.8,
     "cpu_breakdown": {
-      "user": 40,
-      "system": 5,
-      "idle": 54,
-      "iowait": 2
+      "user": 41,
+      "system": 11,
+      "idle": 29,
+      "iowait": 19
     }
   },
   "memory": {
-    "total_bytes": 13262651392,
+    "total_bytes": 13262778368,
     "total_gib": 12.35,
-    "available_bytes": 4703694848,
-    "available_gib": 4.38,
-    "used_bytes": 8558956544,
-    "oracle_available_bytes": 4703694848,
+    "available_bytes": 7043518464,
+    "available_gib": 6.56,
+    "used_bytes": 6219259904,
+    "oracle_available_bytes": 7043518464,
     "oracle_reserve_bytes": 1610612736,
     "oracle_healthy": true,
-    "swap_free_bytes": 392220672,
-    "usage_percent": 64.5
+    "swap_free_bytes": 2147479552,
+    "usage_percent": 46.9
   },
   "docker": {
-    "memory_used_bytes": 3048064679,
-    "memory_used_gib": 2.84,
-    "ceiling_bytes": 6631325696,
+    "memory_used_bytes": 3548074999,
+    "memory_used_gib": 3.3,
+    "ceiling_bytes": 6631389184,
     "ceiling_gib": 6.2,
     "ceiling_percent_of_system": 50,
-    "usage_percent_of_ceiling": 46.0,
+    "usage_percent_of_ceiling": 53.5,
     "healthy": true,
-    "container_count": 24
+    "container_count": 19
   },
   "thresholds": {
-    "docker_memory_ceiling_bytes": 6631325696,
+    "docker_memory_ceiling_bytes": 6631389184,
     "intervention_load_percent": 65,
     "oracle_reserve_bytes": 1610612736,
     "swap_policy": "emergency_only"
   },
   "top_cpu_processes": [
     {
-      "pid": "560557",
-      "cpu": "123",
-      "mem_mb": "396212",
-      "cmd": "openclaw-gateway"
+      "pid": "32017",
+      "cpu": "95.0",
+      "mem_mb": "181128",
+      "cmd": "/usr/bin/node /home/africool/.npm-global/lib/node_modules/openclaw/dist/index.js gateway --port 18789"
     },
     {
-      "pid": "52819",
-      "cpu": "12.0",
-      "mem_mb": "771332",
+      "pid": "29915",
+      "cpu": "18.9",
+      "mem_mb": "529792",
       "cmd": "/snap/firefox/8054/usr/lib/firefox/firefox"
     },
     {
-      "pid": "40616",
-      "cpu": "6.0",
-      "mem_mb": "522824",
-      "cmd": "/usr/share/kibana/bin/../node/bin/node /usr/share/kibana/bin/../src/cli/dist --ops.cGroupOverrides.cpuPath=/ --ops.cGroupOverrides.cpuAcctPath=/ --elasticsearch.hosts=[\"http://elasticsearch:9200\"]"
+      "pid": "11735",
+      "cpu": "15.2",
+      "mem_mb": "599496",
+      "cmd": "/usr/share/logstash/jdk/bin/java -Xms1g -Xmx1g -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djruby.compile.invokedynamic=true -XX:+HeapDumpOnOutOfMemoryError -Djava.security.egd=file:/dev/urandom -Dlog4j2.isThreadContextMapInheritable=true -Dlogstash.jackson.stream-read-constraints.max-string-length=200000000 -Dlogstash.jackson.stream-read-constraints.max-number-length=10000 -Dls.cgroup.cpuacct.path.override=/ -Dls.cgroup.cpu.path.override=/ -Xmx256m -Xms256m -Djruby.regexp.interruptible=true -Djdk.io.File.enableADS=true --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.security=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio.channels=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.management/sun.management=ALL-UNNAMED -Dio.netty.allocator.maxOrder=11 -cp /usr/share/logstash/vendor/jruby/lib/jruby.jar:/usr/share/logstash/logstash-core/lib/jars/checker-qual-3.33.0.jar:/usr/share/logstash/logstash-core/lib/jars/commons-codec-1.15.jar:/usr/share/logstash/logstash-core/lib/jars/commons-compiler-3.1.0.jar:/usr/share/logstash/logstash-core/lib/jars/commons-logging-1.2.jar:/usr/share/logstash/logstash-core/lib/jars/error_prone_annotations-2.18.0.jar:/usr/share/logstash/logstash-core/lib/jars/failureaccess-1.0.1.jar:/usr/share/logstash/logstash-core/lib/jars/google-java-format-1.15.0.jar:/usr/share/logstash/logstash-core/lib/jars/guava-32.1.2-jre.jar:/usr/share/logstash/logstash-core/lib/jars/httpclient-4.5.13.jar:/usr/share/logstash/logstash-core/lib/jars/httpcore-4.4.14.jar:/usr/share/logstash/logstash-core/lib/jars/jackson-annotations-2.15.3.jar:/usr/share/logstash/logstash-core/lib/jars/jackson-core-2.15.3.jar:/usr/share/logstash/logstash-core/lib/jars/jackson-databind-2.15.3.jar:/usr/share/logstash/logstash-core/lib/jars/jackson-dataformat-cbor-2.15.3.jar:/usr/share/logstash/logstash-core/lib/jars/janino-3.1.0.jar:/usr/share/logstash/logstash-core/lib/jars/javassist-3.29.0-GA.jar:/usr/share/logstash/logstash-core/lib/jars/jsr305-3.0.2.jar:/usr/share/logstash/logstash-core/lib/jars/jvm-options-parser-8.14.1.jar:/usr/share/logstash/logstash-core/lib/jars/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/usr/share/logstash/logstash-core/lib/jars/log4j-1.2-api-2.17.1.jar:/usr/share/logstash/logstash-core/lib/jars/log4j-api-2.17.1.jar:/usr/share/logstash/logstash-core/lib/jars/log4j-core-2.17.1.jar:/usr/share/logstash/logstash-core/lib/jars/log4j-jcl-2.17.1.jar:/usr/share/logstash/logstash-core/lib/jars/log4j-slf4j-impl-2.17.1.jar:/usr/share/logstash/logstash-core/lib/jars/logstash-core.jar:/usr/share/logstash/logstash-core/lib/jars/reflections-0.10.2.jar:/usr/share/logstash/logstash-core/lib/jars/slf4j-api-1.7.32.jar:/usr/share/logstash/logstash-core/lib/jars/snakeyaml-2.2.jar org.logstash.Logstash"
     },
     {
-      "pid": "66446",
-      "cpu": "5.9",
-      "mem_mb": "783620",
-      "cmd": "/snap/firefox/8054/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:43863 -prefMapHandle 1:284101 -jsInitHandle 2:156136 -parentBuildID 20260324124100 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {efb38437-cbbc-40b5-96d3-e8f1fe68c81f} -parentPid 52819 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8054/usr/lib/firefox/omni.ja -appomni /snap/firefox/8054/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8054/usr/lib/firefox/browser 16 tab"
+      "pid": "15088",
+      "cpu": "12.5",
+      "mem_mb": "995048",
+      "cmd": "/usr/share/elasticsearch/jdk/bin/java -Des.networkaddress.cache.ttl=60 -Des.networkaddress.cache.negative.ttl=10 -Djava.security.manager=allow -XX:+AlwaysPreTouch -Xss1m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djna.nosys=true -XX:-OmitStackTraceInFastThrow -Dio.netty.noUnsafe=true -Dio.netty.noKeySetOptimization=true -Dio.netty.recycler.maxCapacityPerThread=0 -Dlog4j.shutdownHookEnabled=false -Dlog4j2.disable.jmx=true -Dlog4j2.formatMsgNoLookups=true -Djava.locale.providers=SPI,COMPAT --add-opens=java.base/java.io=org.elasticsearch.preallocate --add-opens=org.apache.lucene.core/org.apache.lucene.store=org.elasticsearch.vec --enable-native-access=org.elasticsearch.nativeaccess -Des.cgroups.hierarchy.override=/ -XX:ReplayDataFile=logs/replay_pid%p.log -Djava.library.path=/usr/share/elasticsearch/lib/platform/linux-x64:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib -Djna.library.path=/usr/share/elasticsearch/lib/platform/linux-x64:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib -Des.distribution.type=docker -XX:+UnlockDiagnosticVMOptions -XX:G1NumCollectionsKeepPinned=10000000 -XX:+UseG1GC -Djava.io.tmpdir=/tmp/elasticsearch-10810757218683496399 --add-modules=jdk.incubator.vector -XX:+HeapDumpOnOutOfMemoryError -XX:+ExitOnOutOfMemoryError -XX:HeapDumpPath=data -XX:ErrorFile=logs/hs_err_pid%p.log -Xlog:gc*,gc+age=trace,safepoint:file=logs/gc.log:utctime,level,pid,tags:filecount=32,filesize=64m -Xms512m -Xmx512m -XX:MaxDirectMemorySize=268435456 -XX:G1HeapRegionSize=4m -XX:InitiatingHeapOccupancyPercent=30 -XX:G1ReservePercent=15 --module-path /usr/share/elasticsearch/lib --add-modules=jdk.net --add-modules=ALL-MODULE-PATH -m org.elasticsearch.server/org.elasticsearch.bootstrap.Elasticsearch"
     },
     {
-      "pid": "2908",
-      "cpu": "5.0",
-      "mem_mb": "539276",
-      "cmd": "openclaw-gateway"
+      "pid": "5612",
+      "cpu": "12.0",
+      "mem_mb": "135140",
+      "cmd": "/snap/vlc/3777/usr/bin/vlc --config=/home/africool/snap/vlc/common/vlcrc"
     }
   ],
   "top_mem_processes": [
     {
-      "pid": "48814",
-      "cpu": "1072320",
-      "mem_mb": "1.8",
-      "cmd": "/usr/share/elasticsearch/jdk/bin/java -Des.networkaddress.cache.ttl=60 -Des.networkaddress.cache.negative.ttl=10 -Djava.security.manager=allow -XX:+AlwaysPreTouch -Xss1m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djna.nosys=true -XX:-OmitStackTraceInFastThrow -Dio.netty.noUnsafe=true -Dio.netty.noKeySetOptimization=true -Dio.netty.recycler.maxCapacityPerThread=0 -Dlog4j.shutdownHookEnabled=false -Dlog4j2.disable.jmx=true -Dlog4j2.formatMsgNoLookups=true -Djava.locale.providers=SPI,COMPAT --add-opens=java.base/java.io=org.elasticsearch.preallocate --add-opens=org.apache.lucene.core/org.apache.lucene.store=org.elasticsearch.vec --enable-native-access=org.elasticsearch.nativeaccess -Des.cgroups.hierarchy.override=/ -XX:ReplayDataFile=logs/replay_pid%p.log -Djava.library.path=/usr/share/elasticsearch/lib/platform/linux-x64:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib -Djna.library.path=/usr/share/elasticsearch/lib/platform/linux-x64:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib -Des.distribution.type=docker -XX:+UnlockDiagnosticVMOptions -XX:G1NumCollectionsKeepPinned=10000000 -XX:+UseG1GC -Djava.io.tmpdir=/tmp/elasticsearch-3640976483146719919 --add-modules=jdk.incubator.vector -XX:+HeapDumpOnOutOfMemoryError -XX:+ExitOnOutOfMemoryError -XX:HeapDumpPath=data -XX:ErrorFile=logs/hs_err_pid%p.log -Xlog:gc*,gc+age=trace,safepoint:file=logs/gc.log:utctime,level,pid,tags:filecount=32,filesize=64m -Xms512m -Xmx512m -XX:MaxDirectMemorySize=268435456 -XX:G1HeapRegionSize=4m -XX:InitiatingHeapOccupancyPercent=30 -XX:G1ReservePercent=15 --module-path /usr/share/elasticsearch/lib --add-modules=jdk.net --add-modules=ALL-MODULE-PATH -m org.elasticsearch.server/org.elasticsearch.bootstrap.Elasticsearch"
+      "pid": "15088",
+      "cpu": "995048",
+      "mem_mb": "12.5",
+      "cmd": "/usr/share/elasticsearch/jdk/bin/java -Des.networkaddress.cache.ttl=60 -Des.networkaddress.cache.negative.ttl=10 -Djava.security.manager=allow -XX:+AlwaysPreTouch -Xss1m -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djna.nosys=true -XX:-OmitStackTraceInFastThrow -Dio.netty.noUnsafe=true -Dio.netty.noKeySetOptimization=true -Dio.netty.recycler.maxCapacityPerThread=0 -Dlog4j.shutdownHookEnabled=false -Dlog4j2.disable.jmx=true -Dlog4j2.formatMsgNoLookups=true -Djava.locale.providers=SPI,COMPAT --add-opens=java.base/java.io=org.elasticsearch.preallocate --add-opens=org.apache.lucene.core/org.apache.lucene.store=org.elasticsearch.vec --enable-native-access=org.elasticsearch.nativeaccess -Des.cgroups.hierarchy.override=/ -XX:ReplayDataFile=logs/replay_pid%p.log -Djava.library.path=/usr/share/elasticsearch/lib/platform/linux-x64:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib -Djna.library.path=/usr/share/elasticsearch/lib/platform/linux-x64:/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib -Des.distribution.type=docker -XX:+UnlockDiagnosticVMOptions -XX:G1NumCollectionsKeepPinned=10000000 -XX:+UseG1GC -Djava.io.tmpdir=/tmp/elasticsearch-10810757218683496399 --add-modules=jdk.incubator.vector -XX:+HeapDumpOnOutOfMemoryError -XX:+ExitOnOutOfMemoryError -XX:HeapDumpPath=data -XX:ErrorFile=logs/hs_err_pid%p.log -Xlog:gc*,gc+age=trace,safepoint:file=logs/gc.log:utctime,level,pid,tags:filecount=32,filesize=64m -Xms512m -Xmx512m -XX:MaxDirectMemorySize=268435456 -XX:G1HeapRegionSize=4m -XX:InitiatingHeapOccupancyPercent=30 -XX:G1ReservePercent=15 --module-path /usr/share/elasticsearch/lib --add-modules=jdk.net --add-modules=ALL-MODULE-PATH -m org.elasticsearch.server/org.elasticsearch.bootstrap.Elasticsearch"
     },
     {
-      "pid": "66446",
-      "cpu": "783620",
-      "mem_mb": "5.9",
-      "cmd": "/snap/firefox/8054/usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0:43863 -prefMapHandle 1:284101 -jsInitHandle 2:156136 -parentBuildID 20260324124100 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {efb38437-cbbc-40b5-96d3-e8f1fe68c81f} -parentPid 52819 -crashReporter 6 -crashHelper 7 -greomni /snap/firefox/8054/usr/lib/firefox/omni.ja -appomni /snap/firefox/8054/usr/lib/firefox/browser/omni.ja -appDir /snap/firefox/8054/usr/lib/firefox/browser 16 tab"
+      "pid": "13218",
+      "cpu": "623808",
+      "mem_mb": "4.1",
+      "cmd": "java -Dkc.config.built=true -Djava.util.concurrent.ForkJoinPool.common.threadFactory=io.quarkus.bootstrap.forkjoin.QuarkusForkJoinWorkerThreadFactory -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.err.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -XX:+ExitOnOutOfMemoryError -Djava.security.egd=file:/dev/urandom -XX:+UseG1GC -XX:FlightRecorderOptions=stackdepth=512 -XX:MaxRAMPercentage=70 -XX:MinRAMPercentage=70 -XX:InitialRAMPercentage=50 --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.base/java.security=ALL-UNNAMED -Duser.language=en -Duser.country=US -Dkc.home.dir=/opt/keycloak/bin/.. -Djboss.server.config.dir=/opt/keycloak/bin/../conf -Djava.util.logging.manager=org.jboss.logmanager.LogManager -Dpicocli.disable.closures=true -Dquarkus-log-max-startup-records=10000 -cp /opt/keycloak/bin/../lib/quarkus-run.jar io.quarkus.bootstrap.runner.QuarkusEntryPoint --profile=dev start-dev"
     },
     {
-      "pid": "52819",
-      "cpu": "771332",
-      "mem_mb": "12.0",
+      "pid": "11735",
+      "cpu": "599496",
+      "mem_mb": "15.2",
+      "cmd": "/usr/share/logstash/jdk/bin/java -Xms1g -Xmx1g -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djruby.compile.invokedynamic=true -XX:+HeapDumpOnOutOfMemoryError -Djava.security.egd=file:/dev/urandom -Dlog4j2.isThreadContextMapInheritable=true -Dlogstash.jackson.stream-read-constraints.max-string-length=200000000 -Dlogstash.jackson.stream-read-constraints.max-number-length=10000 -Dls.cgroup.cpuacct.path.override=/ -Dls.cgroup.cpu.path.override=/ -Xmx256m -Xms256m -Djruby.regexp.interruptible=true -Djdk.io.File.enableADS=true --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.security=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.nio.channels=ALL-UNNAMED --add-opens=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.management/sun.management=ALL-UNNAMED -Dio.netty.allocator.maxOrder=11 -cp /usr/share/logstash/vendor/jruby/lib/jruby.jar:/usr/share/logstash/logstash-core/lib/jars/checker-qual-3.33.0.jar:/usr/share/logstash/logstash-core/lib/jars/commons-codec-1.15.jar:/usr/share/logstash/logstash-core/lib/jars/commons-compiler-3.1.0.jar:/usr/share/logstash/logstash-core/lib/jars/commons-logging-1.2.jar:/usr/share/logstash/logstash-core/lib/jars/error_prone_annotations-2.18.0.jar:/usr/share/logstash/logstash-core/lib/jars/failureaccess-1.0.1.jar:/usr/share/logstash/logstash-core/lib/jars/google-java-format-1.15.0.jar:/usr/share/logstash/logstash-core/lib/jars/guava-32.1.2-jre.jar:/usr/share/logstash/logstash-core/lib/jars/httpclient-4.5.13.jar:/usr/share/logstash/logstash-core/lib/jars/httpcore-4.4.14.jar:/usr/share/logstash/logstash-core/lib/jars/jackson-annotations-2.15.3.jar:/usr/share/logstash/logstash-core/lib/jars/jackson-core-2.15.3.jar:/usr/share/logstash/logstash-core/lib/jars/jackson-databind-2.15.3.jar:/usr/share/logstash/logstash-core/lib/jars/jackson-dataformat-cbor-2.15.3.jar:/usr/share/logstash/logstash-core/lib/jars/janino-3.1.0.jar:/usr/share/logstash/logstash-core/lib/jars/javassist-3.29.0-GA.jar:/usr/share/logstash/logstash-core/lib/jars/jsr305-3.0.2.jar:/usr/share/logstash/logstash-core/lib/jars/jvm-options-parser-8.14.1.jar:/usr/share/logstash/logstash-core/lib/jars/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/usr/share/logstash/logstash-core/lib/jars/log4j-1.2-api-2.17.1.jar:/usr/share/logstash/logstash-core/lib/jars/log4j-api-2.17.1.jar:/usr/share/logstash/logstash-core/lib/jars/log4j-core-2.17.1.jar:/usr/share/logstash/logstash-core/lib/jars/log4j-jcl-2.17.1.jar:/usr/share/logstash/logstash-core/lib/jars/log4j-slf4j-impl-2.17.1.jar:/usr/share/logstash/logstash-core/lib/jars/logstash-core.jar:/usr/share/logstash/logstash-core/lib/jars/reflections-0.10.2.jar:/usr/share/logstash/logstash-core/lib/jars/slf4j-api-1.7.32.jar:/usr/share/logstash/logstash-core/lib/jars/snakeyaml-2.2.jar org.logstash.Logstash"
+    },
+    {
+      "pid": "29915",
+      "cpu": "529800",
+      "mem_mb": "18.9",
       "cmd": "/snap/firefox/8054/usr/lib/firefox/firefox"
     },
     {
-      "pid": "2908",
-      "cpu": "539276",
-      "mem_mb": "5.0",
+      "pid": "3730",
+      "cpu": "416444",
+      "mem_mb": "4.6",
       "cmd": "openclaw-gateway"
-    },
-    {
-      "pid": "40616",
-      "cpu": "522824",
-      "mem_mb": "6.0",
-      "cmd": "/usr/share/kibana/bin/../node/bin/node /usr/share/kibana/bin/../src/cli/dist --ops.cGroupOverrides.cpuPath=/ --ops.cGroupOverrides.cpuAcctPath=/ --elasticsearch.hosts=[\"http://elasticsearch:9200\"]"
     }
   ],
   "containers": [
     {
-      "name": "keycloak",
+      "name": "stack-duka-dao-app-1",
       "status": "",
-      "cpu": "0.06%",
-      "mem_usage": "413.7MiB / 12.35GiB",
-      "mem_perc": "3.27%"
+      "cpu": "0.00%",
+      "mem_usage": "37.98MiB / 12.35GiB",
+      "mem_perc": "0.30%"
     },
     {
-      "name": "kibana",
+      "name": "logstash",
       "status": "",
-      "cpu": "4.17%",
-      "mem_usage": "586.8MiB / 12.35GiB",
-      "mem_perc": "4.64%"
+      "cpu": "3.15%",
+      "mem_usage": "620.9MiB / 12.35GiB",
+      "mem_perc": "4.91%"
     },
     {
       "name": "grafana",
       "status": "",
-      "cpu": "0.02%",
-      "mem_usage": "63.01MiB / 12.35GiB",
-      "mem_perc": "0.50%"
+      "cpu": "0.05%",
+      "mem_usage": "182.2MiB / 12.35GiB",
+      "mem_perc": "1.44%"
     },
     {
-      "name": "consul",
+      "name": "keycloak",
       "status": "",
-      "cpu": "0.26%",
-      "mem_usage": "95.18MiB / 12.35GiB",
-      "mem_perc": "0.75%"
+      "cpu": "0.09%",
+      "mem_usage": "634.4MiB / 12.35GiB",
+      "mem_perc": "5.02%"
     },
     {
-      "name": "app-db",
+      "name": "zookeeper",
       "status": "",
-      "cpu": "0.00%",
-      "mem_usage": "26.38MiB / 12.35GiB",
-      "mem_perc": "0.21%"
-    },
-    {
-      "name": "elasticsearch",
-      "status": "",
-      "cpu": "0.70%",
-      "mem_usage": "1.14GiB / 12.35GiB",
-      "mem_perc": "9.23%"
-    },
-    {
-      "name": "kong-db",
-      "status": "",
-      "cpu": "0.00%",
-      "mem_usage": "24.66MiB / 12.35GiB",
-      "mem_perc": "0.19%"
+      "cpu": "0.08%",
+      "mem_usage": "107.3MiB / 12.35GiB",
+      "mem_perc": "0.85%"
     },
     {
       "name": "keycloak-db",
       "status": "",
       "cpu": "0.00%",
-      "mem_usage": "28.77MiB / 12.35GiB",
+      "mem_usage": "40.23MiB / 12.35GiB",
+      "mem_perc": "0.32%"
+    },
+    {
+      "name": "redis",
+      "status": "",
+      "cpu": "0.50%",
+      "mem_usage": "18.26MiB / 12.35GiB",
+      "mem_perc": "0.14%"
+    },
+    {
+      "name": "consul",
+      "status": "",
+      "cpu": "0.32%",
+      "mem_usage": "132.1MiB / 12.35GiB",
+      "mem_perc": "1.04%"
+    },
+    {
+      "name": "prometheus",
+      "status": "",
+      "cpu": "4.09%",
+      "mem_usage": "97.82MiB / 12.35GiB",
+      "mem_perc": "0.77%"
+    },
+    {
+      "name": "elasticsearch",
+      "status": "",
+      "cpu": "0.72%",
+      "mem_usage": "1.077GiB / 12.35GiB",
+      "mem_perc": "8.72%"
+    },
+    {
+      "name": "kong-db",
+      "status": "",
+      "cpu": "0.00%",
+      "mem_usage": "33.89MiB / 12.35GiB",
+      "mem_perc": "0.27%"
+    },
+    {
+      "name": "app-db",
+      "status": "",
+      "cpu": "0.00%",
+      "mem_usage": "28.95MiB / 12.35GiB",
       "mem_perc": "0.23%"
     },
     {
       "name": "bridge_tracker",
       "status": "",
-      "cpu": "0.28%",
-      "mem_usage": "23.23MiB / 12.35GiB",
-      "mem_perc": "0.18%"
+      "cpu": "0.39%",
+      "mem_usage": "32.05MiB / 12.35GiB",
+      "mem_perc": "0.25%"
     },
     {
       "name": "bridge_heartbeat",
       "status": "",
-      "cpu": "0.29%",
-      "mem_usage": "26.57MiB / 12.35GiB",
-      "mem_perc": "0.21%"
+      "cpu": "0.40%",
+      "mem_usage": "43.64MiB / 12.35GiB",
+      "mem_perc": "0.34%"
     },
     {
       "name": "bridge_api",
       "status": "",
-      "cpu": "0.30%",
-      "mem_usage": "63.8MiB / 12.35GiB",
-      "mem_perc": "0.50%"
-    },
-    {
-      "name": "crypto_nginx",
-      "status": "",
-      "cpu": "0.00%",
-      "mem_usage": "1.527MiB / 12.35GiB",
-      "mem_perc": "0.01%"
-    },
-    {
-      "name": "crypto_loki",
-      "status": "",
-      "cpu": "0.51%",
-      "mem_usage": "73.59MiB / 12.35GiB",
-      "mem_perc": "0.58%"
-    },
-    {
-      "name": "crypto_blockchain",
-      "status": "",
-      "cpu": "0.04%",
-      "mem_usage": "27.59MiB / 12.35GiB",
-      "mem_perc": "0.22%"
-    },
-    {
-      "name": "crypto_phone",
-      "status": "",
-      "cpu": "0.00%",
-      "mem_usage": "24.92MiB / 12.35GiB",
-      "mem_perc": "0.20%"
-    },
-    {
-      "name": "crypto_cloudflare",
-      "status": "",
-      "cpu": "0.01%",
-      "mem_usage": "24.79MiB / 12.35GiB",
-      "mem_perc": "0.20%"
-    },
-    {
-      "name": "crypto_dns",
-      "status": "",
-      "cpu": "0.04%",
-      "mem_usage": "27.38MiB / 12.35GiB",
-      "mem_perc": "0.22%"
-    },
-    {
-      "name": "crypto_mpesa",
-      "status": "",
-      "cpu": "0.00%",
-      "mem_usage": "27.56MiB / 12.35GiB",
-      "mem_perc": "0.22%"
-    },
-    {
-      "name": "crypto_grafana",
-      "status": "",
-      "cpu": "0.24%",
-      "mem_usage": "106.9MiB / 12.35GiB",
-      "mem_perc": "0.85%"
-    },
-    {
-      "name": "crypto_postgres",
-      "status": "",
-      "cpu": "2.85%",
-      "mem_usage": "14.02MiB / 12.35GiB",
-      "mem_perc": "0.11%"
+      "cpu": "0.39%",
+      "mem_usage": "87.64MiB / 12.35GiB",
+      "mem_perc": "0.69%"
     },
     {
       "name": "portainer",
       "status": "",
       "cpu": "0.00%",
-      "mem_usage": "25.45MiB / 12.35GiB",
-      "mem_perc": "0.20%"
+      "mem_usage": "88.16MiB / 12.35GiB",
+      "mem_perc": "0.70%"
     },
     {
       "name": "bridge_db",
       "status": "",
       "cpu": "0.00%",
-      "mem_usage": "6.363MiB / 12.35GiB",
-      "mem_perc": "0.05%"
+      "mem_usage": "43.24MiB / 12.35GiB",
+      "mem_perc": "0.34%"
     },
     {
       "name": "trusting_beaver",
       "status": "",
-      "cpu": "0.03%",
-      "mem_usage": "22.42MiB / 12.35GiB",
-      "mem_perc": "0.18%"
+      "cpu": "0.07%",
+      "mem_usage": "39.36MiB / 12.35GiB",
+      "mem_perc": "0.31%"
     },
     {
       "name": "zerotier",
       "status": "",
-      "cpu": "0.06%",
-      "mem_usage": "4.891MiB / 12.35GiB",
-      "mem_perc": "0.04%"
+      "cpu": "0.08%",
+      "mem_usage": "12.74MiB / 12.35GiB",
+      "mem_perc": "0.10%"
     }
   ]
 }

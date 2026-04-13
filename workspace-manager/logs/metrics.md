@@ -147,3 +147,57 @@ Last check: | 2026-03-31 09:03 | .6503 GiB | 5.00% | 0% | HEALTHY |
 
 | 2026-04-09 02:36 AM  | PHASE-1 | 64.5% | 46.0% | 40.2% | 1.61 | 2.84 | 4.38 | — |
 [resource_check] 2026-04-09 02:36:32 — PHASE-1 HEALTHY | Docker: 2.84 GiB | Load: 1.61 (40.2%) | Oracle: 4.38 GiB free
+| 2026-04-09 12:36 PM  | PHASE-1 | 41.3% | 16.2% | 58.5% | 2.34 | 1.00 | 7.25 | — |
+
+## 2026-04-09 12:36 PM (EAT) — HEALTHY
+
+```
+[resource_monitor] 2026-04-09 12:36 PM  | Phase: PHASE-1 | Docker: 1.00 GiB | Load: 2.34 (58.5%) | Oracle: 7.25 GiB free
+[resource_check] Phase: PHASE-1 (was: PHASE-1)
+[resource_check] PHASE-1: No intervention needed.
+[resource_check] Complete — Phase: PHASE-1
+```
+| 2026-04-09 08:38 PM  | PHASE-2 | 82.1% | 59.6% | 45.0% | 1.8 | 3.68 | 2.21 | — |
+
+---
+## Resource Check — 2026-04-09 08:38 PM (EAT) | PHASE-2 ⚠️
+
+**Status:** WARNING (PHASE-2 Advisory)  
+**Trigger:** load_or_memory_threshold  
+**Phase Change:** PHASE-1 → PHASE-2
+
+### Metrics
+| Metric | Value |
+|--------|-------|
+| Docker Memory | 3.68 GiB / 6.2 GiB ceiling (59.6%) |
+| System Load | 1.8 / 4 cores (45.0%) |
+| Oracle Available | 2.21 GiB (healthy, above 1.5 GiB reserve) |
+| Total Memory Used | 82.1% |
+| Container Count | 25 |
+
+### Top Memory Consumers (Docker)
+- elasticsearch: 877.3 MiB
+- logstash: 704.4 MiB
+- kibana: 524.4 MiB
+- keycloak: 499.7 MiB
+- kong: 337.6 MiB
+
+### Top CPU Processes (Host)
+- openclaw-gateway: 94.4% CPU ⚠️ (PID 845809)
+- firefox: 10.5% CPU
+- openclaw-gateway: 6.2% CPU (PID 2887)
+- kibana node: 5.3% CPU
+- vlc: 4.8% CPU
+
+### Recommended Actions (from Policy Engine)
+`[ADVISORY] Clear logs, reduce Tier 4 restart frequency`
+
+### Intervention
+PHASE-2 — intervention_agent ran. No emergency compact needed.
+
+### Action Taken
+- ✅ Gibson notified of phase change (PHASE-1 → PHASE-2)
+- ✅ Logged to metrics.md
+- ✅ Monitoring continues on next heartbeat
+
+| 2026-04-13 09:46 AM  | PHASE-4 | 46.9% | 53.5% | 105.8% | 4.23 | 3.30 | 6.56 | — |
