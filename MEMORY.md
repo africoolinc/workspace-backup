@@ -124,21 +124,14 @@
 - `192.168.100.0/24` — primary LAN
 - This machine: `192.168.100.182` (hostname: `ahie`)
 
-### Known Devices on LAN (scan 2026-04-09 night)
+### Known Devices on LAN (scan 2026-04-13 morning)
 
 | IP | Device | MAC Vendor | Key Services | Status |
 |----|--------|-----------|-------------|--------|
 | 192.168.100.1 | Huawei Router (gateway) | Huawei Technologies | telnet 23 ⚠️ OPEN, DNS 53, HTTP/HTTPS 80/443 | ⚠️ telnet accessible — security risk |
-| 192.168.100.4 | LG Smart TV | 60:8D:26:B1:AF:4F | port 3000 (LG smart TV http service) | ✅ returned 2026-04-09 |
-| 192.168.100.104 | Unknown | 8A:83:61:00:5E:38 | port 49152 (tcpwrapped) | ⚠️ NEW 2026-04-09 — identify |
 | 192.168.100.105 | TP-Link device | F4:F2:6D:CE:85:D0 | all ports filtered | 🔒 |
-| 192.168.100.116 | D-Link device | 78:54:2E:88:F6:40 | all ports filtered | 🔒 |
 | 192.168.100.122 | Bitsoko Server | CC:32:E5:0A:7D:7B | SSH 22, HTTP 80, Samba 139/445, MySQL 3306, Abyss 9999 | ⚠️ MySQL on LAN |
 | 192.168.100.182 | This machine (ahie) | — | SSH 22, SMTP 25, DNS 53, HTTP 80, Docker Swarm, ZeroTier, OpenClaw | ✅ |
-| 192.168.100.251 | Unknown | 7E:E3:F5:AC:34:71 | port 49152 (tcpwrapped) | ⚠️ |
-| 192.168.100.253 | Unknown | 52:AF:EF:87:F3:C5 | all ports closed | ⚠️ NEW 2026-04-09 |
-| ~~192.168.100.21~~ | ~~TP-Link device~~ | ~~F4:F2:6D:CE:85:D0~~ | ~~Gone 2026-04-08~~ | ❌ gone |
-| ~~192.168.100.251~~ | ~~Unknown~~ | ~~—~~ | ~~Gone 2026-04-09~~ | ❌ gone |
 
 ### Previously Seen
 | IP | Device | Last Seen | Notes |
