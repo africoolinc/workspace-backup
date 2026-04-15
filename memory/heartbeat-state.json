@@ -5,10 +5,19 @@
     "weather": null,
     "sms": 1744195791
   },
+  "lastHeartbeat": 1744242600,
   "android": {
     "lgv20_adb_connected": false,
     "last_sms_id": 66,
-    "note": "LG V20 disconnected — ADB device not found"
+    "note": "LG V20 disconnected — ADB device not found, USB loose/sleep mode"
   },
-  "lastHeartbeat": 1744197300
+  "m_pesa_balance": "Ksh 70.27 (CRITICAL)",
+  "network_stable": true,
+  "docker_healthy": true,
+  "moltchain_karma": 119,
+  "top_blockers": [
+    "M-PESA ~Ksh 70 — financial buffer depleted",
+    "Router telnet 23 — 52+ days open (critical)",
+    "MoltChain dashboard not set up — blocked from DM/comment"
+  ]
 }

@@ -1,87 +1,64 @@
-# Heartbeat — 2026-04-13 12:45 PM EAT
+# Heartbeat — 2026-04-14 11:45 AM EAT
 
-## ✅ Current Status — All Critical Services OPERATIONAL
+## ✅ Microservices Stack — ALL 4 SERVICES UP
 
-### Microservices Stack — ALL UP ✅ (restarted 12:37 PM)
-- **kong** — ✅ HEALTHY (`nginx.......running`)
-- **service-a** — ✅ Up :5001
-- **service-b** — ✅ Up :5002
-- **service-c** — ✅ Up :5003 (PayLife UI)
-- **consul, kafka, redis, elasticsearch, grafana, prometheus** — all healthy
-- **keycloak** — 🟡 unhealthy healthcheck but HTTP 200 on :8180
+### Services (2026-04-14 Morning Restart)
+All 4 services **stopped around 06:17 Apr 14** (shared infrastructure event). Root causes identified and fixed.
 
-### Kong Fix (2026-04-13)
-- **Problem:** Kong crashing with DNS resolution error inside container
-- **Fix:** `docker compose restart kong` from microservices-stack dir
-- **Health check:** `docker exec kong kong health` → ✅
-- **Proxy:** :8000 responding (404 = no routes — needs Kong config)
-- **Admin:** :8001
+| Service | Port | Kong Route | Status | Identity |
+|---------|------|-----------|--------|----------|
+| service-a (Finpay) | 5001 | `/service-a/` | ✅ 200 | Flask fintech wallet (Keycloak, Kafka) |
+| service-b | 5002 | `/service-b/` | ✅ 200 | Simple JSON microservice |
+| service-c | 5003 | `/service-c/` | ✅ 200 | PayLife fintech UI (Flask + templates) |
+| kong | 8000/8001 | — | ✅ healthy | API Gateway (DB-less, declarative) |
 
-### PayLife UI — DEPLOYED ✅
-- Wireframe: `/home/africool/Documents/business/wireframe.jpeg`
-- Routes via Kong `/paylife` → `service-c:5003`
-- **Kong routes need re-configuring** — were lost during crash
+### Issues Fixed This Session
+1. **Dockerfile swap bug** — `dockerfile: Dockerfile.service.b` was assigned to service-a (wrong), service-c got `Dockerfile.service.c` (wrong). Fixed: service-a → `service-a/Dockerfile`, service-b → `Dockerfile.service.b`, service-c → `Dockerfile.service.c`
+2. **Kong DB-less config** — switched from PostgreSQL-dependent to `KONG_DATABASE: off` + `KONG_DECLARATIVE_CONFIG` with valid `kong.yml`
+3. **Network name mismatch** — `microservices-stack_backend` → `backend` (matching docker-compose networks definition)
+4. **service-b had wrong app** — Dockerfile.service.b copied service-b.py, not service-c.py ✅
 
-### Kong API Gateway
-- **Admin:** `:8001` | **Proxy:** `:8000`
-- **Routes to configure:** `/paylife` → service-c:5000, `/service-a` → service-a:5000
+### Kong Config (DB-less Mode)
+```
+kong.yml: _format_version: "3.0"
+Routes: /service-a, /service-b, /service-c (strip_path: true)
+```
 
-### Keycloak
-- **URL:** `http://192.168.100.182:8180`
-- **Admin:** `http://192.168.100.182:8180/admin/`
-- **Credentials:** `admin / adminpass`
-
----
-
-## 🤖 Oracle Android Sensor System
-
-### LG V20 Status
-- **ADB: DISCONNECTED** ⚠️ — USB cable issue
-- **Sensor crons:** lgv20-cell-observer-001, lgv20-full-scan-2h (inactive until ADB reconnects)
-- **Fix:** Reconnect USB cable + `adb kill-server && adb start-server`
+### Test Commands
+```bash
+curl http://localhost:8000/service-a/health  # → 200
+curl http://localhost:8000/service-b/        # → {"service":"service-b"...}
+curl http://localhost:8000/service-c/health  # → OK
+```
 
 ---
 
-## 🌐 Network
+## ✅ Firebase Hosting — Finpay REDEPLOYED
 
-**Last full scan:** Apr 9 — needs updating
-- Huawei Router (.1): ⚠️ telnet 23 OPEN (security risk — 52+ days)
-- Bitsoko Server (.122): ⚠️ MySQL 3306 on LAN
+### Live
+- **Firebase:** https://africool-fd821.web.app
+- **Custom domain:** https://finpay.africoolinc.com *(DNS proxied)*
+- **Deployed version:** `cc078ebfe5d93663` (updated Apr 14 AM)
 
----
+### How it works
+`public/index.html` → checks if browser can reach `http://192.168.100.182:5001/health`
+- ✅ On LAN → auto-redirects to local Finpay
+- ❌ Remote → shows "server unreachable" with guidance
 
-## 💰 Financial — M-PESA
-
-**Balance:** Ksh 8,862.29 (Apr 8) — needs refresh
-**Rule:** Hold Ksh 5,000 minimum at all times
-
----
-
-## 🔥 MoltChain
-
-**AhieJuma:** 119 karma | Read ✅ | Post ✅ | Write ❌ BLOCKED
-**Primary target:** tudou_web3 (2,721 karma) 🔥
-**Window:** Settlement layer posts still trending
+### Deploy Command
+```bash
+gcloud auth activate-service-account \
+  --key-file=/home/africool/Documents/online/africool-fd821-firebase-adminsdk-7lwe8-5e408bfb28.json
+firebase deploy --project africool-fd821 --token "$(gcloud auth print-access-token)"
+```
 
 ---
 
-## 🔧 PROXY SERVICE — IN PROGRESS
+## ✅ Oracle Dynamic Proxy — OPERATIONAL (port 8080)
 
-**Location:** `/root/.openclaw/workspace/proxy-service/`
-**Purpose:** Dynamic reverse proxy that watches Docker containers + auto-configures Cloudflare Tunnel ingress
-**Status:** npm installed, building core logic
-**Components:**
-1. Docker watcher — watches all containers, maps static ports
-2. Express proxy — routes traffic to active containers
-3. Cloudflare ingress manager — writes `config.yml` and restarts cloudflared on container changes
-4. HAProxy integration — existing HAProxy can be fronted or replaced
+### Routes (14 total)
+`/service-a`, `/service-b`, `/service-c`, `/paylife`, `/bridge-api`, `/bridge-hb`, `/bridge-track`, `/duka-dao`, `/consul`, `/grafana`, `/prometheus`, `/kibana`, `/elasticsearch`, `/redis`
 
 ---
 
-## 🎯 Today's Top 3
-
-1. **🔧 Proxy Service** — complete the build at `/root/.openclaw/workspace/proxy-service/`
-2. **📞 Call RUFAS ATENG** — 95 missed calls
-3. **📱 Post on MoltBook** — settlement layer content
-
-*🧠 Oracle | 2026-04-13 12:45 PM EAT*
+*🧠 Oracle | 2026-04-14 11:45 AM EAT*

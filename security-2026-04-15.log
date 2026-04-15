@@ -1,0 +1,155 @@
+# Security Scan — 2026-04-15 18:15 EAT
+
+## Cron Jobs
+### Workspace Manager — activated 2026-04-14
+# Resource check every 5 minutes
+*/5 * * * * /root/.openclaw/workspace/workspace-manager/scripts/resource_check.sh >> /root/.openclaw/workspace/workspace-manager/logs/cron_resource_check.log 2>&1
+
+# Daily status report at 8:00 AM EAT (05:00 UTC)
+0 5 * * * /root/.openclaw/workspace/workspace-manager/scripts/report_generator.py >> /root/.openclaw/workspace/workspace-manager/logs/cron_daily_report.log 2>&1
+
+# Tier 4 restart review every 6 hours (at 2AM, 8AM, 2PM, 8PM EAT = 05:00, 11:00, 17:00, 23:00 UTC)
+0 */6 * * * /root/.openclaw/workspace/workspace-manager/scripts/resource_check.sh --tier4-review >> /root/.openclaw/workspace/workspace-manager/logs/cron_tier4_review.log 2>&1
+
+
+## Network Listeners
+State  Recv-Q Send-Q                               Local Address:Port  Peer Address:PortProcess                                       
+LISTEN 0      10                                      172.17.0.1:53         0.0.0.0:*    users:(("named",pid=1233,fd=164))            
+LISTEN 0      10                                      172.17.0.1:53         0.0.0.0:*    users:(("named",pid=1233,fd=163))            
+LISTEN 0      10                                      172.17.0.1:53         0.0.0.0:*    users:(("named",pid=1233,fd=161))            
+LISTEN 0      10                                      172.17.0.1:53         0.0.0.0:*    users:(("named",pid=1233,fd=162))            
+LISTEN 0      10                                     172.20.10.2:53         0.0.0.0:*    users:(("named",pid=1233,fd=83))             
+LISTEN 0      10                                     172.20.10.2:53         0.0.0.0:*    users:(("named",pid=1233,fd=81))             
+LISTEN 0      10                                     172.20.10.2:53         0.0.0.0:*    users:(("named",pid=1233,fd=84))             
+LISTEN 0      10                                     172.20.10.2:53         0.0.0.0:*    users:(("named",pid=1233,fd=80))             
+LISTEN 0      511                                        0.0.0.0:18789      0.0.0.0:*    users:(("openclaw-gatewa",pid=2667,fd=22))   
+LISTEN 0      5                                        127.0.0.1:953        0.0.0.0:*    users:(("named",pid=1233,fd=64))             
+LISTEN 0      5                                        127.0.0.1:953        0.0.0.0:*    users:(("named",pid=1233,fd=61))             
+LISTEN 0      5                                        127.0.0.1:953        0.0.0.0:*    users:(("named",pid=1233,fd=62))             
+LISTEN 0      5                                        127.0.0.1:953        0.0.0.0:*    users:(("named",pid=1233,fd=63))             
+LISTEN 0      4096                                     127.0.0.1:9050       0.0.0.0:*    users:(("tor",pid=1498,fd=6))                
+LISTEN 0      128                                      127.0.0.1:631        0.0.0.0:*    users:(("cupsd",pid=1368685,fd=7))           
+LISTEN 0      10                                      172.22.0.1:53         0.0.0.0:*    users:(("named",pid=1233,fd=130))            
+LISTEN 0      10                                      172.22.0.1:53         0.0.0.0:*    users:(("named",pid=1233,fd=131))            
+LISTEN 0      10                                      172.22.0.1:53         0.0.0.0:*    users:(("named",pid=1233,fd=129))            
+LISTEN 0      10                                      172.22.0.1:53         0.0.0.0:*    users:(("named",pid=1233,fd=128))            
+LISTEN 0      10                                        10.8.0.1:53         0.0.0.0:*    users:(("named",pid=1233,fd=98))             
+LISTEN 0      10                                        10.8.0.1:53         0.0.0.0:*    users:(("named",pid=1233,fd=97))             
+LISTEN 0      10                                        10.8.0.1:53         0.0.0.0:*    users:(("named",pid=1233,fd=99))             
+LISTEN 0      10                                        10.8.0.1:53         0.0.0.0:*    users:(("named",pid=1233,fd=96))             
+LISTEN 0      10                                       127.0.0.1:53         0.0.0.0:*    users:(("named",pid=1233,fd=47))             
+LISTEN 0      10                                       127.0.0.1:53         0.0.0.0:*    users:(("named",pid=1233,fd=45))             
+LISTEN 0      10                                       127.0.0.1:53         0.0.0.0:*    users:(("named",pid=1233,fd=46))             
+LISTEN 0      10                                       127.0.0.1:53         0.0.0.0:*    users:(("named",pid=1233,fd=48))             
+LISTEN 0      4096                                     127.0.0.1:19999      0.0.0.0:*    users:(("netdata",pid=2578,fd=5))            
+LISTEN 0      4096                                       0.0.0.0:80         0.0.0.0:*    users:(("haproxy",pid=1403,fd=6))            
+
+## ADB Devices
+List of devices attached
+20429563B4043064	device
+
+
+## Docker Container Status
+NAMES                      STATUS                      PORTS
+service-a                  Up 31 hours                 0.0.0.0:5001->5000/tcp, [::]:5001->5000/tcp
+service-b                  Up 31 hours                 0.0.0.0:5002->5000/tcp, [::]:5002->5000/tcp
+service-c                  Up 31 hours                 0.0.0.0:5003->5000/tcp, [::]:5003->5000/tcp
+kong                       Up 32 hours (healthy)       0.0.0.0:8000-8001->8000-8001/tcp, [::]:8000-8001->8000-8001/tcp, 8443-8444/tcp
+stack-duka-dao-app-1       Up 33 hours (healthy)       0.0.0.0:3001->3000/tcp, [::]:3001->3000/tcp
+kafka                      Up 32 hours (healthy)       0.0.0.0:9092->9092/tcp, [::]:9092->9092/tcp, 0.0.0.0:29092->29092/tcp, [::]:29092->29092/tcp
+kibana                     Exited (255) 33 hours ago   0.0.0.0:5601->5601/tcp, [::]:5601->5601/tcp
+logstash                   Up 32 hours                 5044/tcp, 0.0.0.0:9600->9600/tcp, [::]:9600->9600/tcp, 0.0.0.0:5010->5000/tcp, [::]:5010->5000/tcp
+grafana                    Up 32 hours                 0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp
+keycloak                   Exited (255) 33 hours ago   8443/tcp, 9000/tcp, 0.0.0.0:8180->8080/tcp, [::]:8180->8080/tcp
+zookeeper                  Up 32 hours                 2888/tcp, 0.0.0.0:2181->2181/tcp, [::]:2181->2181/tcp, 3888/tcp
+keycloak-db                Up 32 hours (healthy)       5432/tcp
+redis                      Up 32 hours (healthy)       0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp
+consul                     Up 32 hours (healthy)       8300-8302/tcp, 8600/tcp, 8301-8302/udp, 0.0.0.0:8500->8500/tcp, [::]:8500->8500/tcp, 0.0.0.0:8600->8600/udp, [::]:8600->8600/udp
+prometheus                 Up 32 hours (healthy)       0.0.0.0:9090->9090/tcp, [::]:9090->9090/tcp
+elasticsearch              Up 32 hours (healthy)       0.0.0.0:9200->9200/tcp, [::]:9200->9200/tcp, 0.0.0.0:9300->9300/tcp, [::]:9300->9300/tcp
+kong-db                    Up 32 hours (healthy)       5432/tcp
+app-db                     Up 32 hours (healthy)       5432/tcp
+bridge_tracker             Up 33 hours (healthy)       0.0.0.0:3102->3002/tcp, [::]:3102->3002/tcp
+bridge_heartbeat           Up 33 hours (healthy)       0.0.0.0:3101->3001/tcp, [::]:3101->3001/tcp
+bridge_api                 Up 33 hours (healthy)       0.0.0.0:3100->3000/tcp, [::]:3100->3000/tcp
+crypto_nginx               Exited (0) 6 days ago       
+crypto_loki                Exited (0) 6 days ago       
+crypto_blockchain          Exited (137) 6 days ago     
+crypto_phone               Exited (137) 6 days ago     
+crypto_cloudflare          Exited (137) 6 days ago     
+crypto_dns                 Exited (137) 6 days ago     
+crypto_mpesa               Exited (137) 6 days ago     
+crypto_grafana             Exited (0) 6 days ago       
+crypto_redis               Exited (0) 13 days ago      
+crypto_postgres            Exited (0) 6 days ago       
+crypto_prometheus          Exited (0) 13 days ago      
+portainer                  Up 33 hours                 0.0.0.0:9000->9000/tcp, [::]:9000->9000/tcp, 8000/tcp, 0.0.0.0:9443->9443/tcp, [::]:9443->9443/tcp
+crypto-register-api        Exited (255) 3 weeks ago    0.0.0.0:10112->3002/tcp, [::]:10112->3002/tcp
+crypto-register-frontend   Exited (0) 13 days ago      
+trading-api                Exited (255) 3 weeks ago    0.0.0.0:5200->5200/tcp, [::]:5200->5200/tcp
+bridge-api-dev             Exited (255) 3 weeks ago    0.0.0.0:5100->5100/tcp, [::]:5100->5100/tcp
+bridge_db                  Up 33 hours (healthy)       5432/tcp
+trusting_beaver            Up 33 hours                 
+gibsons_dash               Exited (137) 13 days ago    
+dao_wallet                 Exited (137) 13 days ago    
+zerotier                   Up 33 hours                 
+
+## Secret Exposure Check
+(no matches)
+
+## UFW Firewall
+(ufw not active)
+
+## Open Ports Summary
+0.0.0.0:18789
+0.0.0.0:2181
+0.0.0.0:22
+0.0.0.0:25
+0.0.0.0:29092
+0.0.0.0:3000
+0.0.0.0:3001
+0.0.0.0:3100
+0.0.0.0:3101
+0.0.0.0:3102
+0.0.0.0:5001
+0.0.0.0:5002
+0.0.0.0:5003
+0.0.0.0:5010
+0.0.0.0:6379
+0.0.0.0:80
+0.0.0.0:8000
+0.0.0.0:8001
+0.0.0.0:8080
+0.0.0.0:8500
+0.0.0.0:9000
+0.0.0.0:9090
+0.0.0.0:9092
+0.0.0.0:9200
+0.0.0.0:9300
+0.0.0.0:9443
+0.0.0.0:9600
+0.0.0.0:9993
+10.144.205.141:53
+10.8.0.1:53
+127.0.0.1:11434
+127.0.0.1:18791
+127.0.0.1:19999
+127.0.0.1:5037
+127.0.0.1:53
+127.0.0.1:631
+127.0.0.1:8125
+127.0.0.1:9050
+127.0.0.1:953
+127.0.0.53%lo:53
+127.0.2.2:53
+127.0.2.3:53
+172.16.0.2:53
+172.17.0.1:53
+172.18.0.1:53
+172.19.0.1:53
+172.20.0.1:53
+172.20.10.2:53
+172.21.0.1:53
+172.22.0.1:53
+172.23.0.1:53
+172.30.0.1:53

@@ -16,17 +16,12 @@
 
 ## 💰 Financial Reality (Updated April 9, 2026 — Midnight)
 
-### M-PESA — Ksh 8,862.29 Balance
-**Status: 🟡 RECOVERING** — Ksh 4,000 sent to KPLC on April 8 (5:35 PM). Balance healthy but discipline gap remains.
-
-**Pattern still concerning:**
-- Receives money (Airtel Money from Gibson Juma 753336482) → immediately sends out to erick omondi, bills, contacts
-- April 5-6: Received Ksh 500 total → spent down to Ksh 320
-- April 8: Received Ksh 300 → sent Ksh 4,030 (KPLC)
-- **Each influx consumed — no savings accumulation**
-
-### Financial Rule (NEW):
-> **Hold Ksh 5,000 minimum in M-PESA. Spend above that threshold only.**
+### M-PESA — ~Ksh 70 Balance 🔴
+**Status: 🔴 CRITICAL** — Ksh 5,000 minimum rule VIOLATED.
+- Apr 9: KPLC -Ksh 4,000 → Ksh 8,862.29 (healthy buffer)
+- Apr 10-12: Multiple sends → Ksh 70.27 by Apr 12
+- **Pattern NOT broken** — every influx immediately consumed
+- **Rule violated:** Buffer dropped from 8,862 to 70 in 3 days
 
 ### Active Accounts
 | Account | Balance | Status | Action |

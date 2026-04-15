@@ -1,6 +1,6 @@
 # MEMORY.md — Oracle's Long-Term Memory
 
-> Last updated: 2026-04-05 9:34 PM GMT+3
+> Last updated: 2026-04-14 5:50 PM GMT+3
 
 ---
 
@@ -33,13 +33,19 @@
 
 ---
 
-## 💰 FINANCIAL STATUS — CRITICAL (2026-03-30)
+## 💰 FINANCIAL STATUS — CRITICAL (2026-04-14 Evening)
 
-### M-PESA — Ksh 0.27 Balance 🔴
-**Pattern: Living paycheck to paycheck.**
-- Mar 30: Received Ksh 200 (Airtel Money from Gibson Juma) → sent Ksh 200 to erick omondi → 0.27 left after fees
-- This is a recurring cycle — no buffer, no savings
-- **Fix: Top up to Ksh 1000+ minimum before spending**
+### M-PESA — ~Ksh 70 Balance 🔴
+**Pattern: STILL paycheck to paycheck.**
+- Apr 12: Stanley Wahomegicheri (Equity) -Ksh 100 → ~Ksh 70.27
+- Apr 11: Esperance Uwineza -Ksh 50 → Ksh 170.27
+- Apr 10: Joyce Midrecha -Ksh 70, Airtime +Ksh 20 → Ksh 320.27
+- Apr 9: KPLC -Ksh 4,000 → Ksh 8,862.29
+- **No buffer maintained** — every influx immediately consumed
+- **Ksh 5,000 minimum rule VIOLATED** — dropped from 8,862 to ~70 in 3 days
+
+### Financial Rule (CRITICAL):
+> **Hold Ksh 5,000 minimum in M-PESA. Spend above that threshold only.**
 
 ### Other Accounts
 | Account | Balance | Status |
@@ -57,64 +63,28 @@
 
 ---
 
-## 📱 Android Device (LG V20) — Updated 2026-04-08
+## 📱 Android Device (LG V20) — Updated 2026-04-14
 
 ### Device Info
 - **Model:** LG V20 (SN: 20429563B4043064)
-- **Status:** ✅ ADB Connected — USB 3-6, authorized
-- **Battery:** 39% ⚠️ DISCHARGING | Health: GOOD | Temp: 29.0°C | Voltage: 3993 mV
-- **CPU:** armeabi-v7a (32-bit ARM) / MediaTek MT6580
-- **OS:** Android 13 (OS rel=13) | Security patch: 2025-10-05
-- **Kernel:** 4.19.191 | Build: V20-MM8045_N16_20250925_1712
+- **Status:** ❌ ADB DISCONNECTED — 5+ days unreachable
+- **Last sync:** 2026-04-09 (5 days ago)
+- **Battery:** Unknown (was 28%, Charging on Apr 9)
+- **Cell:** LAC 2598, CID 72514441, Safaricom (Apr 9 state)
 - **Storage:** 7.6G/26G used (30%) ✅ | RAM: 1032MB / 1939MB available
-- **Uptime:** 2d 22h 6m
 - **Android ID:** 2d528612edf23efc
 
-### SIM Status
-- **SIM 1:** Absent — secondary slot empty
-- **SIM 2 (Safaricom):** ✅ IN_SERVICE — UMTS voice + HSPA data
-  - LAC: 2598 | CID: 72514441 (primary cell)
-  - MCC: 639 | MNC: 02
-  - Network: HSPA (UMTS radio)
-  - Signal level: 0 (low — RSSI -55 dBm on WiFi, cellular signal not measured)
-
-### Oracle Android Sensor System — DEPLOYED 2026-04-08 ✅
-- **oracle_sensor_local.sh:** Runs on /sdcard/Download/ — no termux, 100% offline
+### Oracle Android Sensor System — DISCONNECTED
+- **oracle_sensor_local.sh:** Running on /sdcard/Download/ — no termux, 100% offline
   - Collects: battery, cell tower (LAC/CID), WiFi, SIM, device info → JSON
   - Stores: /sdcard/Download/.oracle/data/scan_lgv20_*.json (last 100)
   - Triggers: every 2h OR on cell tower change
-- **oracle_sync.sh:** Host-side, runs every 30min via cron
-  - Pulls new scans from Android → /root/.openclaw/workspace/android_scanner_data/
-  - Triggers sensor remotely when cell tower changes
-- **Cell tower:** LAC 2598 ↔ 2430 oscillating (Safaricom) — 4+ handoffs today
-- **Crons updated:** lgv20-cell-observer-001 + lgv20-full-scan-2h → new sensor system
-
-### WiFi
-- SSID: **Juma** | BSSID: 68:89:c1:8c:1d:60 | MAC: 5C:E8:B7:68:7F:38
-- IP: 192.168.100.224 | RSSI: -55 dBm | 65 Mbps | 2.4 GHz | WPA2-PSK
-- WiFi standard: 802.11n (Wi-Fi 4)
-
-### VPN
-- ZeroTier: NOT RUNNING (was previously on 10.144.180.80/16)
-
-### Termux Status ✅
-- **Termux APK:** Installed at `/data/app/~~FWoYqUS-8AL_XI-Ww7h_6w==/com.termux-Dynvf1iXNaLxfUYzxKe2Dw==/base.apk`
-- **Termux home:** `/data/data/com.termux/files/home/` (u0_a160)
-- **SSH daemon:** Running on port 8022 (keys configured, `~/.ssh/authorized_keys` present)
-- **boot.sh:** Configured with `termux-wake-lock` + `sshd` auto-start
-- **SIM scanner data:** `/data/data/com.termux/files/home/.oracle_sim_data/`
-- **Oracle reachable:** ✅ (LAN ping OK)
-
-### Android Connectivity
-- Airplane mode: OFF
-- WiFi: ON | Mobile data: ON | Data roaming: OFF
-- Oracle reachable via LAN: ✅ 192.168.100.182
+- **oracle_sync.sh:** Host-side, running every 30min via cron
+  - **NOT SYNCING** — ADB disconnected since Apr 9
+- **Cell tower:** LAC 2598 ↔ 2430 oscillating (Safaricom) — Apr 9 state
 
 ### ⚠️ Known Issues
-- WiFi MAC address not readable via `ip link show wlan0` (permission denied) — extracted from WiFi service state dump
-- Termux `run-as` context: restricted (no battery service, no /proc/meminfo via run-as) — use `adb shell` for full data collection
-- Termux boot: `termux-boot` APK NOT installed — only boot.sh persistence
-- `run-as com.termux` for file writes: WORKS (writes .oracle_marker, scanner data)
+- **ADB DISCONNECTED** — 5+ days, LG V20 unreachable via USB
 
 ---
 
@@ -124,21 +94,24 @@
 - `192.168.100.0/24` — primary LAN
 - This machine: `192.168.100.182` (hostname: `ahie`)
 
-### Known Devices on LAN (scan 2026-04-13 morning)
+### Known Devices on LAN (scan 2026-04-14 PM)
 
 | IP | Device | MAC Vendor | Key Services | Status |
 |----|--------|-----------|-------------|--------|
 | 192.168.100.1 | Huawei Router (gateway) | Huawei Technologies | telnet 23 ⚠️ OPEN, DNS 53, HTTP/HTTPS 80/443 | ⚠️ telnet accessible — security risk |
+| 192.168.100.4 | LG Smart TV | Unknown | all ports filtered 🔒 (was open on 3000 Apr 9, now silent) | 🔒 possibly sleeping |
 | 192.168.100.105 | TP-Link device | F4:F2:6D:CE:85:D0 | all ports filtered | 🔒 |
+| 192.168.100.116 | D-Link device | D-Link | all ports filtered | 🔒 |
 | 192.168.100.122 | Bitsoko Server | CC:32:E5:0A:7D:7B | SSH 22, HTTP 80, Samba 139/445, MySQL 3306, Abyss 9999 | ⚠️ MySQL on LAN |
-| 192.168.100.182 | This machine (ahie) | — | SSH 22, SMTP 25, DNS 53, HTTP 80, Docker Swarm, ZeroTier, OpenClaw | ✅ |
+| 192.168.100.182 | This machine (ahie) | — | SSH 22, SMTP 25, DNS 53, HTTP 80, Node.js 8080, Docker Swarm, ZeroTier, OpenClaw | ✅ |
+| 192.168.100.224 | Oraimo device (RETURNED) | 5C:E8:B7:68:7F:38 | all ports closed | ✅ RETURNED |
 
 ### Previously Seen
 | IP | Device | Last Seen | Notes |
 |----|--------|-----------|-------|
+| 192.168.100.104 | Unknown | 2026-04-13 PM | **MISSING** — was all filtered, now gone ~2 days. |
+| 192.168.100.251 | Unknown | 2026-04-13 PM | **MISSING** — was up Apr 9 with port 49152. Gone ~2 days. |
 | 192.168.100.4 | LG Smart TV | 2026-04-09 | **Returned 2026-04-09** — port 3000 (LG smart TV http service) now responding. Was gone since ~2026-04-05. |
-| 192.168.100.104 | Unknown | 2026-04-09 | **NEW 2026-04-09** — port 49152 open (tcpwrapped). MAC 8A:83:61:00:5E:38. Unknown vendor. Investigate. |
-| 192.168.100.253 | Unknown | 2026-04-09 | **NEW 2026-04-09** — all ports closed. MAC 52:AF:EF:87:F3:C5. Unknown vendor. |
 | 192.168.100.21 | TP-Link device | 2026-04-05 | **Gone 2026-04-08** — all ports filtered, no longer responding. |
 | 192.168.100.23 | TP-Link/SZ Teleone | 2026-04-05 | **Gone 2026-04-09** — previously returned after absence. |
 | 192.168.100.33 | Nagios/Linux host | 2026-04-05 AM | **Gone by PM** — SSH 22, Nagios NSCA 8008. Unknown device. |
@@ -147,15 +120,24 @@
 | 192.168.100.251 | Unknown | 2026-04-05 | **Gone 2026-04-09** — previously returned after ~2.5 weeks of silence. |
 | 192.168.100.23 | TP-Link/SZ Teleone | 2026-04-02 | Gone by 2026-04-04 — port 8080 (http-proxy) no longer present |
 
+### Last Scan
+**2026-04-14 5:50 PM EAT (Apr 14 14:50 UTC)** — 7 hosts up.
+
+**CHANGES from Apr 13 evening scan:**
+- ✅ .224: **RETURNED 2026-04-14** — Oraimo device (5C:E8:B7:68:7F:38) back online after ~9 days absence.
+- ✅ .105: **NEW 2026-04-14** — TP-Link device (F4:F2:6D:CE:85:D0) first appearance. All filtered.
+- ⚠️ .104: **MISSING 2026-04-14** — Unknown device gone ~2 days. Was present Apr 13.
+- ⚠️ .251: **MISSING 2026-04-14** — Unknown device gone ~2 days. Was present Apr 13.
+- All services unchanged from prior scans (no new ports opened/closed)
+
 ### Security Concerns ⚠️
-1. ⚠️ Router (.1): telnet port 23 is **OPEN** — unencrypted protocol, actively accessible. HIGH priority to disable.
+1. ⚠️ Router (.1): telnet port 23 is **OPEN** — 52+ days, unencrypted protocol, actively accessible. HIGH priority to disable.
 2. ⚠️ .122: MySQL 5.7.44 exposed on LAN with autocommit + mysql_native_password.
 3. ⚠️ .122: Port 9999 (abyss) open — HTTP service on unknown port.
-4. ⚠️ .104: **NEW 2026-04-09** — Unknown device with port 49152 open. MAC 8A:83:61:00:5E:38 (unknown vendor). Investigate.
-5. ⚠️ .253: **NEW 2026-04-09** — Unknown device with all ports closed. MAC 52:AF:EF:87:F3:C5. May be a device that only responds to ARP.
-6. ✅ .4: LG Smart TV returned 2026-04-09 after being gone since ~Apr 5.
-7. ✅ .251: Unknown device returned 2026-04-09 — port 49152 (tcpwrapped) still open.
-8. ✅ .23: TP-Link device left network 2026-04-09 — no longer responding.
+4. 🔒 .4: LG Smart TV all filtered — sleeping.
+5. ✅ .224: Oraimo device **RETURNED** after 9 days.
+6. ✅ .105: NEW TP-Link device — all filtered, low priority.
+7. ⚠️ .104, .251: **MISSING** — unknown devices gone ~2 days.
 
 ### This Machine Services (192.168.100.182)
 - **:22** SSH (OpenSSH 8.9p1) — 0.0.0.0
@@ -331,39 +313,3 @@ obsidian/
 ---
 
 _Remember: I'm Gibson's second brain. What matters to him matters to me. Keep these files accurate and up to date._
-
----
-
-## 📞 Contact Intelligence — Extracted 2026-04-08
-
-### Data Extracted
-- **113 calls** (call log from LG V20)
-- **95 SMS** (from /sdcard/Download/.oracle/)
-- **28 unique contacts** identified
-
-### 🔴 HIGH PRIORITY CONTACTS
-
-| Contact | Number | Calls | SMS | Last Contact | Notes |
-|---------|--------|-------|-----|--------------|-------|
-| **RUFAS ATENG** | 0723288566 / 0780963082 | 95 | 16 | 2026-04-08 (call) | Financial debt — 52+ days missed calls |
-| **M-PESA** | MPESA | — | 33 | 2026-04-08 | Ksh 8,862.29 balance (Apr 8) |
-| **Unknown** | 0796591902 | 2 | 2 | 2026-03-30 | WhatsApp pending — check |
-
-### 💰 M-PESA Financial History (Recent)
-- **2026-04-08:** Ksh 4,000 sent to KPLC → balance Ksh 8,862.29
-- **2026-04-06:** Multiple small transactions (Ksh 20-200 range)
-- **2026-03-30:** Received Ksh 200 from Airtel Money → balance Ksh 207.27
-- **Pattern:** Living paycheck to paycheck, no savings buffer
-
-### 📱 Known Contact Numbers
-- **Brayo Mboka:** 0702853673, 0702869234
-- **Fedi:** 0703148489
-- **Pinky Natalie:** 0754288017
-- **Safaricom Care:** 100
-- **KPLC/Safaricom:** 0700080050
-
-### 📁 Files Saved
-- `android_logs/contacts_intelligence.json` — full contact database
-- `android_logs/call_log_parsed.json` — 113 parsed calls
-- `android_logs/sms_log_parsed.json` — 95 parsed SMS
-- `android_logs/mpesa_history.json` — M-PESA transaction history

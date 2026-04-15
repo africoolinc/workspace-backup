@@ -1,0 +1,68 @@
+[resource_check] 2026-04-14 12:00 alasiri EAT — Starting resource check...
+[resource_monitor] 2026-04-14 12:00 PM  | Phase: PHASE-4 | Docker: 2.88 GiB | Load: 5.02 (125.5%) | Oracle: 3.86 GiB free
+[resource_check] Phase: PHASE-4 (was: PHASE-3)
+[resource_check] PHASE CHANGE: PHASE-3 → PHASE-4
+[notifier] Gibson notified: PHASE-4 — Phase change: PHASE-3 → PHASE-4 | Trigger: load_or_memory_threshold
+[notifier] Phase change alert: PHASE-3 → PHASE-4 (load_or_memory_threshold)
+[resource_check] PHASE-4: Running intervention...
+=== DESCRIBE ===
+Trigger: Phase PHASE-4 triggered
+  Docker memory: 3076031250 / 6442450944
+  System load: 5.02 (125.5% of cores)
+  Time: 2026-04-14 12:00 alasiri EAT
+=== IDENTIFY CAUSES ===
+Top memory consumers (docker):
+zookeeper 100.2MiB / 12.35GiB
+zerotier 5.68MiB / 12.35GiB
+trusting_beaver 21.87MiB / 12.35GiB
+stack-duka-dao-app-1 29.28MiB / 12.35GiB
+service-c 28.29MiB / 12.35GiB
+Top CPU processes (host):
+  PID 270802: 93.1% CPU — /usr/bin/node
+  PID 18032: 24.6% CPU — /snap/firefox/8107/usr/lib/firefox/firefox
+  PID 20711: 22.5% CPU — /snap/firefox/8107/usr/lib/firefox/firefox
+  PID 270935: 18.2% CPU — python3
+  PID 270947: 17.8% CPU — python3
+Recent container events:
+[resource_check] 2026-04-14 06:00 alasiri EAT — Starting resource check...
+[resource_monitor] 2026-04-14 06:00 PM  | Phase: PHASE-1 | Docker: 2.82 GiB | Load: 1.29 (32.2%) | Oracle: 2.12 GiB free
+[resource_check] Phase: PHASE-1 (was: PHASE-3)
+[resource_check] PHASE CHANGE: PHASE-3 → PHASE-1
+[notifier] Gibson notified: PHASE-1 — Phase change: PHASE-3 → PHASE-1 | Trigger: load_or_memory_threshold
+[notifier] Phase change alert: PHASE-3 → PHASE-1 (load_or_memory_threshold)
+[resource_check] PHASE-1: No intervention needed.
+[resource_check] Complete — Phase: PHASE-1
+[resource_check] 2026-04-15 12:00 alasiri EAT — Starting resource check...
+[resource_monitor] 2026-04-15 12:00 PM  | Phase: PHASE-4 | Docker: 2.94 GiB | Load: 8.46 (211.5%) | Oracle: 3.97 GiB free
+[resource_check] Phase: PHASE-4 (was: PHASE-3)
+[resource_check] PHASE CHANGE: PHASE-3 → PHASE-4
+[notifier] Gibson notified: PHASE-4 — Phase change: PHASE-3 → PHASE-4 | Trigger: load_or_memory_threshold
+[notifier] Phase change alert: PHASE-3 → PHASE-4 (load_or_memory_threshold)
+[resource_check] PHASE-4: Running intervention...
+=== DESCRIBE ===
+Trigger: Phase PHASE-4 triggered
+  Docker memory: 3155691569 / 6442450944
+  System load: 8.46 (211.5% of cores)
+  Time: 2026-04-15 12:00 alasiri EAT
+=== IDENTIFY CAUSES ===
+Top memory consumers (docker):
+zookeeper 107.8MiB / 12.35GiB
+zerotier 5.613MiB / 12.35GiB
+trusting_beaver 25.41MiB / 12.35GiB
+stack-duka-dao-app-1 24.25MiB / 12.35GiB
+service-c 27.46MiB / 12.35GiB
+Top CPU processes (host):
+  PID 1666099: 14.0% CPU — python3
+  PID 1666109: 13.8% CPU — python3
+  PID 1638070: 7.8% CPU — /snap/firefox/8107/usr/lib/firefox/firefox
+  PID 1371449: 4.4% CPU — /snap/vlc/3777/usr/bin/vlc
+  PID 10835: 3.3% CPU — /usr/lib/netdata/plugins.d/apps.plugin
+Recent container events:
+[resource_check] 2026-04-15 06:00 alasiri EAT — Starting resource check...
+[resource_monitor] 2026-04-15 06:00 PM  | Phase: PHASE-1 | Docker: 2.72 GiB | Load: 2.21 (55.2%) | Oracle: 3.29 GiB free
+[resource_check] Phase: PHASE-1 (was: PHASE-4)
+[resource_check] PHASE CHANGE: PHASE-4 → PHASE-1
+[notifier] Gibson notified: PHASE-1 — Phase change: PHASE-4 → PHASE-1 | Trigger: load_or_memory_threshold
+[notifier] Phase change alert: PHASE-4 → PHASE-1 (load_or_memory_threshold)
+[resource_check] PHASE-1: No intervention needed.
+[resource_check] Complete — Phase: PHASE-1

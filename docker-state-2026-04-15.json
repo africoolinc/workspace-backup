@@ -1,0 +1,108 @@
+# Docker Container States — 2026-04-15 18:15 EAT
+CONTAINER ID   IMAGE                                        COMMAND                  CREATED        STATUS                      PORTS                                                                                                                              NAMES
+8de23b91346e   microservices-stack-service-a                "python /app.py"         31 hours ago   Up 31 hours                 0.0.0.0:5001->5000/tcp, [::]:5001->5000/tcp                                                                                        service-a
+72acfb82e87d   microservices-stack-service-b                "python /app.py"         31 hours ago   Up 31 hours                 0.0.0.0:5002->5000/tcp, [::]:5002->5000/tcp                                                                                        service-b
+4a2903014ca3   microservices-stack-service-c                "python /app.py"         31 hours ago   Up 31 hours                 0.0.0.0:5003->5000/tcp, [::]:5003->5000/tcp                                                                                        service-c
+4067432b4571   kong:3.7                                     "/docker-entrypoint.…"   32 hours ago   Up 32 hours (healthy)       0.0.0.0:8000-8001->8000-8001/tcp, [::]:8000-8001->8000-8001/tcp, 8443-8444/tcp                                                     kong
+f110083a17b0   stack-duka-dao-app                           "docker-entrypoint.s…"   2 days ago     Up 33 hours (healthy)       0.0.0.0:3001->3000/tcp, [::]:3001->3000/tcp                                                                                        stack-duka-dao-app-1
+a0d8acfff8b3   confluentinc/cp-kafka:7.6.1                  "/etc/confluent/dock…"   6 days ago     Up 32 hours (healthy)       0.0.0.0:9092->9092/tcp, [::]:9092->9092/tcp, 0.0.0.0:29092->29092/tcp, [::]:29092->29092/tcp                                       kafka
+11cb8b6d2e77   kibana:8.14.1                                "/bin/tini -- /usr/l…"   6 days ago     Exited (255) 33 hours ago   0.0.0.0:5601->5601/tcp, [::]:5601->5601/tcp                                                                                        kibana
+9a654329e7d3   logstash:8.14.1                              "/usr/local/bin/dock…"   6 days ago     Up 32 hours                 5044/tcp, 0.0.0.0:9600->9600/tcp, [::]:9600->9600/tcp, 0.0.0.0:5010->5000/tcp, [::]:5010->5000/tcp                                 logstash
+ff55e3a1bd59   grafana/grafana:11.1.0                       "/run.sh"                6 days ago     Up 32 hours                 0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp                                                                                        grafana
+5d18e328c17f   quay.io/keycloak/keycloak:25.0               "/opt/keycloak/bin/k…"   6 days ago     Exited (255) 33 hours ago   8443/tcp, 9000/tcp, 0.0.0.0:8180->8080/tcp, [::]:8180->8080/tcp                                                                    keycloak
+e1dfe3ada4dc   confluentinc/cp-zookeeper:7.6.1              "/etc/confluent/dock…"   6 days ago     Up 32 hours                 2888/tcp, 0.0.0.0:2181->2181/tcp, [::]:2181->2181/tcp, 3888/tcp                                                                    zookeeper
+a39d5771a9c1   postgres:16                                  "docker-entrypoint.s…"   6 days ago     Up 32 hours (healthy)       5432/tcp                                                                                                                           keycloak-db
+bd59262e1e57   redis:7                                      "docker-entrypoint.s…"   6 days ago     Up 32 hours (healthy)       0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp                                                                                        redis
+f353f8a399d0   hashicorp/consul:1.17                        "docker-entrypoint.s…"   6 days ago     Up 32 hours (healthy)       8300-8302/tcp, 8600/tcp, 8301-8302/udp, 0.0.0.0:8500->8500/tcp, [::]:8500->8500/tcp, 0.0.0.0:8600->8600/udp, [::]:8600->8600/udp   consul
+27f2ecb932d4   prom/prometheus:v2.53.0                      "/bin/prometheus --c…"   6 days ago     Up 32 hours (healthy)       0.0.0.0:9090->9090/tcp, [::]:9090->9090/tcp                                                                                        prometheus
+1dce4fa75006   elasticsearch:8.14.1                         "/bin/tini -- /usr/l…"   6 days ago     Up 32 hours (healthy)       0.0.0.0:9200->9200/tcp, [::]:9200->9200/tcp, 0.0.0.0:9300->9300/tcp, [::]:9300->9300/tcp                                           elasticsearch
+91c69a2f4402   postgres:16                                  "docker-entrypoint.s…"   6 days ago     Up 32 hours (healthy)       5432/tcp                                                                                                                           kong-db
+72ecf5dd3c9e   postgres:16                                  "docker-entrypoint.s…"   6 days ago     Up 32 hours (healthy)       5432/tcp                                                                                                                           app-db
+d799332ddc60   bridge_stack-bridge-tracker                  "docker-entrypoint.s…"   2 weeks ago    Up 33 hours (healthy)       0.0.0.0:3102->3002/tcp, [::]:3102->3002/tcp                                                                                        bridge_tracker
+5b5b03999999   bridge_stack-bridge-heartbeat                "docker-entrypoint.s…"   2 weeks ago    Up 33 hours (healthy)       0.0.0.0:3101->3001/tcp, [::]:3101->3001/tcp                                                                                        bridge_heartbeat
+8f78ed1e4bdc   bridge_stack-bridge-api                      "docker-entrypoint.s…"   2 weeks ago    Up 33 hours (healthy)       0.0.0.0:3100->3000/tcp, [::]:3100->3000/tcp                                                                                        bridge_api
+2854459d0c6b   nginx:1.25-alpine                            "/docker-entrypoint.…"   2 weeks ago    Exited (0) 6 days ago                                                                                                                                          crypto_nginx
+58417354c3c3   grafana/loki:latest                          "/usr/bin/loki -conf…"   2 weeks ago    Exited (0) 6 days ago                                                                                                                                          crypto_loki
+347b77513448   crypto_stack-crypto_blockchain               "docker-entrypoint.s…"   2 weeks ago    Exited (137) 6 days ago                                                                                                                                        crypto_blockchain
+630392e51426   crypto_stack-crypto_phone                    "docker-entrypoint.s…"   2 weeks ago    Exited (137) 6 days ago                                                                                                                                        crypto_phone
+1f739f6535e2   crypto_stack-crypto_cloudflare               "docker-entrypoint.s…"   2 weeks ago    Exited (137) 6 days ago                                                                                                                                        crypto_cloudflare
+18d3aaea836c   crypto_stack-crypto_dns                      "docker-entrypoint.s…"   2 weeks ago    Exited (137) 6 days ago                                                                                                                                        crypto_dns
+8bf2753614b9   crypto_stack-crypto_mpesa                    "docker-entrypoint.s…"   2 weeks ago    Exited (137) 6 days ago                                                                                                                                        crypto_mpesa
+cde80493dba2   grafana/grafana:latest                       "/run.sh"                2 weeks ago    Exited (0) 6 days ago                                                                                                                                          crypto_grafana
+4fa509732b65   redis:7-alpine                               "docker-entrypoint.s…"   2 weeks ago    Exited (0) 13 days ago                                                                                                                                         crypto_redis
+e06ca8be2ba1   postgres:16-alpine                           "docker-entrypoint.s…"   2 weeks ago    Exited (0) 6 days ago                                                                                                                                          crypto_postgres
+26547524f435   prom/prometheus:latest                       "/bin/prometheus --c…"   2 weeks ago    Exited (0) 13 days ago                                                                                                                                         crypto_prometheus
+2b6fdc004272   portainer/portainer-ce:latest                "/portainer --admin-…"   2 weeks ago    Up 33 hours                 0.0.0.0:9000->9000/tcp, [::]:9000->9000/tcp, 8000/tcp, 0.0.0.0:9443->9443/tcp, [::]:9443->9443/tcp                                 portainer
+43a415cfdf7e   crypto-register-crypto-register-api:latest   "docker-entrypoint.s…"   4 weeks ago    Exited (255) 3 weeks ago    0.0.0.0:10112->3002/tcp, [::]:10112->3002/tcp                                                                                      crypto-register-api
+ff66bc5694c1   nginx:alpine                                 "/docker-entrypoint.…"   4 weeks ago    Exited (0) 13 days ago                                                                                                                                         crypto-register-frontend
+4312b5025665   trading-api                                  "docker-entrypoint.s…"   5 weeks ago    Exited (255) 3 weeks ago    0.0.0.0:5200->5200/tcp, [::]:5200->5200/tcp                                                                                        trading-api
+e9f48a05a6e4   bridge-api-dev:latest                        "docker-entrypoint.s…"   5 weeks ago    Exited (255) 3 weeks ago    0.0.0.0:5100->5100/tcp, [::]:5100->5100/tcp                                                                                        bridge-api-dev
+38e8ba57a9e9   postgres:16-alpine                           "docker-entrypoint.s…"   6 weeks ago    Up 33 hours (healthy)       5432/tcp                                                                                                                           bridge_db
+f5bfef38ff6c   cloudflare/cloudflared:latest                "cloudflared --no-au…"   7 weeks ago    Up 33 hours                                                                                                                                                    trusting_beaver
+b42eaaaf85b1   gibsons_dash                                 "docker-entrypoint.s…"   8 weeks ago    Exited (137) 13 days ago                                                                                                                                       gibsons_dash
+5b9fbe8a1b42   dao_wallet                                   "docker-entrypoint.s…"   8 weeks ago    Exited (137) 13 days ago                                                                                                                                       dao_wallet
+4ee0692917e4   zyclonite/zerotier                           "entrypoint.sh -U"       2 months ago   Up 33 hours                                                                                                                                                    zerotier
+
+# Docker Volumes
+DRIVER    VOLUME NAME
+local     0ae9a644e03850754e22b5336c76fc489e22d0fd60f709cfc98dd62d8b210598
+local     0dbcde25720c2cc79e3b0b5927b4caca6ab3d097f8f7a505693eb80f88e49d82
+local     0e45e95194c3f1bfd2ae6ed284037fec566a30a2c6b9e9e1b72445aa99414145
+local     3b472caab07974b4da50860d801388781c3f06c2122479edfe3e83e1e0a265b3
+local     8cc718c6e987c56b5ce8c621f0fc6e23d70afb893aefd3ba1ca1a41f232b3537
+local     9c9ecadcaaaa660df383208e127e8f53e08990b2d4200dbc33bc8ecf8cdc2aba
+local     9e84571c3628265c11f10d9c2157aad23c721c388a53b776058fc7494e9568a2
+local     19db9c4cda3f35f5b003c8db9019d3be07b981384a64eae85da55b86c7571689
+local     20e86cfd85333cfe3965890ff7e48a62be45432beea0641384195e6c655e6a88
+local     95d7bacc3dbd16c2fccd6de14cfd0d3b1f68b5bfb4be53ea77a0cb5b7a42a36e
+local     390cd78fd191df518cddde9f46a345ca37aae4a4f569c025406286248fe02add
+local     476ec4d6b8ebb8aa1c0c1feeb73ba0e5e236b970dd4d9312a7439016efed0d62
+local     569f45a023751259d54b6554ad6fa8a1de3e876a5060ef6a97b3d7404c9fafb8
+local     33672cd44ba1c33d4394e20b77384b19b2758af8a8b3ccc12d29459a889daa67
+local     79488f300e0073b50f4ca1d5c9aeb9333eadf0612120c161c8249654ddac1aac
+local     6947932f6b0b15574b14917162ec91492e1553dfb7439623c4b6b8459e3817fb
+local     a71565bba0e2c954713304817f0e45725f2436303398a306df2d6090d65ab8d4
+local     b80e1c5108a62df79d7a49cb33fb53d8e012c4c458a00520e31fd2b8adf5dab4
+local     bb6d154ac544d83b1b8e02f4b68b383ded8ff7e03db6b91452bcfeab4e12e8d2
+local     bridge_stack_bridge_postgres_data
+local     c3c5a5a628a1694892b9c1fd1e424266eac5ee5e8a89a6b258054ae65d5c1e1d
+local     c343f1b3748419957f8704c6221cdecb650bc76ba0dd4a38129cd6e81c9c8139
+local     crypto-register-data
+local     crypto_stack_crypto_logs_data
+local     crypto_stack_crypto_postgres_data
+local     crypto_stack_crypto_redis_data
+local     crypto_stack_prometheus_data
+local     crypto_stack_redis_data
+local     crypto_stack_traefik_certs
+local     f195291a38c579c784736c0aac68e13aaa46f18a15f9c82c38cf8a76b6635e06
+local     fe104556b3b95ef913d9c94032411f0482153ec694bcfee80cd9576436b5a825
+local     gibson_app-db-data
+local     gibson_grafana-data
+local     gibson_kafka-data
+local     gibson_keycloak-db-data
+local     gibson_kong-db-data
+local     gibson_zookeeper-data
+local     microservices-stack_app-db-data
+local     microservices-stack_es-data
+local     microservices-stack_grafana-data
+local     microservices-stack_kafka-data
+local     microservices-stack_keycloak-db-data
+local     microservices-stack_kong-db-data
+local     microservices-stack_prometheus-data
+local     microservices-stack_zookeeper-data
+local     ollama
+local     portainer_data
+
+# Docker Networks
+NETWORK ID     NAME                                DRIVER    SCOPE
+d4734a406c62   bridge                              bridge    local
+9948ca35f763   bridge_stack_bridge_network         bridge    local
+45b4817fe71a   crypto_stack_crypto_network         bridge    local
+431b2db1b249   crypto_stack_crypto_stack_network   bridge    local
+d610c871ff07   crypto_stack_default                bridge    local
+4402b978b7ff   docker_gwbridge                     bridge    local
+a1b1e4145a1c   host                                host      local
+uzqmoucznays   ingress                             overlay   swarm
+eaf2699862c8   microservices-stack_backend         bridge    local
+430d43266f90   none                                null      local
+d2de1f6c2fe3   stack_default                       bridge    local
